@@ -7,7 +7,8 @@ class Debug
   end
 
   def call(env)
-    puts env.inspect
+    #puts env.inspect
+    env['rack.url_scheme'] = 'https'
     @app.call(env)
   end
 end
