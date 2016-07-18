@@ -1,8 +1,5 @@
-#source 'http://gems.www.lib.umich.edu' do
-#  gem 'lit'
-#end
+source 'https://rubygems.org'
 
-source 'https://rubygems.org' do
 gem 'net-ldap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -25,15 +22,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -46,9 +34,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
-
 gem 'umlaut', '>= 4.1.7', '< 5'
 gem 'puma'
-gem 'umlaut-three-sixty-link', path: '../../gems/umlaut-three-sixty-link'
-gem 'umlaut-mirlyn', path: '../../gems/umlaut-mirlyn'
-end
+gem 'umlaut-three-sixty-link', github: 'mlibrary/umlaut-three-sixty-link'
+gem 'umlaut-mirlyn', github: 'mlibrary/umlaut-mirlyn'
