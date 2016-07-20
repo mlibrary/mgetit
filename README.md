@@ -5,6 +5,7 @@
 1. `git clone https://github.com/mlibrary/mgetit`
 2. `bundle install --path .bundle`
 3. add a `config/databases.yml` example:
+
     ```yaml
     default: &default
       host: YOUR_HOST_HERE
