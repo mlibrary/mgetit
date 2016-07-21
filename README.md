@@ -22,7 +22,14 @@
     production:
       <<: *default
     ```
-4. `bundle exec rake db:migrate`
-5. `bundle exec rackup`
+4. If needed, adjust `config/application.rb`
+
+    ```ruby
+    config.relative_url_root = "/path/to/application"
+    config.action_controller.relative_url_root = "/path/to/application"
+    ```
+    
+5. `bundle exec rake db:migrate`
+6. `bundle exec rackup`
 
 
