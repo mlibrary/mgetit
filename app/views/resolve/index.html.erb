@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <div class="card">
+        <%= render 'background_updater', :user_request => @user_request %>
+        <%= render 'manually_entered_warning', :user_request => @user_request %>
+        <%= render 'citation', :user_request => @user_request %>
+        <% html_sections(:resource_info).each do |section| %>
+          <%= content_tag "div", :id => section[:div_id] do %>
+            <%= render_section(section) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# need a div here for ajax bg loader to put bg loaded cover into %>
+<div id="cover_image">
+  <%= render_section(html_section_by_div_id("cover_image")) %>
+</div>
+
+<% html_sections(:main).each do |section| %>
+  <%= content_tag "div", :id => section[:div_id] do %>
+    <%= render_section(section) %>
+  <% end %>
+<% end %>
+
+<% html_sections(:sidebar).each do |section| %>
+  <%= content_tag "div", :id => section[:div_id] do %>
+    <%= render_section(section) %>
+  <% end %>
+<% end %>
+
+<% html_sections(:service_errors).each do |section| %>
+  <%= render_section(section) %>
+<% end %>
+
+<%= render 'modal' %>

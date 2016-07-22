@@ -1,0 +1,15 @@
+<%# local implementers may over-ride this partial for custom local header.
+    This partial is called by default umlaut layout.  %>
+
+<header class="site-header">
+  <div class="container">
+    <a href="lib.umich.edu" class="site-brand">
+      <img src="http://www.lib.umich.edu/shared-files/graphics/logos/umlib_logo_white_72x442.png">
+    </a>
+
+    <div class="permalink-container">
+      <label for="permalink">Permalink:</label>
+      <input id="permalink" type="text" value="<%= render_umlaut_permalink_url %>" />
+    </div>
+  </div>
+</header>

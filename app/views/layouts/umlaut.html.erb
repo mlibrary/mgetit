@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <title><%= umlaut_title_text %></title>
+    <%= render_umlaut_head_content %>
+  </head>
+  <body class="no-js">
+    <%= render :partial => "umlaut/header" %>
+
+    <div class="container">
+      <h1 class="site-heading">MGet it</h1>
+      <p class="site-subheading">
+        Getting you to the resources you need
+      </p>
+    </div>
+
+    <div class="umlaut-main-container-fluid container-fluid <%= "umlaut-#{params[:controller]}-container" %>">
+      <%= render :partial => "umlaut/alerts" %>
+
+      <%= yield %>
+    </div>
+
+    <%= render :partial => "umlaut/footer" %>
+  </body>

@@ -22,8 +22,8 @@ module Mgetit
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.relative_url_root = "/testapp/mgetit"
-    config.action_controller.relative_url_root = "/testapp/mgetit"
+    config.relative_url_root = ""
+    config.action_controller.relative_url_root = ""
     config.dependency_loading = true if $rails_rake_task
   end
 end

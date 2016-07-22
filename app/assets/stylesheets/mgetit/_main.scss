@@ -1,0 +1,17 @@
+body {
+  background: $main-5;
+}
+
+.container {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+}

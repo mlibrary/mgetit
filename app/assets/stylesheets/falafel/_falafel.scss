@@ -1,0 +1,300 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.page-container {
+  max-width: 38rem;
+  margin: 0 auto; }
+
+/*
+  Site
+*/
+body {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+  color: #333; }
+
+/*
+  Headings
+*/
+h1 {
+  font-size: 2.75rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h1, h2 {
+  font-weight: 700;
+  line-height: 1.3; }
+
+h3 {
+  font-size: 1.75rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h3, h4 {
+  font-weight: 400; }
+
+h5 {
+  font-size: 1.5rem; }
+
+h6 {
+  font-size: 1.25rem; }
+
+h5, h6 {
+  font-weight: 300; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0; }
+
+/*
+  Typography and Elements
+*/
+p {
+  margin-top: 1rem; }
+
+a:not(.button) {
+  color: #333;
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 0 #126DC1; }
+
+a:not(.button):hover {
+  background: #E6F3FF; }
+
+a:not(.button):active {
+  color: #0C5292; }
+
+a:not(.button):visited {
+  box-shadow: inset 0 -5px 0 0 #CCE6FF; }
+
+a:not(.button)[href^="//"]:after,
+a:not(.button)[href^="http://"]:after,
+a:not(.button)[href^="https://"]:after {
+  content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+  margin: 0 0 0 5px; }
+
+*::selection {
+  background: #CCE6FF; }
+
+ol, ul {
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+ol {
+  list-style: decimal; }
+
+ul {
+  list-style: disc; }
+
+li {
+  padding-left: 1rem;
+  margin-top: 1rem;
+  font-family: "PT Serif", serif; }
+
+dl {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+dd {
+  margin-bottom: 1.5rem;
+  margin-left: 4rem; }
+
+.table-scroll-container {
+  max-width: 100%;
+  overflow-x: scroll; }
+
+table {
+  width: 100%;
+  border: solid 1px #E5E5E5;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+thead {
+  background: #FAFAFA;
+  border-bottom: solid 2px #E5E5E5; }
+
+tr {
+  border-bottom: solid 1px #E5E5E5; }
+
+td, th {
+  padding: 1rem; }
+
+th {
+  text-align: left;
+  color: #6E6E6E; }
+
+blockquote {
+  font-family: "PT Serif", serif;
+  font-size: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: solid 0.5rem #126DC1;
+  margin: 2rem 0;
+  color: #126DC1;
+  font-style: italic; }
+
+input[type="text"] {
+  font-size: 1.1rem;
+  border: solid 0.15rem #6E6E6E;
+  border-radius: 4px;
+  padding: 0.75rem;
+  min-width: 22rem; }
+
+label {
+  margin-bottom: 0.1rem;
+  color: #4E4E4E;
+  display: block; }
+
+input[type="text"]:disabled,
+input[type="text"]:read-only {
+  background: #FAFAFA;
+  border-color: #CCC;
+  color: #6E6E6E;
+  cursor: not-allowed; }
+
+fieldset {
+  margin: 1rem 0; }
+
+.help-text {
+  margin: 0; }
+
+fieldset.field-valid input[type="text"] {
+  border-color: #05A657; }
+
+fieldset.field-valid .help-text {
+  color: #05A657;
+  font-size: 0.9rem; }
+
+fieldset.field-error input[type="text"] {
+  border-color: #ED5D47; }
+
+fieldset.field-error .help-text {
+  color: #ED5D47;
+  font-size: 0.9rem; }
+
+fieldset.field-warning input[type="text"] {
+  border-color: #E77504; }
+
+fieldset.field-warning .help-text {
+  color: #E77504;
+  font-size: 0.9rem; }
+
+textarea {
+  display: block;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: solid 2px #CCC;
+  max-width: 100%; }
+
+.button,
+input[type="submit"] {
+  display: inline-block;
+  text-decoration: none;
+  margin: 1rem 0;
+  padding: 0.75rem 1.25rem;
+  background: #126DC1;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer; }
+
+.button:not(.button-disabled):hover,
+input[type="submit"]:hover {
+  background: #0C5292; }
+
+.button:not(.button-disabled):active {
+  color: #FAFAFA;
+  background: #0C5292; }
+
+.button-disabled {
+  border: solid 2px #E5E5E5;
+  color: #6E6E6E;
+  background: #FAFAFA;
+  box-shadow: none; }
+
+.button-disabled:hover,
+.button-disabled:active {
+  cursor: not-allowed; }
+
+.button-primary {
+  border-color: #0C5292;
+  background: #fff;
+  color: #0C5292; }
+
+.alert {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: solid 2px #E5E5E5;
+  background: #FAFAFA; }
+
+.alert-success {
+  background: #E2F4EB;
+  border-color: #05A657; }
+
+.alert-info {
+  background: #FFEEDD;
+  border-color: #E77504; }
+
+.alert-warning {
+  background: #FFEEDD;
+  border-color: #E77504; }
+
+.alert-danger {
+  background: #FFEAE7;
+  border-color: #ED5D47; }
+
+.alert *:first-child {
+  margin: 0; }
