@@ -106,12 +106,9 @@ p {
   margin-top: 1rem; }
 
 a:not(.button) {
-  color: #333;
-  text-decoration: none;
-  box-shadow: inset 0 -2px 0 0 #126DC1; }
-
-a:not(.button):hover {
-  background: #E6F3FF; }
+  color: #126DC1;
+  cursor: pointer;
+  text-decoration: none; }
 
 a:not(.button):active {
   color: #0C5292; }
@@ -141,8 +138,7 @@ ul {
 
 li {
   padding-left: 1rem;
-  margin-top: 1rem;
-  font-family: "PT Serif", serif; }
+  margin-top: 1rem; }
 
 dl {
   margin-top: 1rem;
@@ -158,7 +154,7 @@ dd {
 
 table {
   width: 100%;
-  border: solid 1px #E5E5E5;
+  border: solid 2px #E5E5E5;
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
@@ -167,7 +163,7 @@ thead {
   border-bottom: solid 2px #E5E5E5; }
 
 tr {
-  border-bottom: solid 1px #E5E5E5; }
+  border-bottom: solid 2px #E5E5E5; }
 
 td, th {
   padding: 1rem; }

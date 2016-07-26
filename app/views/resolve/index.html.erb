@@ -2,6 +2,10 @@
   <div class="row">
     <div class="col-md-8 col-xs-12">
       <div class="card">
+        <%# need a div here for ajax bg loader to put bg loaded cover into %>
+        <div id="cover_image" class="cover-image-container">
+          <%= render_section(html_section_by_div_id("cover_image")) %>
+        </div>
         <%= render 'background_updater', :user_request => @user_request %>
         <%= render 'manually_entered_warning', :user_request => @user_request %>
         <%= render 'citation', :user_request => @user_request %>
@@ -10,30 +14,106 @@
             <%= render_section(section) %>
           <% end %>
         <% end %>
+
+        <div>
+          <ul class="tabs">
+            <li class="tab tab-active">
+              <a href="#digital_sources">Digital Sources</a>
+            </li>
+            <li class="tab">
+              <a href="#physical_holdings_and_delivery_sources">Physical Holdings &amp; Delivery Sources</a>
+            </li>
+          </ul>
+        </div>
+
+        <div id="digital_sources">
+          <table>
+            <thead>
+              <tr>
+                <th>Link</th>
+                <th>Resource</th>
+                <th>Available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="">Go to Journal</a></td>
+                <td>ProQuest</td>
+                <td>01/01/1995 - Present</td>
+              </tr>
+              <tr>
+                <td><a href="">Go to Journal</a></td>
+                <td>ScienceDirect Freedom Collection</td>
+                <td>05/01/1988 - Present</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="physical_holdings_and_delivery_sources">
+
+        </div>
+
+        <script>
+          /*
+            Managing Tabs
+            =============
+
+            Setup:
+            * Create an unordered lists with classname "tabs" and
+            children list items with the classname "tab". Inside
+            the list items have an anchor tag linking to an
+            ID on the page. That's it!
+
+            Note: Also add class "tab-active" to the initial
+            active tab.
+
+          */
+
+          //(function() {
+
+            // Get all tabs that will toggle the tab active content
+            var tabs = document.getElementsByClassName('tab');
+
+            var array_of_tabs = []
+            for (var i=0,  tabs_length = tabs.length; i < tabs_length; i++) {
+              array_of_tabs.push(tabs[i])
+            }
+
+            var tab_ids = array_of_tabs.reduce(function(ids, tab, value, arry) {
+              console.log('tab', tab)
+              console.log('ids', ids)
+              console.log('value', value)
+              console.log('arry', arry)
+
+              return ids.push(tab.firstElementChild.getAttribute('href'))
+            }, [])
+
+          //})();
+
+        </script>
+
+        <!--
+        <% html_sections(:main).each do |section| %>
+          <%= content_tag "div", :id => section[:div_id] do %>
+            <%= render_section(section) %>
+          <% end %>
+        <% end %>
+
+        <% html_sections(:sidebar).each do |section| %>
+          <%= content_tag "div", :id => section[:div_id] do %>
+            <%= render_section(section) %>
+          <% end %>
+        <% end %>
+
+        <% html_sections(:service_errors).each do |section| %>
+          <%= render_section(section) %>
+        <% end %>
+        -->
+
       </div>
     </div>
   </div>
 </div>
-
-<%# need a div here for ajax bg loader to put bg loaded cover into %>
-<div id="cover_image">
-  <%= render_section(html_section_by_div_id("cover_image")) %>
-</div>
-
-<% html_sections(:main).each do |section| %>
-  <%= content_tag "div", :id => section[:div_id] do %>
-    <%= render_section(section) %>
-  <% end %>
-<% end %>
-
-<% html_sections(:sidebar).each do |section| %>
-  <%= content_tag "div", :id => section[:div_id] do %>
-    <%= render_section(section) %>
-  <% end %>
-<% end %>
-
-<% html_sections(:service_errors).each do |section| %>
-  <%= render_section(section) %>
-<% end %>
 
 <%= render 'modal' %>
