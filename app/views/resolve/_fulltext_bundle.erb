@@ -1,0 +1,27 @@
+<div class="<%= section_css_classes(@user_request, "fulltext_bundle").join(" ") %> umlaut-section-highlighted">
+  <%= render 'section_heading', presenter: renderer, force_render: true %>
+  <div class="umlaut_section_content">
+    <ul>
+    <% fulltext_bundle.each do |bundle| %>
+      <li>
+        <dl>
+        <dt>bundle.notes</dt>
+        <dd><%= bundle.notes %></dd>
+        <dt>bundle.service_data[:headings][:article]</dt>
+        <dd><%= bundle.service_data[:headings][:article] %></dd>
+        <dt>bundle.service_data[:headings][:journal]</dt>
+        <dd><%= bundle.service_data[:headings][:journal] %></dd>
+        <dt>bundle.service_data[:headings][:source]</dt>
+        <dd><%= bundle.service_data[:headings][:source] %></dd>
+        <dt>bundle.service_data[:urls].article</dt>
+        <dd><%= bundle.service_data[:urls].article %></dd>
+        <dt>bundle.service_data[:urls].journal</dt>
+        <dd><%= bundle.service_data[:urls].journal %></dd>
+        <dt>bundle.service_data[:urls].source</dt>
+        <dd><%= bundle.service_data[:urls].source %></dd>
+        </dl>
+      </li>
+    <% end %>
+    <ul>
+  </div>
+</div>

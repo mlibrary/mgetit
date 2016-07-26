@@ -130,6 +130,19 @@ class UmlautController < ApplicationController
       # Advanced topic, you can declaratively configure
       # what sections of the resolve page are output where
       # and how using resolve_sections and add_resolve_sections!
+      add_resolve_sections! do
+        div_id 'fulltext_bundle'
+        html_area :main
+        partial :fulltext_bundle
+        show_partial_only true
+        section_title 'Available Online'
+        highlight true
+      end
 
+      add_resolve_sections_filter! Proc.new {|request, sections|
+        s = sections.remove_section('fulltext_bundle')
+        sections.insert_section(s, before: 'fulltext')
+        #sections.remove_section('fulltext')
+      }
     end
 end
