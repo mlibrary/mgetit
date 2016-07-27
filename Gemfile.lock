@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/mlibrary/umlaut-three-sixty-link.git
-  revision: 12ff4bc7012068aa05c0e8aaa1a157b771f2cbb4
+  revision: 5b66a63d66eae72c26b383c4be57d84ef11afa01
   specs:
     umlaut-three-sixty-link (0.0.1)
       nokogiri
@@ -76,7 +76,7 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
-    globalid (0.3.6)
+    globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.4)
     htmlentities (4.3.4)

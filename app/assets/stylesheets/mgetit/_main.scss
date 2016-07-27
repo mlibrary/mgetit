@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  max-width: 62rem;
+  max-width: 72rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -89,4 +89,27 @@ body {
   color: $main-3;
 
   border-bottom-color: white;
+}
+
+@media (max-width: 42rem) {
+  .tabs {
+    margin: 0;
+  }
+
+  .tab {
+    display: block;
+    margin: 0;
+
+    a {
+      display: block;
+    }
+  }
+
+  .tab:first-child {
+    margin-left: 0;
+  }
+
+  .tab-active a {
+    border-color: $grey-4;
+  }
 }

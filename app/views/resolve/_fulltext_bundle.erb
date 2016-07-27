@@ -15,36 +15,21 @@
       <% fulltext_bundle.each do |bundle| %>
       <tr>
         <td><a href="<%= bundle.service_data[:urls].journal %>">Fulltext Online</a></td>
-        <td><a href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:source] %></a></td>
-        <td><%= bundle.notes %></td>
+        <td><a href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a></td>
+        <td>
+          <% if bundle.service_data[:available][:start].present? %>
+            <%= bundle.service_data[:available][:start] %> -
+          <% end %>
+
+          <% if bundle.service_data[:available][:end].present? %>
+            <%= bundle.service_data[:available][:end] %>
+          <% else %>
+            Present
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
   <% end %>
-
-  <div class="alert alert-info">
-    <h3>[debug] Fulltext Bundle</h3>
-    <dl>
-    <% fulltext_bundle.each do |bundle| %>
-        <dt>bundle.notes</dt>
-        <dd><%= bundle.notes %></dd>
-        <dt>bundle.service_data[:headings][:article]</dt>
-        <dd><%= bundle.service_data[:headings][:article] %></dd>
-        <dt>bundle.service_data[:headings][:journal]</dt>
-        <dd><%= bundle.service_data[:headings][:journal] %></dd>
-        <dt>bundle.service_data[:headings][:source]</dt>
-        <dd><%= bundle.service_data[:headings][:source] %></dd>
-        <dt>bundle.service_data[:urls].article</dt>
-        <dd><%= bundle.service_data[:urls].article %></dd>
-        <dt>bundle.service_data[:urls].journal</dt>
-        <dd><%= bundle.service_data[:urls].journal %></dd>
-        <dt>bundle.service_data[:urls].source</dt>
-        <dd><%= bundle.service_data[:urls].source %></dd>
-    <% end.empty? and begin %>
-      <p>Not available.</p>
-    <% end %>
-    </dl>
-  </div>
-
 </div>

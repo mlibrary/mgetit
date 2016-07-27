@@ -19,11 +19,8 @@
       </p>
     </div>
 
-    <div class="umlaut-main-container-fluid container-fluid <%= "umlaut-#{params[:controller]}-container" %>">
-      <%= render :partial => "umlaut/alerts" %>
-
-      <%= yield %>
-    </div>
+    <%= render :partial => "umlaut/alerts" %>
+    <%= yield %>
 
     <%= render :partial => "umlaut/footer" %>
   </body>
