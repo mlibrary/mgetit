@@ -18,7 +18,7 @@
         <div>
           <ul class="tabs">
             <li class="tab tab-active">
-              <a href="#digital_sources">Digital Sources</a>
+              <a href="#fulltext_bundle">Digital Sources</a>
             </li>
             <li class="tab">
               <a href="#physical_holdings_and_delivery_sources">Physical Holdings &amp; Delivery Sources</a>
@@ -26,94 +26,103 @@
           </ul>
         </div>
 
-        <div id="digital_sources">
-          <table>
-            <thead>
-              <tr>
-                <th>Link</th>
-                <th>Resource</th>
-                <th>Available</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a href="">Go to Journal</a></td>
-                <td>ProQuest</td>
-                <td>01/01/1995 - Present</td>
-              </tr>
-              <tr>
-                <td><a href="">Go to Journal</a></td>
-                <td>ScienceDirect Freedom Collection</td>
-                <td>05/01/1988 - Present</td>
-              </tr>
-            </tbody>
-          </table>
+        <div id="physical_holdings_and_delivery_sources" class="hide">
+          <p>Not available. <a href="">Try our other options.</a></p>
         </div>
 
-        <div id="physical_holdings_and_delivery_sources">
-
-        </div>
-
-        <script>
-          /*
-            Managing Tabs
-            =============
-
-            Setup:
-            * Create an unordered lists with classname "tabs" and
-            children list items with the classname "tab". Inside
-            the list items have an anchor tag linking to an
-            ID on the page. That's it!
-
-            Note: Also add class "tab-active" to the initial
-            active tab.
-
-          */
-
-          //(function() {
-
-            // Get all tabs that will toggle the tab active content
-            var tabs = document.getElementsByClassName('tab');
-
-            var array_of_tabs = []
-            for (var i=0,  tabs_length = tabs.length; i < tabs_length; i++) {
-              array_of_tabs.push(tabs[i])
-            }
-
-            var tab_ids = array_of_tabs.reduce(function(ids, tab, value, arry) {
-              console.log('tab', tab)
-              console.log('ids', ids)
-              console.log('value', value)
-              console.log('arry', arry)
-
-              return ids.push(tab.firstElementChild.getAttribute('href'))
-            }, [])
-
-          //})();
-
-        </script>
-
-        <!--
-        <% html_sections(:main).each do |section| %>
+        <% html_sections(:digital_sources).each do |section| %>
           <%= content_tag "div", :id => section[:div_id] do %>
             <%= render_section(section) %>
           <% end %>
         <% end %>
-
-        <% html_sections(:sidebar).each do |section| %>
-          <%= content_tag "div", :id => section[:div_id] do %>
-            <%= render_section(section) %>
-          <% end %>
-        <% end %>
-
-        <% html_sections(:service_errors).each do |section| %>
-          <%= render_section(section) %>
-        <% end %>
-        -->
 
       </div>
     </div>
   </div>
 </div>
 
-<%= render 'modal' %>
+<script>
+  /*
+    Managing Tabs
+    =============
+
+    Setup:
+    * Create an unordered lists with classname "tabs" and
+    children list items with the classname "tab". Inside
+    the list items have an anchor tag linking to an
+    ID on the page. That's it!
+
+    Note: Also add class "tab-active" to the initial
+    active tab.
+
+  */
+
+  (function() {
+
+    // Get all tabs that will toggle the tab active content
+    var tabs = document.getElementsByClassName('tab');
+    var tab_ids = []
+
+    // Get all tab IDS
+    for (var i = 0; i < tabs.length; i++) {
+      var tab = tabs[i]
+
+      tab_ids.push(tab.firstElementChild.getAttribute('href').substring(1))
+    }
+
+    var handleTabClick = function(event) {
+      var active_tab_id = event.target.getAttribute('href').substring(1)
+
+      // Prevent the page from jumping to anchor
+      event.preventDefault();
+
+      // Reset active tabs by removing 'tab-active' class
+      for (var i = 0; i < tabs.length; i++) {
+        var tab = tabs[i]
+        var anchor = tab.firstElementChild;
+        var href = anchor.getAttribute('href')
+
+        removeClass(tab, 'tab-active')
+      }
+
+      // Add active tab to target element
+      addClass(event.target.parentElement, 'tab-active')
+
+      // Show active content
+      for (var i = 0; i < tab_ids.length; i++) {
+        var tab_id = tab_ids[i]
+        var content_element = document.getElementById(tab_id)
+
+        if (tab_id == active_tab_id) {
+          removeClass(content_element, 'hide')
+        } else {
+          addClass(content_element, 'hide')
+        }
+      }
+    }
+
+    // Add click handler to tabs
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', handleTabClick, false)
+    }
+
+    /*
+     * Helper Functions
+     */
+    function addClass(el, className) {
+      if (el.classList)
+        el.classList.add(className)
+      else if (!hasClass(el, className)) el.className += " " + className
+    }
+
+    function removeClass(el, className) {
+      if (el.classList)
+        el.classList.remove(className)
+      else if (hasClass(el, className)) {
+        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+        el.className=el.className.replace(reg, ' ')
+      }
+    }
+  })();
+
+</script>

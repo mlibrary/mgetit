@@ -1,10 +1,32 @@
 <div class="<%= section_css_classes(@user_request, "fulltext_bundle").join(" ") %> umlaut-section-highlighted">
-  <%= render 'section_heading', presenter: renderer, force_render: true %>
-  <div class="umlaut_section_content">
-    <ul>
+
+  <% if fulltext_bundle.empty? %>
+  <p>Not available. <a href="">Try our other options.</a></p>
+  <% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Link</th>
+        <th>Resource</th>
+        <th>Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% fulltext_bundle.each do |bundle| %>
+      <tr>
+        <td><a href="<%= bundle.service_data[:urls].journal %>">Fulltext Online</a></td>
+        <td><a href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:source] %></a></td>
+        <td><%= bundle.notes %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+
+  <div class="alert alert-info">
+    <h3>[debug] Fulltext Bundle</h3>
+    <dl>
     <% fulltext_bundle.each do |bundle| %>
-      <li>
-        <dl>
         <dt>bundle.notes</dt>
         <dd><%= bundle.notes %></dd>
         <dt>bundle.service_data[:headings][:article]</dt>
@@ -19,9 +41,10 @@
         <dd><%= bundle.service_data[:urls].journal %></dd>
         <dt>bundle.service_data[:urls].source</dt>
         <dd><%= bundle.service_data[:urls].source %></dd>
-        </dl>
-      </li>
+    <% end.empty? and begin %>
+      <p>Not available.</p>
     <% end %>
-    <ul>
+    </dl>
   </div>
+
 </div>

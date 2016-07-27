@@ -50,7 +50,7 @@ class UmlautController < ApplicationController
       # entry_not_in_kb_warning true
 
       # uncomment this line to show localization (language) selector
-      # in default umlaut layout header. 
+      # in default umlaut layout header.
       # show_localization_selector true
 
       # rfr_ids used for umlaut generated pages.
@@ -118,7 +118,6 @@ class UmlautController < ApplicationController
         #  ]
         # additional_sfx_controlled_urls []
 
-
       end
 
       # You can use Umlaut's built-in feedback form if you want
@@ -132,7 +131,7 @@ class UmlautController < ApplicationController
       # and how using resolve_sections and add_resolve_sections!
       add_resolve_sections! do
         div_id 'fulltext_bundle'
-        html_area :main
+        html_area :digital_sources
         partial :fulltext_bundle
         show_partial_only true
         section_title 'Available Online'

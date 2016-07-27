@@ -1,12 +1,14 @@
-PATH
-  remote: ../../gems/umlaut-mirlyn
+GIT
+  remote: git://github.com/mlibrary/umlaut-mirlyn.git
+  revision: 42e90533e6d76aa8aa313dd4a663797fb97196ba
   specs:
     umlaut-mirlyn (0.1.0)
       ratom
       umlaut
 
-PATH
-  remote: ../../gems/umlaut-three-sixty-link
+GIT
+  remote: git://github.com/mlibrary/umlaut-three-sixty-link.git
+  revision: 12ff4bc7012068aa05c0e8aaa1a157b771f2cbb4
   specs:
     umlaut-three-sixty-link (0.0.1)
       nokogiri
