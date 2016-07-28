@@ -1,0 +1,24 @@
+<div class="<%= section_css_classes(@user_request, "holding").join(" ") %> umlaut-section-highlighted">
+  <% if holding.empty? %>
+    Not available
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>Source</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% holding.each do |hold| %>
+        <tr>
+          <td><a href="<%= hold[:url] %>">Catalog</a></td>
+          <td><%= hold.service_data[:collection_str] %></td>
+          <td><%= hold.service_data[:status] %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

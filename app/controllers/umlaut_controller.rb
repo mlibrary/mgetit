@@ -134,8 +134,16 @@ class UmlautController < ApplicationController
         html_area :digital_sources
         partial :fulltext_bundle
         show_partial_only true
-        section_title 'Available Online'
-        highlight true
+        section_title 'Digital Sources'
+      end
+
+      add_resolve_sections! do
+        div_id 'holding'
+        html_area :holding_sources
+        partial :holding
+        show_partial_only true
+        service_type_values ["holding","holding_search"]
+        section_title 'Physical Holdings & Delivery Sources'
       end
 
       add_resolve_sections_filter! Proc.new {|request, sections|

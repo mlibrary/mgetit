@@ -18,7 +18,7 @@
         <div>
           <ul class="tabs">
             <li class="tab tab-active">
-              <a href="#fulltext_bundle">Digital Sources</a>
+              <a href="#digital_sources">Digital Sources</a>
             </li>
             <li class="tab">
               <a href="#physical_holdings_and_delivery_sources">Physical Holdings &amp; Delivery Sources</a>
@@ -26,44 +26,41 @@
           </ul>
         </div>
 
-        <div id="physical_holdings_and_delivery_sources" class="hide">
-          <p>Not available. <a href="">Try our other options.</a></p>
+        <div id="digital_sources">
+          <% html_sections(:digital_sources).each do |section| %>
+            <%= content_tag "div", :id => section[:div_id] do %>
+              <%= render_section(section) %>
+            <% end %>
+          <% end %>
         </div>
 
-        <% html_sections(:digital_sources).each do |section| %>
-          <%= content_tag "div", :id => section[:div_id] do %>
-            <%= render_section(section) %>
+        <div id="physical_holdings_and_delivery_sources" class="hide">
+          <% html_sections(:holding_sources).each do |section| %>
+            <%= content_tag "div", :id => section[:div_id] do %>
+              <%= render_section(section) %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
 
       </div>
     </div>
     <div class="col-md-4 col-xs-12">
-      <div class="card">
-        <h2>Ask a Librarian</h2>
-        <p>
-          Chat with a librarian and get any help that you need.
-        </p>
+      <div class="link-resolver-sidebar">
+        <div class="card">
+          <h2>Ask a Librarian</h2>
+          <p>
+            Chat with a librarian on staff about this record or any help that you need.
+          </p>
 
-        <a href="">Ask a Librarian</a>
-      </div>
+          <a href="http://www.lib.umich.edu/ask-librarian">Ask a Librarian</a>
+        </div>
 
-      <div class="card">
-        <h2>Why am I here?</h2>
-        <p>
-          Sometimes we fail to find a full text link for you on our first try, but we have other ways to get you what you need.
-        </p>
-
-        <a href="">Ask a Librarian</a>
-      </div>
-
-      <div class="card">
-        <h2>Ask a Librarian</h2>
-        <p>
-          Chat with a librarian and get any help that you need.
-        </p>
-
-        <a href="">Ask a Librarian</a>
+        <div class="card">
+          <h2>Why am I here?</h2>
+          <p>
+            This page provides the quickest and easiest ways for you to read materials online. See delivery options for physical copies from U-M Libraries and partners.
+          </p>
+        </div>
       </div>
     </div>
   </div>

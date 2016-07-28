@@ -113,3 +113,22 @@ body {
     border-color: $grey-4;
   }
 }
+
+.link-resolver-sidebar {
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    font-weight: 500;
+  }
+
+  p {
+    color: $grey-2;
+    margin: 1rem 0;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.7);
+    border-color: rgba(0,0,0, 0.1);
+  }
+}
