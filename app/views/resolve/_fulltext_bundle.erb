@@ -1,37 +1,27 @@
+<%= fulltext_bundle %>
+
 <div class="<%= section_css_classes(@user_request, "fulltext_bundle").join(" ") %> umlaut-section-highlighted">
+  <ul class="fulltext-sources" id="fulltext-sources">
+    <% fulltext_bundle.each do |bundle| %>
+    <li>
+      <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-read-article">Read Article</a>
+      <span class="fulltext-source"><%= bundle.service_data[:headings][:database] %></span>
+      <span class="fulltext-date">
+      <% if bundle.service_data[:available][:start].present? %>
+        <%= bundle.service_data[:available][:start] %> -
 
-  <% if fulltext_bundle.empty? %>
-  <p>Not available.</p>
-  <% else %>
-  <table class="mgetit-sources">
-    <thead>
-      <tr>
-        <th>Link</th>
-        <th>Database</th>
-        <th>Available</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% fulltext_bundle.each do |bundle| %>
-      <tr>
-        <td><a href="<%= bundle.service_data[:urls].journal %>" class="button read-article">Read Article</a></td>
-        <td><a href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a></td>
-        <td>
-          <span class="date-available">
-          <% if bundle.service_data[:available][:start].present? %>
-            <%= bundle.service_data[:available][:start] %> -
-          <% end %>
-
-          <% if bundle.service_data[:available][:end].present? %>
-            <%= bundle.service_data[:available][:end] %>
-          <% else %>
-            Present
-          <% end %>
-          </span>
-        </td>
-      </tr>
+        <% if bundle.service_data[:available][:end].present? %>
+          <%= bundle.service_data[:available][:end] %>
+        <% else %>
+          Present
+        <% end %>
       <% end %>
-    </tbody>
-  </table>
+      </span>
+    </li>
+    <% end %>
+  </ul>
+
+  <% if fulltext_bundle.length > 1 %>
+    <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more source<% if fulltext_bundle.length > 2 %>s<% end %></a>
   <% end %>
 </div>

@@ -100,29 +100,6 @@ body {
   }
 }
 
-@media (max-width: 42rem) {
-  .tabs {
-    margin: 0;
-  }
-
-  .tab {
-    display: block;
-    margin: 0;
-
-    a {
-      display: block;
-    }
-  }
-
-  .tab:first-child {
-    margin-left: 0;
-  }
-
-  .tab-active a {
-    border-color: $grey-4;
-  }
-}
-
 .link-resolver-sidebar {
   h2 {
     font-size: 1.25rem;
@@ -151,7 +128,6 @@ body {
       margin-bottom: 0;
     }
   }
-
 }
 
 .citation-info {
@@ -166,41 +142,41 @@ body {
   }
 }
 
-.mgetit-sources {
+/*
+  Fulltext sources
+*/
 
-  border: none;
+.fulltext-sources {
+  margin: 0;
+  list-style: none;
 
-  thead {
-    border: none;
-    background: transparent;
-  }
-
-  .date-available,
-  .button {
-    white-space: nowrap;
-  }
-
-  td, th {
-    vertical-align: middle;
-    padding: 1rem 1rem 1rem 0;
-  }
-
-  th {
-    color: $grey-1;
+  li {
+    padding: 0;
   }
 }
 
-.button-secondary {
-  background: white;
-  color: $grey-2;
-  border: solid 2px $grey-4;
-  padding: 0.5rem 1rem;
+.fulltext-read-article {
+  margin: 0;
+  margin-right: 1rem;
+}
 
-  &:hover {
-    background: $grey-5 !important;
-  }
+.fulltext-source {
+  margin-right: 1rem;
+}
 
-  &:active {
-    color: $grey-2 !important;
-  }
+.fulltext-date {
+  color: $grey-3;
+}
+
+.show-more {
+  display: block;
+  padding-top: 1.5rem;
+}
+
+/*
+  Helper
+*/
+
+.hide {
+  display: none;
 }
