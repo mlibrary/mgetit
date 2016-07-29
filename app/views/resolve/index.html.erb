@@ -15,7 +15,9 @@
           <% end %>
         <% end %>
 
-        <div>
+        <a class="button button-secondary show-more-sources" id="show_more_sources">Show More Sources</a>
+
+        <div id="sources" class="hide">
           <ul class="tabs">
             <li class="tab tab-active">
               <a href="#digital_sources">Digital Sources</a>
@@ -24,28 +26,35 @@
               <a href="#physical_holdings_and_delivery_sources">Physical Holdings &amp; Delivery Sources</a>
             </li>
           </ul>
-        </div>
 
-        <div id="digital_sources">
-          <% html_sections(:digital_sources).each do |section| %>
-            <%= content_tag "div", :id => section[:div_id] do %>
-              <%= render_section(section) %>
+          <div id="digital_sources">
+            <% html_sections(:digital_sources).each do |section| %>
+              <%= content_tag "div", :id => section[:div_id] do %>
+                <%= render_section(section) %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
 
-        <div id="physical_holdings_and_delivery_sources" class="hide">
-          <% html_sections(:holding_sources).each do |section| %>
-            <%= content_tag "div", :id => section[:div_id] do %>
-              <%= render_section(section) %>
+          <div id="physical_holdings_and_delivery_sources" class="hide">
+            <% html_sections(:holding_sources).each do |section| %>
+              <%= content_tag "div", :id => section[:div_id] do %>
+                <%= render_section(section) %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
 
       </div>
     </div>
     <div class="col-md-4 col-xs-12">
       <div class="link-resolver-sidebar">
+        <div class="card card-outline">
+          <h2>Why am I here?</h2>
+          <p>
+            This page provides the quickest and easiest ways for you to read materials online. See delivery options for physical copies from U-M Libraries and partners.
+          </p>
+        </div>
+        
         <div class="card">
           <h2>Ask a Librarian</h2>
           <p>
@@ -53,13 +62,6 @@
           </p>
 
           <a href="http://www.lib.umich.edu/ask-librarian">Ask a Librarian</a>
-        </div>
-
-        <div class="card">
-          <h2>Why am I here?</h2>
-          <p>
-            This page provides the quickest and easiest ways for you to read materials online. See delivery options for physical copies from U-M Libraries and partners.
-          </p>
         </div>
       </div>
     </div>
@@ -104,8 +106,6 @@
       // Reset active tabs by removing 'tab-active' class
       for (var i = 0; i < tabs.length; i++) {
         var tab = tabs[i]
-        var anchor = tab.firstElementChild;
-        var href = anchor.getAttribute('href')
 
         removeClass(tab, 'tab-active')
       }
@@ -132,8 +132,19 @@
     }
 
     /*
-     * Helper Functions
-     */
+      Toggle Show Sources
+    */
+    var show_more_sources = document.getElementById('show_more_sources')
+    var sources = document.getElementById('sources')
+
+    show_more_sources.addEventListener('click', function() {
+      addClass(show_more_sources, 'hide')
+      removeClass(sources, 'hide')
+    })
+
+    /*
+      Helper Functions
+    */
     function addClass(el, className) {
       if (el.classList)
         el.classList.add(className)
@@ -149,5 +160,6 @@
       }
     }
   })();
+
 
 </script>

@@ -3,20 +3,21 @@
   <% if fulltext_bundle.empty? %>
   <p>Not available.</p>
   <% else %>
-  <table>
+  <table class="mgetit-sources">
     <thead>
       <tr>
         <th>Link</th>
-        <th>Resource</th>
+        <th>Database</th>
         <th>Available</th>
       </tr>
     </thead>
     <tbody>
       <% fulltext_bundle.each do |bundle| %>
       <tr>
-        <td><a href="<%= bundle.service_data[:urls].journal %>">Fulltext Online</a></td>
+        <td><a href="<%= bundle.service_data[:urls].journal %>" class="button read-article">Read Article</a></td>
         <td><a href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a></td>
         <td>
+          <span class="date-available">
           <% if bundle.service_data[:available][:start].present? %>
             <%= bundle.service_data[:available][:start] %> -
           <% end %>
@@ -26,6 +27,7 @@
           <% else %>
             Present
           <% end %>
+          </span>
         </td>
       </tr>
       <% end %>

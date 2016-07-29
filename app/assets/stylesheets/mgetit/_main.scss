@@ -29,10 +29,9 @@ body {
 }
 
 .short-divider {
-  max-width: 8rem;
   background: $grey-4;
   height: 2px;
-  width: 10rem;
+  width: 6rem;
 }
 
 .citation-container {
@@ -57,8 +56,7 @@ body {
 
 .tabs {
   list-style: none;
-  margin: 0 -1.5rem;
-  margin-bottom: 2rem;
+  margin: 2rem -1.5rem;
 
   border-bottom: solid 2px $grey-4;
 }
@@ -71,12 +69,20 @@ body {
 
   a {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     box-shadow: none;
     background: $grey-6;
     border: solid 2px $grey-4;
     color: $grey-1;
     margin-bottom: -2px;
+
+    &:hover {
+      background: $grey-5;
+    }
+
+    &:active {
+      color: $grey-1;
+    }
   }
 }
 
@@ -87,8 +93,11 @@ body {
 .tab-active a {
   background: transparent;
   color: $main-3;
-
   border-bottom-color: white;
+
+  &:hover {
+    background: white;
+  }
 }
 
 @media (max-width: 42rem) {
@@ -116,7 +125,7 @@ body {
 
 .link-resolver-sidebar {
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-top: 0;
     font-weight: 500;
   }
@@ -129,6 +138,69 @@ body {
   .card {
     margin-bottom: 1rem;
     background: rgba(255,255,255,0.7);
-    border-color: rgba(0,0,0, 0.1);
+
+    border: none;
+    box-shadow: none;
+  }
+
+  .card-outline {
+    background: transparent;
+    border: solid 2px $grey-3;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.citation-info {
+  dt, dd {
+    display: inline-block;
+    margin: 0;
+  }
+
+  dt {
+    color: $grey-3;
+    margin-right: 0.5rem;
+  }
+}
+
+.mgetit-sources {
+
+  border: none;
+
+  thead {
+    border: none;
+    background: transparent;
+  }
+
+  .date-available,
+  .button {
+    white-space: nowrap;
+  }
+
+  td, th {
+    vertical-align: middle;
+    padding: 1rem 1rem 1rem 0;
+  }
+
+  th {
+    color: $grey-1;
+  }
+}
+
+.button-secondary {
+  background: white;
+  color: $grey-2;
+  border: solid 2px $grey-4;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background: $grey-5 !important;
+  }
+
+  &:active {
+    color: $grey-2 !important;
   }
 }
