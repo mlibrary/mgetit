@@ -23,3 +23,19 @@
   display: inline;
   color: $grey-2;
 }
+
+@media (max-width: 32rem) {
+  .site-heading,
+  .site-subheading {
+    display: block;
+  }
+
+  .site-heading {
+    margin-bottom: 0;
+  }
+
+  .site-subheading {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}

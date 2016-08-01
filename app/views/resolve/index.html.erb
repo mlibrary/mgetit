@@ -1,46 +1,40 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-xs-12">
-      <div class="card">
-        <%# need a div here for ajax bg loader to put bg loaded cover into %>
-        <div id="cover_image" class="cover-image-container">
-          <%= render_section(html_section_by_div_id("cover_image")) %>
-        </div>
-        <%= render 'background_updater', :user_request => @user_request %>
-        <%= render 'manually_entered_warning', :user_request => @user_request %>
-        <%= render 'citation', :user_request => @user_request %>
-        <% html_sections(:resource_info).each do |section| %>
+<div class="row">
+  <div class="col-md-8 col-xs-12">
+    <div class="card">
+      <%# need a div here for ajax bg loader to put bg loaded cover into %>
+      <div id="cover_image" class="cover-image-container">
+        <%= render_section(html_section_by_div_id("cover_image")) %>
+      </div>
+      <%= render 'background_updater', :user_request => @user_request %>
+      <%= render 'manually_entered_warning', :user_request => @user_request %>
+      <%= render 'citation', :user_request => @user_request %>
+      <% html_sections(:resource_info).each do |section| %>
+        <%= content_tag "div", :id => section[:div_id] do %>
+          <%= render_section(section) %>
+        <% end %>
+      <% end %>
+
+      <div class="clearfix"></div>
+
+      <div id="digital_sources">
+        <% html_sections(:digital_sources).each do |section| %>
           <%= content_tag "div", :id => section[:div_id] do %>
             <%= render_section(section) %>
           <% end %>
         <% end %>
-
-        <div id="digital_sources">
-          <% html_sections(:digital_sources).each do |section| %>
-            <%= content_tag "div", :id => section[:div_id] do %>
-              <%= render_section(section) %>
-            <% end %>
-          <% end %>
-        </div>
       </div>
     </div>
-    <div class="col-md-4 col-xs-12">
-      <div class="link-resolver-sidebar">
-        <div class="card card-outline">
-          <h2>Why am I here?</h2>
-          <p>
-            This page provides the quickest and easiest ways for you to read materials online. See delivery options for physical copies from U-M Libraries and partners.
-          </p>
-        </div>
+  </div>
+  <div class="col-md-4 col-xs-12">
+    <div class="link-resolver-sidebar">
 
-        <div class="card">
-          <h2>Ask a Librarian</h2>
-          <p>
-            Chat with a librarian on staff about this record or any help that you need.
-          </p>
+      <div class="card">
+        <h2>Ask a Librarian</h2>
+        <p>
+          Chat with a librarian on staff about this record or any help that you need.
+        </p>
 
-          <a href="http://www.lib.umich.edu/ask-librarian">Ask a Librarian</a>
-        </div>
+        <a href="http://www.lib.umich.edu/ask-librarian">Ask a Librarian</a>
       </div>
     </div>
   </div>
