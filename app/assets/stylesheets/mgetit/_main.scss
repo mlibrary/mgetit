@@ -114,7 +114,9 @@ body {
   background: white;
 }
 
-.fulltext-go-to-journal:hover {
+.fulltext-go-to-journal:hover,
+.fulltext-go-to-journal:active {
+  color: $main-3 !important;
   background: $main-6 !important;
 }
 

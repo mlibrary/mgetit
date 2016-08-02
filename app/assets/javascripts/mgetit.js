@@ -32,12 +32,6 @@
 
 
   /*
-    Permalink Clipboard Setup
-  */
-  new Clipboard('#permalink')
-
-
-  /*
     Helper Functions
   */
   function addClass(el, className) {

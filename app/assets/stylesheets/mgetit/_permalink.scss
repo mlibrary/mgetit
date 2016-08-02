@@ -17,8 +17,7 @@
     padding-right: 0;
     background: $main-6;
     color: $grey-2;
-    width: 10rem;
-    min-width: 14rem;
+    min-width: 17rem;
     border: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -36,6 +35,10 @@
     label {
       padding-left: 0;
     }
+
+    input {
+      min-width: 12rem;
+    }
   }
 }
 
@@ -50,4 +53,10 @@
   margin: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.clippy-text {
+  position: relative;
+  top: -0.2rem;
+  font-size: 0.9rem;
 }

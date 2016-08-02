@@ -13,8 +13,36 @@
 
       <button class="button button-clippy" data-clipboard-target="#permalink">
         <img class="clippy" src="assets/clippy.svg" alt="Copy to clipboard">
+        <span class="clippy-text">Copy</span>
       </button>
     </div>
+
+    <script>
+      /*
+        Permalink Clipboard Setup
+      */
+      (function() {
+
+        var clipboard = new Clipboard('#permalink');
+
+        clipboard.on('success', function(e) {
+            console.log(e);
+        });
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+
+      })();
+
+      var clipboard = new Clipboard('#permalink');
+
+      clipboard.on('success', function(e) {
+          console.log(e);
+      });
+      clipboard.on('error', function(e) {
+          console.log(e);
+      });
+    </script>
 
     <div class="clearfix"></div>
   </div>
