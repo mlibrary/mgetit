@@ -1,6 +1,13 @@
 (function() {
 
   document.addEventListener("DOMContentLoaded", function(event) {
+
+    /*
+      Show More Sources/Links/Results
+    */
+    // Hide all but the first link on page load and then
+    // show the rest of the links when "show more" is clicked.
+
     var show_more_sources = document.getElementById('show-more-sources');
     var digital_sources = document.getElementById('fulltext-sources').children;
 
@@ -22,6 +29,13 @@
       }
     })
   })
+
+
+  /*
+    Permalink Clipboard Setup
+  */
+  new Clipboard('#permalink')
+
 
   /*
     Helper Functions

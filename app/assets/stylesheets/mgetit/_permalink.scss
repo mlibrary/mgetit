@@ -6,14 +6,36 @@
     font-size: 0.9rem;
     font-weight: 400;
     color: white;
-    padding: 0.7rem;
+    padding: 0.5rem;
+    margin: 0;
   }
 
   input {
     font-size: 0.9rem;
+    height: 2.5rem;
     padding: 0.5rem;
-    background: $grey-5;
+    background: $main-6;
     width: 10rem;
     min-width: 14rem;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
+
+  @media (max-width: 32rem) {
+    margin-top: 1rem;
+  }
+}
+
+.clippy {
+  width: 1rem;
+  stroke: white;
+}
+
+.button-clippy {
+  height: 2.5rem;
+  padding: 0 1rem;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
