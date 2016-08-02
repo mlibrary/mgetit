@@ -14,7 +14,9 @@
     font-size: 0.9rem;
     height: 2.5rem;
     padding: 0.5rem;
+    padding-right: 0;
     background: $main-6;
+    color: $grey-2;
     width: 10rem;
     min-width: 14rem;
     border: none;
@@ -22,8 +24,18 @@
     border-bottom-right-radius: 0;
   }
 
-  @media (max-width: 32rem) {
-    margin-top: 1rem;
+  input[readonly] {
+    color: $grey-1;
+    cursor: text;
+  }
+
+  @media (max-width: 40rem) {
+    margin: 0.5rem 0;
+    float: none;
+
+    label {
+      padding-left: 0;
+    }
   }
 }
 
