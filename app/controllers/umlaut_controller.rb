@@ -117,7 +117,6 @@ class UmlautController < ApplicationController
         #    %r{^http://([^\.]\.)*pubmedcentral\.com}
         #  ]
         # additional_sfx_controlled_urls []
-
       end
 
       # You can use Umlaut's built-in feedback form if you want
