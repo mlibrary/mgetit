@@ -26,6 +26,7 @@
   input[readonly] {
     color: $grey-1;
     cursor: text;
+    background: $main-6;
   }
 
   @media (max-width: 40rem) {

@@ -90,73 +90,11 @@ body {
 }
 
 /*
-  Fulltext sources
-*/
-
-.fulltext-sources {
-  margin: 0;
-  list-style: none;
-
-  li {
-    padding: 0;
-  }
-}
-
-.fulltext-read-article,
-.fulltext-go-to-journal {
-  margin: 0;
-  margin-right: 0.5rem;
-}
-
-.fulltext-go-to-journal {
-  border: solid 2px $main-3;
-  color: $main-3;
-  background: white;
-}
-
-.fulltext-go-to-journal:hover,
-.fulltext-go-to-journal:active {
-  color: $main-3 !important;
-  background: $main-6 !important;
-}
-
-.fulltext-source {
-  margin-right: 0.5rem;
-}
-
-.fulltext-date {
-  color: $grey-3;
-}
-
-.show-more {
-  display: block;
-  padding-top: 1.5rem;
-}
-
-@media (max-width: 46rem) {
-
-  .fulltext-read-article,
-  .fulltext-source,
-  .fulltext-date,
-  .fulltext-go-to-journal {
-    display: block;
-    margin-right: 0;
-  }
-
-  .fulltext-read-article,
-  .fulltext-go-to-journal {
-    text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 1.5rem;
-  }
-}
-
-/*
   Helper
 */
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .clearfix:after {

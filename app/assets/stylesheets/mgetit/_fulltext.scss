@@ -1,0 +1,70 @@
+/*
+  Fulltext sources
+*/
+
+.fulltext-sources {
+  margin: 0;
+  list-style: none;
+
+  li {
+    padding: 0;
+  }
+}
+
+.fulltext-read-article,
+.fulltext-go-to-journal {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.fulltext-go-to-journal {
+  border: solid 2px $main-3;
+  color: $main-3;
+  background: white;
+}
+
+.fulltext-go-to-journal:hover,
+.fulltext-go-to-journal:active {
+  color: $main-3 !important;
+  background: $main-6 !important;
+}
+
+.fulltext-source {
+  margin-right: 0.5rem;
+  line-height: 1.5 !important;
+}
+
+.fulltext-access {
+  width: 21rem;
+}
+
+.fulltext-date {
+  color: $grey-3;
+}
+
+.show-more {
+  display: block;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 46rem) {
+  .fulltext-read-article,
+  .fulltext-source,
+  .fulltext-date,
+  .fulltext-go-to-journal {
+    display: block;
+    margin-right: 0;
+  }
+
+  .fulltext-access {
+    width: 11rem;
+  }
+
+  .fulltext-read-article,
+  .fulltext-go-to-journal {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: auto;
+    white-space: nowrap;
+  }
+}

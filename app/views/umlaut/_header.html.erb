@@ -9,9 +9,9 @@
 
     <div class="permalink-container">
       <label for="permalink">Permalink:</label>
-      <input id="permalink" type="text" readonly value="<%= render_umlaut_permalink_url %>" />
+      <input class="permalink" id="permalink" type="text" readonly value="<%= render_umlaut_permalink_url %>" />
 
-      <button class="button button-clippy" data-clipboard-target="#permalink">
+      <button class="button button-clippy" data-clipboard-target="#permalink" data-clipboard-action="copy">
         <img class="clippy" src="assets/clippy.svg" alt="Copy to clipboard">
         <span class="clippy-text">Copy</span>
       </button>
@@ -33,15 +33,6 @@
         });
 
       })();
-
-      var clipboard = new Clipboard('#permalink');
-
-      clipboard.on('success', function(e) {
-          console.log(e);
-      });
-      clipboard.on('error', function(e) {
-          console.log(e);
-      });
     </script>
 
     <div class="clearfix"></div>
