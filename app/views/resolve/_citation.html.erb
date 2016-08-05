@@ -6,6 +6,10 @@ cite = user_request.referent.to_citation
 <h2 class="citation-title"><%= cite[:title] %></h2>
 <div class="short-divider"></div>
 <div class="citation-container">
+
+  <% if user_request.referent.type_of_thing.present? %>
+    <p class="resource-type"><%=user_request.referent.type_of_thing.titlecase %></p>
+  <% end %>
   <% if cite[:author].present? || cite[:date].present? %>
     <p class="author-and-date">
       <% if cite[:author].present? %>
@@ -18,9 +22,6 @@ cite = user_request.referent.to_citation
         <span class="date"><%= date_format(cite[:date]) %></span>
       <% end %>
     </p>
-  <% end %>
-  <% if user_request.referent.type_of_thing.present? %>
-    <p class="resource-type"><%=user_request.referent.type_of_thing.titlecase %></p>
   <% end %>
   <p class="published_in">
     <% if [:container_title, :volume, :issue, :page].find {|k| cite[k].present? } %>

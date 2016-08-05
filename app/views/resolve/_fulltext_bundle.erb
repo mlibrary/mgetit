@@ -1,31 +1,38 @@
 <div class="<%= section_css_classes(@user_request, "fulltext_bundle").join(" ") %> umlaut-section-highlighted">
-  <ul class="fulltext-sources" id="fulltext-sources">
-    <% fulltext_bundle.each do |bundle| %>
-    <li>
-      <% if bundle.service_data[:urls].article.present? %>
-        <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Read Article</a>
-      <% else %>
-        <% if bundle.service_data[:urls].journal.present? %>
-          <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Go to Journal</a>
-        <% else %>
-          No link available.
-        <% end %>
-      <% end %>
-      <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
-      <span class="fulltext-date">
-      <% if bundle.service_data[:available][:start].present? %>
-        <%= bundle.service_data[:available][:start] %> -
 
-        <% if bundle.service_data[:available][:end].present? %>
-          <%= bundle.service_data[:available][:end] %>
+  <% if fulltext_bundle.any? %>
+    <ul class="fulltext-sources" id="fulltext-sources">
+      <% fulltext_bundle.each do |bundle| %>
+      <li>
+        <% if bundle.service_data[:urls].article.present? %>
+          <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Read Article</a>
         <% else %>
-          Present
+          <% if bundle.service_data[:urls].journal.present? %>
+            <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Go to Journal</a>
+          <% else %>
+            No link available.
+          <% end %>
         <% end %>
+        <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
+        <span class="fulltext-date">
+        <% if bundle.service_data[:available][:start].present? %>
+          <%= bundle.service_data[:available][:start] %> -
+
+          <% if bundle.service_data[:available][:end].present? %>
+            <%= bundle.service_data[:available][:end] %>
+          <% else %>
+            Present
+          <% end %>
+        <% end %>
+        </span>
+      </li>
       <% end %>
-      </span>
-    </li>
-    <% end %>
-  </ul>
+    </ul>
+  <% else %>
+    <p class="alert alert-warning">
+      Links not available.
+    </p>
+  <% end %>
 
   <% if fulltext_bundle.length > 1 %>
     <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more option<% if fulltext_bundle.length > 2 %>s<% end %></a>
