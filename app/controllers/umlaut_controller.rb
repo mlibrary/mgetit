@@ -141,8 +141,17 @@ class UmlautController < ApplicationController
         html_area :holding_sources
         partial :holding
         show_partial_only true
-        service_type_values ["holding","holding_search"]
+        service_type_values ["holding"]
         section_title 'Physical Holdings & Delivery Sources'
+      end
+
+      add_resolve_sections! do
+        div_id 'not_available_online'
+        html_area :not_available_online_links
+        partial :not_available_online
+        show_partial_only true
+        service_type_values ["holding_search", "document_delivery"]
+        section_title 'Not Available Online?'
       end
 
       add_resolve_sections_filter! Proc.new {|request, sections|

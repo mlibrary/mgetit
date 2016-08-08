@@ -28,13 +28,17 @@
       </li>
       <% end %>
     </ul>
-  <% else %>
-    <p class="alert alert-warning">
-      Links not available.
-    </p>
-  <% end %>
 
-  <% if fulltext_bundle.length > 1 %>
-    <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more option<% if fulltext_bundle.length > 2 %>s<% end %></a>
+    <% if fulltext_bundle.length > 1 %>
+      <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more option<% if fulltext_bundle.length > 2 %>s<% end %></a>
+    <% end %>
+
+    <p class="report-broken-link">
+      <b>Found a problem?</b> <a href="">Let our team of link fixers know</a>.
+    </p>
+  <% else %>
+    <p class="alert links-not-available">
+      <b>Links not available.</b>
+    </p>
   <% end %>
 </div>
