@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mlibrary/umlaut-mirlyn.git
-  revision: b74b4516c2a14a78a1f9a5201346ff9cd1c607f6
+  revision: aac991da88d378317a22015175aad4a1073e3582
   specs:
     umlaut-mirlyn (0.1.0)
       ratom
