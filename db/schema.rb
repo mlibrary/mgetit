@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219194005) do
+ActiveRecord::Schema.define(version: 20160809185006) do
 
   create_table "clickthroughs", force: :cascade do |t|
     t.integer  "request_id",          limit: 4, default: 0, null: false
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20160219194005) do
     t.string   "value_alt_string",        limit: 255
     t.text     "value_text",              limit: 65535
     t.string   "display_text",            limit: 255
-    t.string   "url",                     limit: 1024
+    t.text     "url",                     limit: 65535
     t.text     "notes",                   limit: 65535
     t.text     "service_data",            limit: 65535
     t.datetime "created_at"
