@@ -120,3 +120,35 @@ body {
   background: $grey-6;
   border-top: solid 1px $grey-5;
 }
+
+
+/*
+  Ask a Librarian
+*/
+
+.add-ask-a-librarian-image:after {
+  content: '';
+  position: relative;
+  top: 0.2rem;
+  background-image: url('gateway_ask-a-librarian.png');
+  background-image: none, url('gateway_ask-a-librarian.svg');
+  display: inline-block;
+  margin: 0 auto;
+  height: 1.3rem;
+  width: 3rem;
+  margin-left: 0.75rem;
+  background-size: 2.8rem auto;
+  background-repeat: no-repeat;
+}
+
+/* site message
+*/
+
+.site-message {
+  padding: 1rem;
+  background: white;
+
+  p {
+    margin: 0;
+  }
+}
