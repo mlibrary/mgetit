@@ -26,10 +26,19 @@
     background: $main-6;
   }
 
+  &.permalink-header {
+    float: right;
+    margin: 0;
+
+    @media (max-width: 42rem) {
+      display: none;
+    }
+  }
+
   @media (min-width: 42rem) {
-    position: fixed;
-    top: 0;
-    right: 1rem;
+    &.permalink-footer {
+      display: none;
+    }
   }
 
   @media (max-width: 32rem) {
