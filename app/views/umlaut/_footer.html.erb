@@ -15,5 +15,10 @@
       <%= link_to_direct_sfx %>
       <%= link_to_toggle_debug_info %>
     </p>
+
+    <div class="permalink-container">
+      <label for="permalink">Permalink:</label>
+      <input class="permalink" id="permalink" type="text" readonly value="<%= render_umlaut_permalink_url %>" />
+    </div>
   </div>
 </div>

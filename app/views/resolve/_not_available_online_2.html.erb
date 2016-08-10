@@ -1,0 +1,6 @@
+<p>
+  <b>Links not available.</b>
+  <% if not_available_online_2[0].present? && not_available_online_2[1].present? %>
+    Try <a href="<%= not_available_online_2[0].url %>">searching the catalog</a>   or <a href="<%= not_available_online_2[1].url %>">request a copy delivered</a>.
+  <% end %>
+</p>

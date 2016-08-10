@@ -154,6 +154,15 @@ class UmlautController < ApplicationController
         section_title 'Not Available Online?'
       end
 
+      add_resolve_sections! do
+        div_id 'not_available_online_2'
+        html_area :not_available_online_links_2
+        partial :not_available_online_2
+        show_partial_only true
+        service_type_values ["holding_search", "document_delivery"]
+        section_title 'Not Available Online?'
+      end
+
       add_resolve_sections_filter! Proc.new {|request, sections|
         s = sections.remove_section('fulltext_bundle')
         sections.insert_section(s, before: 'fulltext')

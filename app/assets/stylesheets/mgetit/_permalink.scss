@@ -1,12 +1,13 @@
 .permalink-container {
   display: flex;
-  float: right;
+  margin: 1rem 0;
 
   label {
     font-size: 0.9rem;
     font-weight: 400;
     color: white;
     padding: 0.5rem;
+    padding-left: 0;
     margin: 0;
   }
 
@@ -25,12 +26,17 @@
     background: $main-6;
   }
 
-  @media (max-width: 40rem) {
-    margin: 0.5rem 0;
-    float: none;
+  @media (min-width: 42rem) {
+    position: fixed;
+    top: 0;
+    right: 1rem;
+  }
 
-    label {
-      padding-left: 0;
+  @media (max-width: 32rem) {
+    display: block;
+
+    input {
+      width: 100%;
     }
   }
 }

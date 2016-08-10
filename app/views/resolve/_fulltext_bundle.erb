@@ -5,12 +5,10 @@
       <% fulltext_bundle.each do |bundle| %>
       <li>
         <% if bundle.service_data[:urls].article.present? %>
-          <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Read Article</a>
+          <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Get Item</a>
         <% else %>
           <% if bundle.service_data[:urls].journal.present? %>
-            <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Go to Journal</a>
-          <% else %>
-            No link available.
+            <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Get Item</a>
           <% end %>
         <% end %>
         <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
@@ -37,8 +35,12 @@
       <b>Found a problem?</b> <a href="">Let our team of link fixers know</a>.
     </p>
   <% else %>
-    <p class="alert links-not-available">
-      <b>Links not available.</b>
-    </p>
+    <div class="alert links-not-available">
+      <% html_sections(:not_available_online_links_2).each do |link| %>
+        <%= content_tag "div", :id => link[:div_id] do %>
+          <%= render_section(link) %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
