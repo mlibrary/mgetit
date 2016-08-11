@@ -34,37 +34,51 @@
   line-height: 1.5 !important;
 }
 
-.fulltext-access {
-  width: 21rem;
-}
-
-.fulltext-date {
-  color: $grey-3;
-}
-
 .show-more {
   display: inline-block;
   margin-top: 1.5rem;
 }
 
-@media (max-width: 46rem) {
-  .fulltext-read-article,
-  .fulltext-source,
-  .fulltext-date,
-  .fulltext-go-to-journal {
+
+/*
+  Fulltext-wrapper
+*/
+
+.fulltext-wrapper {
+  display: flex;
+}
+
+.fulltext-links {
+  margin-right: 0.5rem;
+}
+
+.fulltext-source,
+.fulltext-date {
+  display: block;
+}
+
+.fulltext-read-article {
+  white-space: nowrap
+}
+
+.fulltext-date {
+  color: $grey-3;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 32rem) {
+  .fulltext-wrapper {
     display: block;
+  }
+
+  .fulltext-links {
+    margin-bottom: 0.25rem;
     margin-right: 0;
-  }
+    width: 100%;
 
-  .fulltext-access {
-    width: 11rem;
-  }
-
-  .fulltext-read-article,
-  .fulltext-go-to-journal {
-    margin-bottom: 0.5rem;
-    text-align: center;
-    width: auto;
-    white-space: nowrap;
+    .button {
+      width: 100%;
+      text-align: center;
+    }
   }
 }

@@ -4,25 +4,31 @@
     <ul class="fulltext-sources" id="fulltext-sources">
       <% fulltext_bundle.each do |bundle| %>
       <li>
-        <% if bundle.service_data[:urls].article.present? %>
-          <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Get Item</a>
-        <% else %>
-          <% if bundle.service_data[:urls].journal.present? %>
-            <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Get Item</a>
-          <% end %>
-        <% end %>
-        <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
-        <span class="fulltext-date">
-        <% if bundle.service_data[:available][:start].present? %>
-          <%= bundle.service_data[:available][:start] %> -
+        <div class="fulltext-wrapper">
+          <div class="fulltext-links">
+            <% if bundle.service_data[:urls].article.present? %>
+              <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Get Item</a>
+            <% else %>
+              <% if bundle.service_data[:urls].journal.present? %>
+                <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Get Item</a>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="fulltext-source-and-date">
+            <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
+            <span class="fulltext-date">
+              <% if bundle.service_data[:available][:start].present? %>
+                <%= bundle.service_data[:available][:start] %> -
 
-          <% if bundle.service_data[:available][:end].present? %>
-            <%= bundle.service_data[:available][:end] %>
-          <% else %>
-            Present
-          <% end %>
-        <% end %>
-        </span>
+                <% if bundle.service_data[:available][:end].present? %>
+                  <%= bundle.service_data[:available][:end] %>
+                <% else %>
+                  Present
+                <% end %>
+              <% end %>
+            </span>
+          </div>
+        </div>
       </li>
       <% end %>
     </ul>
