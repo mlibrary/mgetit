@@ -23,7 +23,7 @@ class UmlautController < ApplicationController
     # a Confstruct object.
 
     umlaut_config.configure do
-      # app_name 'Find It'
+      app_name 'MGet It'
 
       # URL to image to use for link resolver in some self-links,
       # OR name of image asset in local app.
