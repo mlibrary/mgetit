@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811152958) do
+ActiveRecord::Schema.define(version: 20160811182051) do
 
   create_table "clickthroughs", force: :cascade do |t|
     t.integer  "request_id",          limit: 4, default: 0, null: false
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160811152958) do
   create_table "service_responses", force: :cascade do |t|
     t.string   "service_id",              limit: 25,                 null: false
     t.string   "response_key",            limit: 255,   default: ""
-    t.string   "value_string",            limit: 255
+    t.text     "value_string",            limit: 65535
     t.string   "value_alt_string",        limit: 255
     t.text     "value_text",              limit: 65535
     t.string   "display_text",            limit: 255
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20160811152958) do
   end
 
   add_index "service_responses", ["request_id"], name: "index_service_responses_on_request_id", using: :btree
-  add_index "service_responses", ["service_id", "response_key", "value_string", "value_alt_string"], name: "svc_resp_service_id", using: :btree
+  add_index "service_responses", ["service_id", "response_key", "value_string", "value_alt_string"], name: "svc_resp_service_id", length: {"service_id"=>nil, "response_key"=>nil, "value_string"=>255, "value_alt_string"=>nil}, using: :btree
 
   create_table "sfx_urls", force: :cascade do |t|
     t.string "url", limit: 255
