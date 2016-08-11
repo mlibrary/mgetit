@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219194005) do
+ActiveRecord::Schema.define(version: 20160811182051) do
 
   create_table "clickthroughs", force: :cascade do |t|
     t.integer  "request_id",          limit: 4, default: 0, null: false
@@ -75,14 +75,14 @@ ActiveRecord::Schema.define(version: 20160219194005) do
   add_index "referents", ["year", "volume"], name: "by_year", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.string   "session_id",             limit: 100,  default: "", null: false
-    t.integer  "referent_id",            limit: 4,    default: 0,  null: false
+    t.string   "session_id",             limit: 100,   default: "", null: false
+    t.integer  "referent_id",            limit: 4,     default: 0,  null: false
     t.string   "referrer_id",            limit: 255
-    t.datetime "created_at",                                       null: false
+    t.datetime "created_at",                                        null: false
     t.string   "client_ip_addr",         limit: 255
     t.boolean  "client_ip_is_simulated"
     t.string   "contextobj_fingerprint", limit: 32
-    t.string   "http_env",               limit: 2048
+    t.text     "http_env",               limit: 65535
   end
 
   add_index "requests", ["client_ip_addr"], name: "index_requests_on_client_ip_addr", using: :btree
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(version: 20160219194005) do
   create_table "service_responses", force: :cascade do |t|
     t.string   "service_id",              limit: 25,                 null: false
     t.string   "response_key",            limit: 255,   default: ""
-    t.string   "value_string",            limit: 255
+    t.text     "value_string",            limit: 65535
     t.string   "value_alt_string",        limit: 255
     t.text     "value_text",              limit: 65535
     t.string   "display_text",            limit: 255
-    t.string   "url",                     limit: 1024
+    t.text     "url",                     limit: 65535
     t.text     "notes",                   limit: 65535
     t.text     "service_data",            limit: 65535
     t.datetime "created_at"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20160219194005) do
   end
 
   add_index "service_responses", ["request_id"], name: "index_service_responses_on_request_id", using: :btree
-  add_index "service_responses", ["service_id", "response_key", "value_string", "value_alt_string"], name: "svc_resp_service_id", using: :btree
+  add_index "service_responses", ["service_id", "response_key", "value_string", "value_alt_string"], name: "svc_resp_service_id", length: {"service_id"=>nil, "response_key"=>nil, "value_string"=>255, "value_alt_string"=>nil}, using: :btree
 
   create_table "sfx_urls", force: :cascade do |t|
     t.string "url", limit: 255
