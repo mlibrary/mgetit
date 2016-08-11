@@ -1,7 +1,7 @@
 <p><b>Online access not available</b></p>
 
-<p>
-  <% unless not_available_online_2.empty? %>
-    Please try <a href="<%= not_available_online_2[0].url %>">searching the library catalog</a>   or <a href="<%= not_available_online_2[1].url %>">Request a copy delivered</a>.
-  <% end %>
-</p>
+<% unless not_available_online_2.empty? %>
+  <p>
+    Please try <a href="<%= not_available_online_2[0].url %>">searching the library catalog</a>   or <a href="<%= not_available_online_2[1].url %>">Request to have a copy delivered</a> (Interlibrary Loan, 7Fast).
+  </p>
+<% end %>
