@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809185006) do
+ActiveRecord::Schema.define(version: 20160811152958) do
 
   create_table "clickthroughs", force: :cascade do |t|
     t.integer  "request_id",          limit: 4, default: 0, null: false
@@ -75,14 +75,14 @@ ActiveRecord::Schema.define(version: 20160809185006) do
   add_index "referents", ["year", "volume"], name: "by_year", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.string   "session_id",             limit: 100,  default: "", null: false
-    t.integer  "referent_id",            limit: 4,    default: 0,  null: false
+    t.string   "session_id",             limit: 100,   default: "", null: false
+    t.integer  "referent_id",            limit: 4,     default: 0,  null: false
     t.string   "referrer_id",            limit: 255
-    t.datetime "created_at",                                       null: false
+    t.datetime "created_at",                                        null: false
     t.string   "client_ip_addr",         limit: 255
     t.boolean  "client_ip_is_simulated"
     t.string   "contextobj_fingerprint", limit: 32
-    t.string   "http_env",               limit: 2048
+    t.text     "http_env",               limit: 65535
   end
 
   add_index "requests", ["client_ip_addr"], name: "index_requests_on_client_ip_addr", using: :btree
