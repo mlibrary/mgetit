@@ -163,6 +163,15 @@ class UmlautController < ApplicationController
         section_title 'Not Available Online?'
       end
 
+      add_resolve_sections! do
+        div_id 'found_a_problem'
+        html_area :found_a_problem
+        partial :found_a_problem
+        show_partial_only true
+        service_type_values ["help"]
+        section_title 'Found a problem?'
+      end
+
       add_resolve_sections_filter! Proc.new {|request, sections|
         s = sections.remove_section('fulltext_bundle')
         sections.insert_section(s, before: 'fulltext')

@@ -37,9 +37,13 @@
       <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more option<% if fulltext_bundle.length > 2 %>s<% end %></a>
     <% end %>
 
-    <p class="report-broken-link">
-      <b>Found a problem?</b> <a href="">Let our team of link fixers know</a>.
-    </p>
+    <!-- Not Available Online -->
+    <% html_sections(:found_a_problem).each do |link| %>
+      <%= content_tag "div", :id => link[:div_id] do %>
+        <%= render_section(link) %>
+      <% end %>
+    <% end %>
+
   <% else %>
     <div class="alert links-not-available">
       <% html_sections(:not_available_online_links_2).each do |link| %>
