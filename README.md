@@ -22,14 +22,16 @@
     production:
       <<: *default
     ```
-4. If needed, adjust `config/application.rb`
+4. Add a `config/umlaut_services.yml` file.
+5. Add a `config/360link.yml` file.
+6. If needed, adjust `config/application.rb`
 
     ```ruby
     config.relative_url_root = "/path/to/application"
     config.action_controller.relative_url_root = "/path/to/application"
     ```
     
-5. `bundle exec rake db:migrate`
-6. `bundle exec rackup`
+7. `bundle exec rake db:migrate`
+8. `bundle exec rackup`
 
 
