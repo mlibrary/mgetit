@@ -16,4 +16,5 @@
 /config/database.yml
 /config/umlaut_services.yml
 /config/secrets.yml
+/config/360link.yml
 
