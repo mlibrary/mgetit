@@ -1,3 +1,5 @@
+
+
 <div class="<%= section_css_classes(@user_request, "fulltext_bundle").join(" ") %> umlaut-section-highlighted">
 
   <% if fulltext_bundle.any? %>
@@ -7,10 +9,21 @@
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
             <% if bundle.service_data[:urls].article.present? %>
-              <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article">Get Item</a>
+              <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article"><% if @user_request.referent.type_of_thing.titlecase == 'Article' %>
+                Read Article
+              <% else %>
+                Get Item
+              <% end %>
+              </a>
             <% else %>
               <% if bundle.service_data[:urls].journal.present? %>
-                <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">Get Item</a>
+                <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">
+                  <% if @user_request.referent.type_of_thing.titlecase == 'Article' %>
+                    Go to Journal
+                  <% else %>
+                    Get Item
+                  <% end %>
+                </a>
               <% end %>
             <% end %>
           </div>

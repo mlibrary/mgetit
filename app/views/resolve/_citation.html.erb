@@ -7,17 +7,12 @@ cite = user_request.referent.to_citation
 <div class="short-divider"></div>
 <div class="citation-container">
   <% if cite[:author].present? || cite[:date].present? %>
-    <p class="author-and-date">
-      <% if cite[:author].present? && cite[:date].present? %>
-        <span class="sep">•</span>
-      <% end %>
-      <% if cite[:date].present? %>
-        <span class="date"><%= date_format(cite[:date]) %></span>
-      <% end %>
-      <% if cite[:author].present? %>
-        <span class="author"><%= cite[:author] %></span>
-      <% end %>
-    </p>
+    <% if cite[:date].present? %>
+      <span class="date"><%= date_format(cite[:date]) %></span>
+    <% end %>
+    <% if cite[:author].present? %>
+      <span class="author"><%= cite[:author] %></span>
+    <% end %>
   <% end %>
   <% if user_request.referent.type_of_thing.present? %>
     <p class="resource-type"><%=user_request.referent.type_of_thing.titlecase %></p>
