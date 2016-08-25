@@ -1,3 +1,32 @@
-<% disambiguation_bundle.each do |bundle| %>
-  <%= debug(bundle) %>
+<% if disambiguation_bundle.any? %>
+
+  <div class="alert">
+    <p><b>We're not sure what publication you need.</b> Please check the following citations and choose the correct link.</p>
+  </div>
+  <% disambiguation_bundle.each do |bundle| %>
+    <h2 class="disambiguation-title"><%= bundle.service_data[:metadata]["title"] %></h2>
+    <div class="short-divider"></div>
+    <div class="citation-container">
+      <p>
+        <%= bundle.service_data[:metadata]["creator"] %>
+      </p>
+      <p>
+        <%= bundle.service_data[:metadata]["source"] %>
+      </p>
+      <p>
+        <%= bundle.service_data[:metadata]["date"] %>
+      </p>
+    </div>
+    <a class="button" href="<%= bundle.url %>">MGet It</a>
+  <% end %>
+
 <% end %>
+
+<!--
+
+Author
+Journal Volume Issue Page Date
+ISSN
+Format
+
+-->
