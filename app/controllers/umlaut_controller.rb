@@ -137,6 +137,15 @@ class UmlautController < ApplicationController
       end
 
       add_resolve_sections! do
+        div_id 'disambiguation_bundle'
+        html_area :disambiguation_section
+        partial :disambiguation_bundle
+        show_partial_only true
+        service_type_values ["disambiguation"]
+        section_title 'Disambiguation'
+      end
+
+      add_resolve_sections! do
         div_id 'holding'
         html_area :holding_sources
         partial :holding

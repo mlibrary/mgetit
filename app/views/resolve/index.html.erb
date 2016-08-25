@@ -15,6 +15,12 @@
         <% end %>
       <% end %>
 
+      <% html_sections(:disambiguation_section).each do |bundle| %>
+        <%= content_tag "div", :id => bundle[:div_id] do %>
+          <%= render_section(bundle) %>
+        <% end %>
+      <% end %>
+
       <div class="clearfix"></div>
 
       <div id="digital_sources">
