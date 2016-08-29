@@ -40,3 +40,18 @@
     margin-bottom: 1rem;
   }
 }
+
+.site-brand-mlibrary-logo,
+.site-brand-umich-block-m-logo {
+  display: inline-block;
+  height: 2.5rem;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.site-brand-umich-block-m-logo {
+  margin-right: 0.5rem;
+}

@@ -22,6 +22,12 @@ body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 3px;
+
+  @media (max-width: 32rem) {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
   margin-bottom: 1.5rem;
 }
 

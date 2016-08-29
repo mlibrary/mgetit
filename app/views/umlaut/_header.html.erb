@@ -13,18 +13,12 @@
 <header class="site-header">
   <div class="container-fluid">
 
-    <a href="lib.umich.edu" class="site-brand">
-      <img src="http://www.lib.umich.edu/shared-files/graphics/logos/umlib_logo_white_72x442.png">
+    <a href="http://umich.edu" class="site-brand-umich-block-m-logo">
+      <img src="<%= asset_path('umich_block_m.png') %>" alt="University of Michigan"/>
     </a>
-
-    <!--
-    <a href="umich.edu" class="site-brand-um-logo">
-      <%= image_tag('um_logo.png') %>
+    <a href="/" class="site-brand-mlibrary-logo">
+      <img src="<%= asset_path('mlibrary_logo.png') %>" alt="Library"/>
     </a>
-    <a href="lib.umich.edu" class="site-brand-mlibrary-logo">
-      <%= image_tag('mlibrary_logo.png') %>
-    </a>
-    -->
 
     <div class="permalink-container permalink-header">
       <label for="permalink">Permalink:</label>
