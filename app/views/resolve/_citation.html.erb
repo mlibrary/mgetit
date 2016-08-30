@@ -1,3 +1,4 @@
+<% if user_request.service_responses.to_a.find { |response| response.service_type_value.name == :disambiguation }.nil? %>
 <%
 # Get the citation from the user request
 cite = user_request.referent.to_citation
@@ -37,3 +38,4 @@ cite = user_request.referent.to_citation
   <% end %>
 
 </div>
+<% end %>
