@@ -16,7 +16,7 @@ unless ( failed_dispatches.nil? || failed_dispatches.empty? ) %>
               <li class="nav-header"><%= t 'umlaut.error.technical_error_info' %></li>
               <%= content_tag("li") do
                 content_tag("pre", :class=>"pre-scrollable") do
-                  error_message = (exception_info) ? "#{exception_info[:class_name]}: #{exception_info[:message]}\n#{exception_info[:backtrace].join("\n")}\n" : ""
+                  error_message = (exception_info) ? "#{exception_info[:class_name]}: #{exception_info[:message]}\n#{(exception_info[:backtrace] || []).join("\n")}\n" : ""
                   error_message + "dispatched service id: #{dispatch.id}"
                 end
               end %>
