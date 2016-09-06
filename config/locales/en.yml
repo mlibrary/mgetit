@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  umlaut:
+    call_to_action:
+      book:
+        book: Read Book
+        bookitem: Read Chapter
+      journal:
+        article: Read Article
+        issue: Get Issue
+        journal: Get Journal
+      default: Get Item
