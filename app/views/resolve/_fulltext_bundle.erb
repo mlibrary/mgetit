@@ -7,7 +7,9 @@
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
 
-            <% if bundle.service_data[:urls].article.present? %>
+            <% if bundle.service_data[:urls].direct_link.present? %>
+              <a href="<%= bundle.service_data[:urls].direct_link %>" class="button fulltext-read-article">Get Thing</a>
+            <% elsif bundle.service_data[:urls].article.present? %>
               <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article"><% if @user_request.referent.type_of_thing.titlecase == 'Article' %>
                 Read Article
               <% elsif @user_request.referent.type_of_thing.titlecase == 'Book' %>
