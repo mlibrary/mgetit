@@ -32,4 +32,6 @@
 5. `bundle exec rake db:migrate`
 6. `bundle exec rackup`
 
+## To clear
+`bundle exec rake umlaut:clear`
 
