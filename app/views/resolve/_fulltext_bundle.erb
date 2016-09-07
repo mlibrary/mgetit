@@ -6,42 +6,16 @@
       <li>
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
-
-            <% if bundle.service_data[:urls].direct_link.present? %>
-              <a href="<%= bundle.service_data[:urls].direct_link %>" class="button fulltext-read-article">Get Thing</a>
-            <% elsif bundle.service_data[:urls].article.present? %>
-              <a href="<%= bundle.service_data[:urls].article %>" class="button fulltext-read-article"><% if @user_request.referent.type_of_thing.titlecase == 'Article' %>
-                Read Article
-              <% elsif @user_request.referent.type_of_thing.titlecase == 'Book' %>
-                Read Book
-              <% elsif @user_request.referent.type_of_thing.titlecase == 'Book Chapter' %>
-                Read Chapter
-              <% else %>
-                Get Item
-              <% end %>
-              </a>
-            <% else %>
-              <% if bundle.service_data[:urls].journal.present? %>
-                <a href="<%= bundle.service_data[:urls].journal %>" class="button fulltext-go-to-journal">
-                  <% if @user_request.referent.type_of_thing.titlecase == 'Article' %>
-                    Go to Journal
-                  <% elsif @user_request.referent.type_of_thing.titlecase == 'Book' %>
-                    Read Book
-                  <% elsif @user_request.referent.type_of_thing.titlecase == 'Book Chapter' %>
-                    Read Chapter
-                  <% else %>
-                    Go to Source
-                  <% end %>
-                </a>
-              <% end %>
-            <% end %>
+            <a href="<%= bundle.service_data[:urls].best %>" class="button fulltext-link">
+              <%= t("umlaut.call_to_action.#{bundle.service_data[:format]}.#{bundle.service_data[:genre]}.#{bundle.service_data[:best]}", default: "Get Item")
+              %>
+            </a>
           </div>
           <div class="fulltext-source-and-date">
             <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
             <span class="fulltext-date">
               <% if bundle.service_data[:available][:start].present? %>
                 <%= bundle.service_data[:available][:start] %> -
-
                 <% if bundle.service_data[:available][:end].present? %>
                   <%= bundle.service_data[:available][:end] %>
                 <% else %>

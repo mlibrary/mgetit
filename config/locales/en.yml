@@ -19,14 +19,30 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+defaut_: &DEFAULT
+  direct_link: Read Article
+  article: Read Article
+  issue: Go To Issue
+  volume: Go To Volume
+  journal: Go To Journal
+
 en:
   umlaut:
     call_to_action:
       book:
-        book: Read Book
-        bookitem: Read Chapter
+        book:
+          <<: *DEFAULT
+          direct_link: Read Book
+          article: Read Book
+        bookitem:
+          <<: *DEFAULT
+          direct_link: Read Chapter
+          article: Read Chapter
       journal:
-        article: Read Article
-        issue: Get Issue
-        journal: Get Journal
-      default: Get Item
+        article:
+          <<: *DEFAULT
+        journal:
+          <<: *DEFAULT
+          direct_link: Go To Journal
+          article: Go To Journal
+      default: Go To Item

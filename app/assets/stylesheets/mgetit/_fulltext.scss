@@ -11,22 +11,9 @@
   }
 }
 
-.fulltext-read-article,
-.fulltext-go-to-journal {
+.fulltext-link {
   margin: 0;
   margin-right: 0.5rem;
-}
-
-.fulltext-go-to-journal {
-  border: solid 2px $main-3;
-  color: $main-3;
-  background: white;
-}
-
-.fulltext-go-to-journal:hover,
-.fulltext-go-to-journal:active {
-  color: $main-3 !important;
-  background: $main-6 !important;
 }
 
 .fulltext-source {
