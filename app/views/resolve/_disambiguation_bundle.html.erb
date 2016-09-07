@@ -5,7 +5,14 @@
   <% disambiguation_bundle.each do |bundle| %>
   <li>
     <p>
-      <a href="<%= bundle.url %>">  <%= bundle.service_data[:metadata]["title"] %></a><br /><%= bundle.service_data[:metadata]["creator"] %>, <%= bundle.service_data[:metadata]["source"] %>, <%= bundle.service_data[:metadata]["date"] %>
+      <%= link_to(
+            bundle.service_data[:metadata]["title"],
+            {controller: 'resolve'}.merge(bundle.service_data[:query])
+          )
+      %><br />
+      <%= bundle.service_data[:metadata]["creator"] %>,
+      <%= bundle.service_data[:metadata]["source"] %>,
+      <%= bundle.service_data[:metadata]["date"] %>
     </p>
   </li>
   <% end %>
