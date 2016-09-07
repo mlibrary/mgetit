@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/mlibrary/umlaut-three-sixty-link.git
-  revision: ba273ef72a92c4f6e04475a190cba9fb50527af6
+  revision: 2d890d5f737abd8600f45101807c1d8415460fc6
   specs:
     umlaut-three-sixty-link (0.0.1)
       nokogiri
