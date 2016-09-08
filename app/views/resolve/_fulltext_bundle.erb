@@ -7,7 +7,9 @@
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
             <a href="<%= bundle.service_data[:urls].best %>" class="button fulltext-link">
-              <%= t("umlaut.call_to_action.#{bundle.service_data[:format]}.#{bundle.service_data[:genre]}.#{bundle.service_data[:best]}", default: "Get Item")
+              <% default_label = t("umlaut.call_to_action.default") %>
+
+              <%= t("umlaut.call_to_action.#{bundle.service_data[:format]}.#{bundle.service_data[:genre]}.#{bundle.service_data[:best]}", default: default_label)
               %>
             </a>
           </div>
