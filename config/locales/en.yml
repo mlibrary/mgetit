@@ -50,4 +50,8 @@ en:
           <<: *DEFAULT_JOURNAL
           direct_link: Go To Journal
           article: Go To Journal
+        issue:
+          <<: *DEFAULT_JOURNAL
+          direct_link: Go To Issue
+          article: Go To Issue
       default: Go To Item
