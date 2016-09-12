@@ -4,15 +4,22 @@
   <ol class="disambiguation-list">
   <% disambiguation_bundle.each do |bundle| %>
   <li>
+
     <p>
       <%= link_to(
-            bundle.service_data[:metadata]["title"] || bundle.service_data[:metadata]["jtitle"] || bundle.service_data[:metadata]["btitle"],
+            bundle.service_data[:metadata]["title"] || bundle.service_data[:query]["rft.jtitle"] || bundle.service_data[:metadata]["btitle"] || "Get Item",
             {controller: 'resolve'}.merge(bundle.service_data[:query])
           )
       %><br />
-      <%= bundle.service_data[:metadata]["creator"] %>,
-      <%= bundle.service_data[:metadata]["source"] %>,
-      <%= bundle.service_data[:metadata]["date"] %>
+      <% if (bundle.service_data[:metadata]["creator"]) %>
+        <%= bundle.service_data[:metadata]["creator"] %>,
+      <% end %>
+      <% if (bundle.service_data[:metadata]["source"] ) %>
+        <%= bundle.service_data[:metadata]["source"] %>
+      <% end %>
+      <% if (bundle.service_data[:metadata]["date"] ) %>
+        , <%= bundle.service_data[:metadata]["date"] %>
+      <% end %>
     </p>
   </li>
   <% end %>
