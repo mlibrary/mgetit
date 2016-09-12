@@ -6,13 +6,16 @@
   <li>
     <p>
       <%= link_to(
-            bundle.service_data[:metadata]["title"] || bundle.service_data[:metadata]["jtitle"] || bundle.service_data[:metadata]["btitle"],
+            bundle.service_data[:metadata]["title"] || bundle.service_data[:metadata]["source"],
             {controller: 'resolve'}.merge(bundle.service_data[:query])
           )
       %><br />
-      <%= bundle.service_data[:metadata]["creator"] %>,
-      <%= bundle.service_data[:metadata]["source"] %>,
-      <%= bundle.service_data[:metadata]["date"] %>
+      <%= [
+            bundle.service_data[:metadata]["creator"],
+            bundle.service_data[:metadata]["title"] && bundle.service_data[:metadata]["source"],
+            bundle.service_data[:metadata]["date"]
+          ].compact.join(', ')
+      %>
     </p>
   </li>
   <% end %>
