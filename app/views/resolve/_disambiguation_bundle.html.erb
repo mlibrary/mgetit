@@ -6,7 +6,7 @@
   <li>
     <p>
       <%= link_to(
-            bundle.service_data[:metadata]["title"],
+            bundle.service_data[:metadata]["title"] || bundle.service_data[:metadata]["jtitle"] || bundle.service_data[:metadata]["btitle"],
             {controller: 'resolve'}.merge(bundle.service_data[:query])
           )
       %><br />
