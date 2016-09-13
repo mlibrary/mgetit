@@ -2,13 +2,13 @@
 
   <% if fulltext_bundle.any? %>
     <ul class="fulltext-sources" id="fulltext-sources">
+      <% default_label = t("umlaut.call_to_action.default") %>
+
       <% fulltext_bundle.each do |bundle| %>
       <li>
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
             <a href="<%= bundle.service_data[:urls].best %>" class="button fulltext-link">
-              <% default_label = t("umlaut.call_to_action.default") %>
-
               <%= t("umlaut.call_to_action.#{bundle.service_data[:format]}.#{bundle.service_data[:genre]}.#{bundle.service_data[:best]}", default: default_label)
               %>
             </a>
