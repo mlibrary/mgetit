@@ -9,11 +9,15 @@ cite = user_request.referent.to_citation
 
 <div class="citation-container">
   <% if cite[:author].present? %>
-    <p class="citation-metadata"><%= cite[:author] %></p>
+    <p class="citation-metadata">By: <%= cite[:author] %></p>
+  <% end %>
+
+  <% if cite[:date].present? %>
+    <p class="citation-metadata"><span class="citation-label">Publication Date:</span> <%= cite[:date] %></p>
   <% end %>
 
   <% if [:container_title, :volume, :issue, :page].find {|k| cite[k].present? } %>
-    <span class="container-title"><%= cite[:container_title] %></span>.
+    <span class="container-title">Journal: <%= cite[:container_title] %></span>.
   <% end %>
   <% if cite[:volume].present? %>
       <span class="volume"><%="#{t('umlaut.citation.volume').titlecase} #{cite[:volume]}" %></span>.
@@ -34,7 +38,7 @@ cite = user_request.referent.to_citation
   <% end %>
 
   <% if user_request.referent.type_of_thing.present? %>
-    <p class="resource-type"><%=user_request.referent.type_of_thing.titlecase %></p>
+    <p class="resource-type">Resource: <%=user_request.referent.type_of_thing.titlecase %></p>
   <% end %>
 
 </div>
