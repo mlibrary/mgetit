@@ -6,7 +6,7 @@ class ResolveController < UmlautController
   # These methods are meant as API called from other sites via Javascript
   # with JS responses. We don't want Rails to keep it from happening.
   # http://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection.html
-  skip_before_filter :verify_authenticity_token, only: [:index, :background_status, :partial_html_sections, :api]
+  skip_before_filter :verify_authenticity_token, only: [:deliver, :index, :background_status, :partial_html_sections, :api]
 
   before_filter :init_processing
 
@@ -20,6 +20,22 @@ class ResolveController < UmlautController
   after_filter :save_request
 
   layout :resolve_layout, :except => [:partial_html_sections]
+
+  def deliver
+    @bg_thread = service_dispatch
+    link = @user_request.service_responses.where(service_type_value_name: 'fulltext_bundle').first
+    if link
+      redirect_to url_for(controller: 'link_router', action: 'index', id: link.id)
+    else
+      unless current_permalink_url
+        permalink = Permalink.new_with_values!(@user_request.referent, @user_request.referrer_id)
+        @user_request.referent.permalinks << permalink
+      end
+
+      # Render configed view, if configed, or default view if not.
+      render umlaut_config.resolve_view
+    end
+  end
 
   def index
     # saving the bg Thread object mostly so testing environment
