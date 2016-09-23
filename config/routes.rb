@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   Umlaut::Routes.new(self).draw
+  get 'deliver' => 'resolve#deliver'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
