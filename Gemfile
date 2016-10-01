@@ -34,6 +34,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'hashie', '3.4.4'
 gem 'umlaut', '>= 4.1.7', '< 5'
 gem 'puma'
 gem 'umlaut-three-sixty-link', github: 'mlibrary/umlaut-three-sixty-link'

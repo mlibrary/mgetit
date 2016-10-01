@@ -78,7 +78,7 @@ GEM
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    hashie (3.4.6)
+    hashie (3.4.4)
     htmlentities (4.3.4)
     httpclient (2.8.2.4)
     i18n (0.7.0)
@@ -214,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  hashie (= 3.4.4)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
