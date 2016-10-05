@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'net-ldap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.7.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
@@ -34,6 +34,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'hashie', '3.4.4'
 gem 'umlaut', '>= 4.1.7', '< 5'
 gem 'puma'
 gem 'umlaut-three-sixty-link', github: 'mlibrary/umlaut-three-sixty-link'
