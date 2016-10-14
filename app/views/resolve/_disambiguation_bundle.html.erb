@@ -10,10 +10,11 @@
             {controller: 'resolve'}.merge(bundle.service_data[:query])
           )
       %><br />
+
       <%= [
             bundle.service_data[:metadata]["creator"],
             bundle.service_data[:metadata]["title"] && bundle.service_data[:metadata]["source"],
-            bundle.service_data[:metadata]["date"]
+            bundle.service_data[:metadata]["date"], 'ISBN: ' + bundle.service_data[:metadata]["isbn"]
           ].compact.join(', ')
       %>
     </p>
