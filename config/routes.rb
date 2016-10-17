@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   Umlaut::Routes.new(self, {except: [:root]}).draw
   get 'deliver' => 'resolve#deliver'
   root 'application#redirect'
-  get 'sfx_local*' => 'application#redirect'
-  get 'sfx_locator*' => 'application#redirect'
-  get 'citation/sfx_local*' => 'application#redirect'
+  get 'sfx_local' => 'application#redirect'
+  get 'sfx_locator' => 'application#redirect'
+  get 'citation/sfx_local' => 'application#redirect'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
