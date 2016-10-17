@@ -32,8 +32,7 @@ class ResolveController < UmlautController
         @user_request.referent.permalinks << permalink
       end
 
-      # Render configed view, if configed, or default view if not.
-      render umlaut_config.resolve_view
+      redirect_to current_permalink_url
     end
   end
 
