@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'application#redirect'
   get 'sfx_local' => 'application#redirect'
   get 'sfx_locator' => 'application#redirect'
+  get 'sfx_locater' => 'application#redirect'
   get 'citation/sfx_local' => 'application#redirect'
 
   # The priority is based upon order of creation: first created -> highest priority.
