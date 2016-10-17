@@ -8,12 +8,12 @@
         <%= umlaut_config.footer_credit %> |
       <% end %>
 
-      <%= render_service_credits %>
+      <%= t('umlaut.misc.powered_by_umlaut') %>
+      <%= link_to('Umlaut', 'https://github.com/team-umlaut-umlaut') %>.
 
       <!-- links to aid in debugging openurls gone wrong when in production -->
       <%= link_to_test_resolve %>
       <%= link_to_direct_sfx %>
-      <%= link_to_toggle_debug_info %>
     </p>
 
     <div class="permalink-container permalink-footer">

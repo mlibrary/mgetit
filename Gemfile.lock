@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/mlibrary/umlaut-three-sixty-link.git
-  revision: cd603bed818ef41702cadcbe9d65ee5901bd211c
+  revision: 4b1c8bc6d22277b6297fdd6c4ccdbd7eeaf7b716
   specs:
     umlaut-three-sixty-link (0.0.1)
       nokogiri
@@ -61,7 +61,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (9.0.5)
+    byebug (9.0.6)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
