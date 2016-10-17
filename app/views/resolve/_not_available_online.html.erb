@@ -1,15 +1,16 @@
-<% unless not_available_online.empty? %>
+<% unless not_available_online.length < 2 %>
 <div class="card">
   <h2>Not available online?</h2>
 
   <% if not_available_online[0].url %>
   <p>
-    <a href="<%= not_available_online[0].url %>">Search the catalog</a>
+    <%= link_to('Search the catalog', {controller: 'link_router', id: not_available_online[0].id}) %>
   </p>
   <% end %>
 
   <% if not_available_online[1].url %>
-  <a href="<%= not_available_online[1].url %>">Request to have a copy delivered</a> <span class="small-help-text">(Interlibrary Loan, 7Fast)</span>
+    <%= link_to('Request to have a copy delivered', {controller: 'link_router', id: not_available_online[1].id}) %>
+    <span class="small-help-text">(Interlibrary Loan, 7Fast)</span>
   <% end %>
 </div>
 <% end %>

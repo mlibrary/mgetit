@@ -8,13 +8,12 @@
       <li>
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
-            <a href="<%= bundle.service_data[:urls].best %>" class="button fulltext-link">
-              <%= t("umlaut.call_to_action.#{bundle.service_data[:format]}.#{bundle.service_data[:genre]}.#{bundle.service_data[:best]}", default: default_label)
-              %>
+            <% label = t("umlaut.call_to_action.#{bundle.service_data[:format]}.#{bundle.service_data[:genre]}.#{bundle.service_data[:best]}", default: default_label) %>
+            <%= link_to(label, {controller: 'link_router', id: bundle.service_data[:best_id]}, {class: 'button fulltext-link'}) %>
             </a>
           </div>
           <div class="fulltext-source-and-date">
-            <a class="fulltext-source" href="<%= bundle.service_data[:urls].source %>"><%= bundle.service_data[:headings][:database] %></a>
+            <%= link_to(bundle.service_data[:headings][:database], {controller: 'link_router', id: bundle.service_data[:source_id]}, {class: 'fulltext-source'}) %>
             <span class="fulltext-date">
               <% if bundle.service_data[:available][:start].present? %>
                 <%= bundle.service_data[:available][:start] %> -
