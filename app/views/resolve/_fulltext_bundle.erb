@@ -34,18 +34,19 @@
       <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more option<% if fulltext_bundle.length > 2 %>s<% end %></a>
     <% end %>
 
-    <!-- Not Available Online -->
-    <% html_sections(:found_a_problem).each do |link| %>
-      <%= content_tag "div", :id => link[:div_id] do %>
-        <%= render_section(link) %>
-      <% end %>
-    <% end %>
-
   <% else %>
+    <!-- inline -->
     <% html_sections(:not_available_online_links_2).each do |link| %>
       <%= content_tag "div", :id => link[:div_id] do %>
         <%= render_section(link) %>
       <% end %>
+    <% end %>
+  <% end %>
+
+  <!-- Found a problem? -->
+  <% html_sections(:found_a_problem).each do |link| %>
+    <%= content_tag "div", :id => link[:div_id] do %>
+      <%= render_section(link) %>
     <% end %>
   <% end %>
 </div>
