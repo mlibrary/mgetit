@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   def redirect
     if request.query_parameters.empty?
       redirect_to '/citation-linker/', status: 302
+    elsif params.has_key?('SS_Page') && params['SS_Page'] == 'refiner'
+      redirect_to '/citation-linker/', status: 302
     else
       redirect_to request.query_parameters.merge({ controller: 'resolve', action: 'index', status: 302})
     end
