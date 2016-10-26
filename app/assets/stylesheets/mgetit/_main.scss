@@ -143,8 +143,8 @@ body {
   content: '';
   position: relative;
   top: 0.2rem;
-  background-image: url('gateway_ask-a-librarian.png');
-  background-image: none, url('gateway_ask-a-librarian.svg');
+  background-image: asset-url('gateway_ask-a-librarian.png');
+  background-image: none, asset-url('gateway_ask-a-librarian.svg');
   display: inline-block;
   margin: 0 auto;
   height: 1.3rem;
