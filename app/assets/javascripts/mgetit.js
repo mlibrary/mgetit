@@ -36,14 +36,13 @@
   var dismiss = function() {
     var dismiss_elements = document.getElementsByClassName('dismiss');
 
+    var dismissElement = function() {
+      addClass(document.getElementById(this.getAttribute('data-dismiss')), 'hide')
+    }
+
     for (var i = 0; i < dismiss_elements.length; i++) {
-      var dismiss_element = dismiss_elements[i];
-
-      dismiss_element.addEventListener('click', function() {
-        var id_to_dismiss = dismiss_element.getAttribute('data-dismiss')
-
-        addClass(document.getElementById(id_to_dismiss), 'hide')
-      })
+      var element = dismiss_elements[i];
+      element.addEventListener('click', dismissElement);
     }
   }
 
