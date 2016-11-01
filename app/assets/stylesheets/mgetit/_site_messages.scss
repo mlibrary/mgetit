@@ -1,0 +1,35 @@
+.site-message-warning {
+  background: $orange-3;
+  border-bottom: solid 2px $orange-2;
+}
+
+.site-message {
+  position: relative;
+  padding-right: 6rem;
+
+}
+
+.site-message-dismiss {
+  /* remove button style */
+  border: none;
+  font-size: 100%;
+  background: none;
+  padding: 0;
+
+  /* continue */
+  position: absolute;
+  right: 1rem;
+  top: 0.6rem;
+  cursor: pointer;
+  line-height: 1.4;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &:after {
+    content: '✕';
+    padding-left: 0.5rem;
+    text-decoration: none;
+  }
+}
