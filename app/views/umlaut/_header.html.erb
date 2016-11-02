@@ -1,7 +1,10 @@
 <%# local implementers may over-ride this partial for custom local header.
     This partial is called by default umlaut layout.  %>
 
-<!-- <%= render :partial => "resolve/site_message" %> -->
+<% html_sections(:site_message).each do |section| %>
+  <%= render_section(section) %>
+<% end %>
+
 
 <header class="site-header">
   <div class="container-fluid">

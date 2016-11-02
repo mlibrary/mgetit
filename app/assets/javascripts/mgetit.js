@@ -8,7 +8,11 @@
     // show the rest of the links when "show more" is clicked.
 
     var show_more_sources = document.getElementById('show-more-sources');
-    var digital_sources = document.getElementById('fulltext-sources').children;
+    var fulltext_sources = document.getElementById('fulltext-sources');
+    var digital_sources = [];
+    if (fulltext_sources) {
+      digital_sources = fulltext_sources.children;
+    }
 
     if (show_more_sources) { // only if there are more sources to show
 
