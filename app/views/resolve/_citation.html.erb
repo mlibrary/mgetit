@@ -43,9 +43,8 @@ cite = user_request.referent.to_citation
   <% end %>
 
   <%
-    pmid = cite[:identifiers].map { |id| id.start_with?('info:pmid/') ? id.slice(10, id.length) : nil }.compact.first
-
-    doi  = cite[:identifiers].map { |id| id.start_with?('info:doi=') ? id.slice(9, id.length) : nil}.compact.first
+    pmid = cite[:identifiers].map { |id| id.start_with?('info:pmid') ? id.slice(10, id.length) : nil }.compact.first
+    doi  = cite[:identifiers].map { |id| id.start_with?('info:doi') ? id.slice(9, id.length) : nil}.compact.first
   %>
 
   <% if pmid.present? %>
