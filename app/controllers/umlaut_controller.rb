@@ -181,6 +181,15 @@ class UmlautController < ApplicationController
         section_title 'Found a problem?'
       end
 
+      add_resolve_sections! do
+        div_id 'site_mesage'
+        html_area :site_message
+        partial :site_message
+        show_partial_only true
+        service_type_values ['site_message']
+        section_title 'Site Messages'
+      end
+
       add_resolve_sections_filter! Proc.new {|request, sections|
         s = sections.remove_section('fulltext_bundle')
         sections.insert_section(s, before: 'fulltext')
