@@ -35,7 +35,11 @@ group :development do
 end
 
 gem 'hashie', '3.4.4'
-gem 'umlaut', '>= 4.1.7', '< 5'
+
+# Temporarily, until I can work out a good monkey patch for the request model.
+# Or an alternative way to get the same information.
+#gem 'umlaut', '>= 4.1.7', '< 5'
+gem 'umlaut', github: 'mlibrary/umlaut', branch: 'local-overrides'
 gem 'puma'
 gem 'umlaut-three-sixty-link', github: 'mlibrary/umlaut-three-sixty-link'
 gem 'umlaut-mirlyn', github: 'mlibrary/umlaut-mirlyn'
