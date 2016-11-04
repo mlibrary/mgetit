@@ -8,6 +8,7 @@ cite = user_request.referent.to_citation
 <div class="short-divider"></div>
 
 <div class="citation-container">
+
   <% if cite[:author].present? %>
     <p class="citation-metadata">By: <%= cite[:author] %></p>
   <% end %>
@@ -39,6 +40,20 @@ cite = user_request.referent.to_citation
 
   <% if user_request.referent.type_of_thing.present? %>
     <p class="resource-type">Resource: <%=user_request.referent.type_of_thing.titlecase %></p>
+  <% end %>
+
+  <%
+    pmid = cite[:identifiers].map { |id| id.start_with?('info:pmid/') ? id.slice(10, id.length) : nil }.compact.first
+
+    doi  = cite[:identifiers].map { |id| id.start_with?('info:doi/') ? id.slice(9, id.length) : nil}.compact.first
+  %>
+
+  <% if pmid.present? %>
+    <p class="resource-type">PMID: <%=pmid %></p>
+  <% end %>
+
+  <% if doi.present? %>
+    <p class="resource-type">DOI: <%=doi %></p>
   <% end %>
 
 </div>
