@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require File.expand_path('../../lib/mgetit/request_patch', __FILE__)
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -25,5 +26,11 @@ module Mgetit
     config.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || ''
     config.action_controller.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || ''
     config.dependency_loading = true if $rails_rake_task
+
+    # Adapted from http://stackoverflow.com/questions/15212637/using-presenters-in-rails
+    config.after_initialize do |app|
+      app.config.paths.add 'app/presenters', eager_load: true
+      Request.send(:include, Mgetit::RequestPatch)
+    end
   end
 end
