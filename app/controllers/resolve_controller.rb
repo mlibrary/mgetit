@@ -174,6 +174,15 @@ class ResolveController < UmlautController
     @user_request ||= Request.find_or_create(params, session, request, options )
     # If we chose not to create a request and still don't have one, bale out.
     return unless @user_request
+
+    # The openurl parser Umlaut uses doesn't process ID in all caps.
+    # That's not a complaint, the spec has them in all lowercase.  That said,
+    # we've seen them in the wild from psycinfo, and sometimes the rest of
+    # the metadata isn't enough to resolve correctly.
+    if params[:ID].present?
+      @user_request.referent.add_identifier(params[:ID])
+    end
+
     @user_request.save!
     @collection = create_collection
   end
