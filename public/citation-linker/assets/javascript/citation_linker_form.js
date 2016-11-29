@@ -6,10 +6,18 @@ var citation_linker = function() {
 
       // Search for form submit element within form
       _.each(form_element.childNodes, function(child_node) {
-        if (child_node.type == 'submit') {
+
+        if (_.contains(child_node.classList, 'js-submit-form')) {
           child_node.addEventListener("click", function(event) {
             event.preventDefault()
             form_submit(form)
+          })
+        }
+
+        if (_.contains(child_node.classList, 'js-clear-form')) {
+          child_node.addEventListener("click", function(event) {
+            event.preventDefault()
+            form_element.reset()
           })
         }
       })

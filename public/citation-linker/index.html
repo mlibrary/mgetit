@@ -45,7 +45,7 @@
         </label>
       </fieldset>
 
-      <form action="" method="post" id="article_form">
+      <form action="" method="post" id="article_form" class="js-form">
         <p>
           For best results, include a journal title, ISSN, DOI or PMID.
         </p>
@@ -136,10 +136,11 @@
           </div>
         </fieldset>
 
-        <input type="submit" value="Find It" class="button" />
+        <input type="submit" value="Find It" class="button js-submit-form" />
+        <input type="submit" value="Clear" class="button button-light js-clear-form" />
       </form>
 
-      <form action="" method="post" id="book_form" class="hidden">
+      <form action="" method="post" id="book_form" class="hidden js-form">
         <p>
           For best results, include a book title, ISBN, or DOI.
         </p>
@@ -225,7 +226,8 @@
           </div>
         </fieldset>
 
-        <input type="submit" value="Find It" class="button" />
+        <input type="submit" value="Find It" class="button js-submit-form" />
+        <input type="submit" value="Clear" class="button button-light js-clear-form" />
       </form>
 
     </div>
