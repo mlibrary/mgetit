@@ -16,8 +16,12 @@
     height: 2.5rem;
     padding: 0.5rem;
     color: $grey-2;
-    min-width: 17rem;
+    min-width: 20rem;
     border: none;
+
+    @media (max-width: 46rem) {
+      min-width: 12rem;
+    }
   }
 
   input[readonly] {
@@ -30,12 +34,12 @@
     float: right;
     margin: 0;
 
-    @media (max-width: 42rem) {
+    @media (max-width: 46rem) {
       display: none;
     }
   }
 
-  @media (min-width: 42rem) {
+  @media (min-width: 46rem) {
     &.permalink-footer {
       display: none;
     }

@@ -8,6 +8,7 @@ html {
 
 body {
   background: $main-5;
+  min-width: 20rem;
 }
 
 .container {
@@ -24,8 +25,12 @@ body {
   border-radius: 3px;
 
   @media (max-width: 32rem) {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+    padding: 1rem;
   }
 
   margin-bottom: 1.5rem;
@@ -132,6 +137,12 @@ body {
   margin-top: 1.5rem;
   background: $grey-6;
   border-top: solid 1px $grey-5;
+
+  @media (max-width: 32rem) {
+    padding: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
 }
 
 
@@ -171,4 +182,13 @@ body {
   display: block;
   color: $grey-3;
   font-size: 0.85rem;
+}
+
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
