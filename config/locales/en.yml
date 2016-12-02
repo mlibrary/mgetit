@@ -38,6 +38,7 @@ en:
     message:
       pubmed_unavailable: PubMed is experiencing outages. For those services, please try back later.
       doi_unavailable: CrossRef is experiencing outages. For those services, please try back later.
+      three_sixty_link_unavailable: MGet It is temporarily unavailable.  Please try back later.
     call_to_action:
       book:
         book:
