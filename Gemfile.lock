@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mlibrary/umlaut-mirlyn.git
-  revision: 92936019a0f597c46e302856af391aed0ae1e3d8
+  revision: fa4fb7f7dcca4ae90fc58bf145cc34b3a119908f
   specs:
     umlaut-mirlyn (0.1.0)
       ratom
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/mlibrary/umlaut-three-sixty-link.git
-  revision: 4722a2255de62d87e898d9a67ac4c77380a203eb
+  revision: 1de31839f56bf464bc5bce057ea823fbee15903a
   specs:
     umlaut-three-sixty-link (0.0.1)
       nokogiri
