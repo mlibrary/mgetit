@@ -105,11 +105,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 1rem; }
 
-a:not(.button) {
+a {
   color: #126DC1;
   cursor: pointer;
   line-height: 1;
-  text-decoration: none; }
+  text-decoration: underline;
+}
 
 a:not(.button):active {
   color: #0C5292; }
