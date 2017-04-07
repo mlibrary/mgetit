@@ -7,7 +7,7 @@
     <p>
       <%= link_to(
             bundle.service_data[:metadata]["title"] || bundle.service_data[:metadata]["source"],
-            {controller: 'resolve'}.merge(bundle.service_data[:query])
+            url_for({controller: 'resolve'}) + '?' + URI.encode_www_form(bundle.service_data[:query])
           )
       %><br />
       <%= [
