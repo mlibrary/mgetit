@@ -15,7 +15,15 @@
             <%= link_to(label, {controller: 'link_router', id: bundle.service_data[:best_id]}, {class: 'button fulltext-link'}) %>
           </div>
           <div class="fulltext-source-and-date">
-            <%= link_to(bundle.service_data[:headings][:database], {controller: 'link_router', id: bundle.service_data[:source_id]}, {class: 'fulltext-source'}) %>
+            <div>
+              <%= link_to(bundle.service_data[:headings][:database], {controller: 'link_router', id: bundle.service_data[:source_id]}, {class: 'fulltext-source'}) %>
+              <% if bundle.service_data[:structured_notes][:database].present? %>
+                <span>
+                  <%= bundle.service_data[:structured_notes][:database][0] %>
+                </span>
+              <% end %>
+            </div>
+
             <span class="fulltext-date">
               <% if bundle.service_data[:available][:start].present? %>
                 <%= bundle.service_data[:available][:start] %> -
@@ -27,13 +35,14 @@
               <% end %>
             </span>
           </div>
+
         </div>
       </li>
       <% end %>
     </ul>
 
     <% if fulltext_bundle.length > 1 %>
-      <a href="" id="show-more-sources" class="show-more hide">Show <%= fulltext_bundle.length - 1 %> more option<% if fulltext_bundle.length > 2 %>s<% end %></a>
+      <a href="" id="show-more-sources" class="show-more hide">Show all <%= fulltext_bundle.length %> options</a>
     <% end %>
 
   <% else %>

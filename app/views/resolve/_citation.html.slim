@@ -13,20 +13,24 @@
         =< req.date
 
     - if req.container_title.present?
-      span.container-title = "#{req.container_type}: #{req.container_title}"
-      ' . 
+      p.citation-metadata
+        span.citation-label #{req.container_type}:
+        =< "#{req.container_title}"
 
     - if req.volume.present?
-      span.volume = "#{t('umlaut.citation.volume').titlecase} #{req.volume}"
-      ' .
+      p.citation-metadata
+        span.citation-label #{t('umlaut.citation.volume').titlecase}:
+        =< req.volume
 
     - if req.issue.present?
-      span.issue = "#{t('umlaut.citation.issue').titlecase} #{req.issue}"
-      ' .
+      p.citation-metadata
+        span.citation-label #{t('umlaut.citation.issue').titlecase}:
+        =< req.issue
 
     - if req.page.present?
-      span.page = "#{t('umlaut.citation.page').titlecase} #{req.page}"
-      ' .
+      p.citation-metadata
+        span.citation-label #{t('umlaut.citation.page').titlecase}:
+        =< "#{req.page}"
 
     - if req.issn.present?
       p.citation-metadata
@@ -39,10 +43,16 @@
         =< req.isbn
 
     - if req.type.present?
-      p.resource-type = "Resource: #{req.type.titlecase}"
+      p.citation-metadata
+        span.citation-label Resource:
+        =< "#{req.type.titlecase}"
 
     - if req.pmid.present?
-      p.resource-type = "PMID: #{req.pmid}"
+      p.citation-metadata
+        span.citation-label PMID:
+        =< "#{req.pmid}"
 
     - if req.doi.present?
-      p.resource-type = "DOI: #{req.doi}"
+      p.citation-metadata
+        span.citation-label DOI:
+        =< "#{req.doi.titlecase}"

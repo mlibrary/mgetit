@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: $main-5;
+  background: $grey-7;
   min-width: 20rem;
 }
 
@@ -22,7 +22,7 @@ body {
   padding: 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09);
-  border-radius: 3px;
+  border-radius: 4px;
 
   @media (max-width: 32rem) {
     margin-left: -1rem;
@@ -79,7 +79,7 @@ body {
 
   .card {
     margin-bottom: 1rem;
-    background: rgba(255,255,255,0.7);
+    background: $grey-6;
 
     border: none;
     box-shadow: none;
@@ -137,6 +137,7 @@ body {
   margin-top: 1.5rem;
   background: $grey-6;
   border-top: solid 1px $grey-5;
+  border-radius: 0 0 4px 4px;
 
   @media (max-width: 32rem) {
     padding: 1rem;
