@@ -1,11 +1,11 @@
 - req = ::RequestPresenter.new(user_request)
 - @page_title = req.title
 - if req.unambiguous?
-  h2.citation-title = req.title
+  h2.citation-title #{req.title}
   .short-divider
   .citation-container
     - if req.author.present?
-      p.citation-metadata = "By: #{req.author}"
+      p.citation-metadata By: #{req.author}
 
     - if req.date.present?
       p.citation-metadata
@@ -15,7 +15,7 @@
     - if req.container_title.present?
       p.citation-metadata
         span.citation-label #{req.container_type}:
-        =< "#{req.container_title}"
+        =< req.container_title
 
     - if req.volume.present?
       p.citation-metadata
@@ -30,7 +30,7 @@
     - if req.page.present?
       p.citation-metadata
         span.citation-label #{t('umlaut.citation.page').titlecase}:
-        =< "#{req.page}"
+        =< req.page
 
     - if req.issn.present?
       p.citation-metadata
@@ -45,14 +45,14 @@
     - if req.type.present?
       p.citation-metadata
         span.citation-label Resource:
-        =< "#{req.type.titlecase}"
+        =< req.type.titlecase
 
     - if req.pmid.present?
       p.citation-metadata
         span.citation-label PMID:
-        =< "#{req.pmid}"
+        =< req.pmid
 
     - if req.doi.present?
       p.citation-metadata
         span.citation-label DOI:
-        =< "#{req.doi.titlecase}"
+        =< req.doi
