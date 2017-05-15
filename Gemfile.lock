@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/bertrama/openurl.git
+  revision: d8dc373f2d4996f92f043ed77eb994146d474383
+  branch: parse-doi-in-context-object
+  specs:
+    openurl (1.0.0)
+      marc
+      scrub_rb (~> 1.0)
+
+GIT
   remote: git://github.com/mlibrary/umlaut-mirlyn.git
   revision: 58b9cd611495a01785c1135e1110e9f7d698af72
   specs:
@@ -112,9 +121,6 @@ GEM
     net-ldap (0.15.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    openurl (1.0.0)
-      marc
-      scrub_rb (~> 1.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -226,6 +232,7 @@ DEPENDENCIES
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
   net-ldap
+  openurl!
   pry
   pry-rails
   puma
