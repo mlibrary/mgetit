@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/bertrama/openurl.git
-  revision: d8dc373f2d4996f92f043ed77eb994146d474383
-  branch: parse-doi-in-context-object
+  revision: 499d12f1a322849abee38ed63b148c6183580914
+  branch: parse-doi-pmid-in-context-object
   specs:
     openurl (1.0.0)
       marc
