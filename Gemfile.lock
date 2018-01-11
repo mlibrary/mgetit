@@ -118,7 +118,6 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     mysql2 (0.4.4)
-    net-ldap (0.15.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     pry (0.10.4)
@@ -231,7 +230,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
-  net-ldap
   openurl!
   pry
   pry-rails
