@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '~> 4.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bundler-audit'
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'
@@ -37,6 +38,6 @@ gem 'hashie', '3.4.4'
 gem 'umlaut', '>= 4.1.7', '< 5'
 gem 'puma'
 gem 'slim'
-gem 'openurl', github: 'bertrama/openurl', branch: 'parse-doi-pmid-in-context-object'
-gem 'umlaut-three-sixty-link', github: 'mlibrary/umlaut-three-sixty-link'
-gem 'umlaut-mirlyn', github: 'mlibrary/umlaut-mirlyn'
+gem 'openurl', git: 'https://github.com/bertrama/openurl', branch: 'parse-doi-pmid-in-context-object'
+gem 'umlaut-three-sixty-link', git: 'https://github.com/mlibrary/umlaut-three-sixty-link'
+gem 'umlaut-mirlyn', git: 'https://github.com/mlibrary/umlaut-mirlyn'
