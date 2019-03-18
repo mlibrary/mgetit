@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/mlibrary/umlaut-three-sixty-link
-  revision: f371442dea25214404a26c78e975f3d632f27c69
+  revision: 28db4688590c80a311b5dac9e7b94340f3505491
   specs:
     umlaut-three-sixty-link (0.0.1)
       nokogiri
