@@ -26,6 +26,7 @@ module Mgetit
     config.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || ''
     config.action_controller.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || ''
     config.dependency_loading = true if $rails_rake_task
+    config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
 
     # Adapted from http://stackoverflow.com/questions/15212637/using-presenters-in-rails
     config.after_initialize do |app|
