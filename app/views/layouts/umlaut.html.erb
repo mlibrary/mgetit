@@ -5,26 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application' %>
-    <link
-      href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
-      rel="stylesheet"
-    />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
     <%= javascript_include_tag 'application' %>
-    <script
-      type="module"
-      src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js"
-    ></script>
     <title>MGet It</title>
     <%= render_umlaut_head_content %>
   </head>
   <body class="no-js">
-    <m-universal-header></m-universal-header>
-    
     <%= render :partial => "umlaut/header" %>
 
     <div class="heading-container">
@@ -41,6 +27,4 @@
     </div>
 
     <%= render :partial => "umlaut/footer" %>
-    
-    <m-chat></m-chat>
   </body>
