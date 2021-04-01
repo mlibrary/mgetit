@@ -15,8 +15,8 @@ ENV APP_HOME /home/app
 RUN mkdir -p $BUNDLE_PATH $APP_HOME
 WORKDIR $APP_HOME
 
-COPY Gemfile Gemfile.lock ${APP_HOME}/
-RUN bundle install
+#COPY Gemfile Gemfile.lock ${APP_HOME}/
+#RUN bundle install
 
 COPY . .
 
