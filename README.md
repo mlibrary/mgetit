@@ -37,3 +37,11 @@
 ## To clear
 `bundle exec rake umlaut:clear`
 
+## Docker-compose
+
+```bash
+docker-compose run web bundle install
+docker-compose run web bundle exec rake db:migrate
+docker-compose run web bunlde exec rake assets:precompile
+docker-compose up --build
+```

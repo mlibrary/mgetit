@@ -121,7 +121,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.12.1)
-    mysql2 (0.4.4)
+    mysql2 (0.4.10)
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -246,7 +246,7 @@ DEPENDENCIES
   hashie (= 3.4.4)
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (>= 0.3.13, < 0.5)
+  mysql2 (>= 0.4.10, < 0.5)
   openurl!
   pry
   pry-rails

@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  mysql-web:
+    image: "mysql:5.7"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_USERNAME: mgetit
+      MYSQL_USER: mgetit
+      MYSQL_PASSWORD: mgetit
+      MYSQL_DATABASE: mgetit
+    expose:
+    - '3306'
+    volumes:
+    - mysql-web:/var/run/mysqld
+    logging:
+      driver: none
+    ports:
+    - "33061:3306"
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b 0.0.0.0
+    environment:
+      DB_USERNAME: mgetit
+      DB_PASSWORD: mgetit
+      DB_NAME: mgetit
+      DB_PORT: 3306
+      DB_HOST: mysql-web
+      RAILS_ENV: production
+      BUNDLE_PATH: /bundle
+      PUMA_BIND: 0.0.0.0
+      PUMA_PORT: 3000
+      PUMA_PIDFILE: /home/app/tmp/puma.pid
+      RAILS_RELATIVE_URL_ROOT: http://localhost:3000
+      RAILS_SERVE_STATIC_FILES: 'true'
+    volumes:
+    - .:/home/app
+    - bundle:/bundle
+    ports:
+    - "3000:3000"
+    depends_on:
+    - mysql-web
+volumes:
+  mysql-web:
+  bundle:
