@@ -18,7 +18,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+#gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,3 +41,7 @@ gem 'slim'
 gem 'openurl', git: 'https://github.com/bertrama/openurl', branch: 'parse-doi-pmid-in-context-object'
 gem 'umlaut-three-sixty-link', git: 'https://github.com/mlibrary/umlaut-three-sixty-link'
 gem 'umlaut-mirlyn', git: 'https://github.com/mlibrary/umlaut-mirlyn'
+gem 'nokogiri', '>= 1.11.0'
+gem "json", ">= 2.3.0"
+gem 'rack', '>= 1.6'
+
