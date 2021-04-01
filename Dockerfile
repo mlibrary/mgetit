@@ -26,10 +26,10 @@ ENV APP_HOME /home/app
 RUN mkdir -p ${BUNDLE_PATH} ${APP_HOME} && chown ${UID}:${GID} ${BUNDLE_PATH} ${APP_HOME}
 WORKDIR $APP_HOME
 
-#USER $UNAME
+USER $UNAME
 
-#COPY  --chown=${UID}:${GID} Gemfile Gemfile.lock ${APP_HOME}/
-#RUN bundle install
+COPY  --chown=${UID}:${GID} Gemfile Gemfile.lock ${APP_HOME}/
+RUN bundle install
 
 COPY . .
 
