@@ -1,6 +1,6 @@
 var openurl = function() {
   var settings = {
-    base_url: 'https://mgetit.lib.umich.edu/resolve',
+    base_url: document.location.origin + '/resolve',
     sid: 'info:sid:lib.umich.edu'
   }
 
