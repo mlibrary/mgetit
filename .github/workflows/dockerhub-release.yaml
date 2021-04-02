@@ -1,0 +1,28 @@
+name: Build docker image
+on:
+  release:
+    types: [created,edited]
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Get the version
+      id: tag
+      run: echo ::set-output name=TAG::${GITHUB_REF/refs\/tags\//}
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: bertrama/mgetit:${{ steps.tag.outputs.TAG }}
