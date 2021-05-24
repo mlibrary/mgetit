@@ -1,34 +1,63 @@
-<%
-all_responses = fulltext
-(title_level_fulltxt, fulltxt) = all_responses.partition do |i|
-  i.view_data[:coverage_checked] == false || i.view_data[:can_link_to_article] == false
-end
-# order em with full fulltxt before title_level_fulltxt
-all_responses = fulltxt + title_level_fulltxt
-%>
-<div class="<%= section_css_classes(@user_request, "fulltext").join(" ") %>">
-  <%= render 'section_heading', :presenter => renderer, :force_render => true %>
-  <div class="umlaut_section_content">
-    <%= list_with_limit('umlaut_fulltext', all_responses,
-      :ul_class => "response_list", :limit => renderer.list_visible_limit ) do |item, index | %>
-      <%-
-        # Display special warning header if it's title-level only,
-        # and it's an article or issue level link. Are we
-        # at the beginning of title level display?
-      -%>
-      <% if (index == fulltxt.length && !title_level_request?) %>
-        </ul>
-        <div class="section-subheading title-level-link-warning">
-          <h4><%= (@user_request.referent.container_type_of_thing || "Container").titlecase %>-level Page Only</h4>
-          <p><span class="notice">Can not link directly to citation. Dates or extent of coverage may be unknown.</span></p>
+<div class="<%= section_css_classes(@user_request, "fulltext_bundle").join(" ") %> umlaut-section-highlighted">
+
+  <% if fulltext.length > 0 %>
+    <p class="hidden">
+      Below are our best options for accessing this item. If you don't get to what you're looking for, come back and look for more options.
+    </p>
+    <ul class="fulltext-sources" id="fulltext-sources">
+      <% default_label = t("umlaut.call_to_action.default") %>
+
+      <% fulltext.each_with_index do |fulltext_link, index| %>
+      <li>
+        <div class="fulltext-wrapper">
+          <div class="fulltext-links">
+            <% label = t("umlaut.call_to_action.#{fulltext_link.service_data[:format]}.#{fulltext_link.service_data[:genre]}.#{fulltext_link.service_data[:best]}", default: default_label) %>
+            <%= link_to(default_label, {controller: 'link_router', id: fulltext_link.id}, {class: 'button fulltext-link'}) %>
+          </div>
+          <div class="fulltext-source-and-date">
+            <div>
+              <span class="fulltext-source"><%= fulltext_link.service_data[:package_name] %></span>
+              <% if fulltext_link.service_data[:authentication_note].present? %>
+                <div>
+                  <%= fulltext_link.service_data[:authentication_note] %>
+                </div>
+              <% end %>
+              <% if fulltext_link.service_data[:public_note].present? %>
+                <div>
+                  <%= fulltext_link.service_data[:public_note] %>
+                </div>
+              <% end %>
+            </div>
+
+            <span class="fulltext-date">
+              <% if fulltext_link.service_data[:availability].present? %>
+                <%= fulltext_link.service_data[:availability] %>
+              <% end %>
+            </span>
+          </div>
+
         </div>
-        <ul class="response_list">
+      </li>
       <% end %>
-      <%= render :partial => "standard_response_item", :object => item %>
+    </ul>
+
+    <% if fulltext.length > 1 %>
+      <a href="" id="show-more-sources" class="show-more hide">Show all <%= fulltext.length %> options</a>
     <% end %>
-    <% if (fulltxt.empty? && title_level_fulltxt.empty? && !service_type_in_progress?('fulltext')) %>
-      <p class="umlaut-unavailable umlaut-content-indent"><%= t('umlaut.resolve.not_available') %></p>
+
+  <% else %>
+    <!-- inline -->
+    <% html_sections(:not_available_online_links_2).each do |link| %>
+      <%= content_tag "div", :id => link[:div_id] do %>
+        <%= render_section(link) %>
+      <% end %>
     <% end %>
-    <%= render renderer.spinner_render_hash if renderer.services_in_progress? %>
-  </div>
+  <% end %>
+
+  <!-- Found a problem? -->
+  <% html_sections(:found_a_problem).each do |link| %>
+    <%= content_tag "div", :id => link[:div_id] do %>
+      <%= render_section(link) %>
+    <% end %>
+  <% end %>
 </div>
