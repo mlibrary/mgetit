@@ -35,7 +35,7 @@ module Umlaut
       end
 
       def availability
-        self['Availability'].first.gsub(/<br>/, '')
+        self['Availability'].first.gsub(/<br>/, "\n")
       end
 
       def authentication_note
@@ -48,7 +48,6 @@ module Umlaut
 
       def add_fulltext(request, base)
         return nil if filtered?
-        puts availability
         request.add_service_response(base.merge(
           display_text: 'Go To Item',
           package_name: package_name,

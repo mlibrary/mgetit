@@ -17,7 +17,6 @@ module Umlaut
           transport.get
           OptionList.from_xml(transport.response)
         rescue Errno::ECONNRESET => e
-          puts e.inspect
           raise e
         rescue Net::ReadTimeout, Errno::ECONNREFUSED => e
           FailedOptionList.new(e)
