@@ -62,7 +62,7 @@ puts xml
       def deduplicate(options)
         deduped = {}
         options.each do |option|
-          response = HTTParty.head(option.url)
+          response = HTTParty.head(option.url, follow_redirects: false)
           resolved_url = response.headers['location'] || option.url
           unless deduped.has_key?(resolved_url)
             deduped[resolved_url] = option
