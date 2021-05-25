@@ -52,7 +52,7 @@ module Umlaut
         request.add_service_response(base.merge(
           display_text: 'Go To Item',
           package_name: package_name,
-          url:  @url,
+          url:  url,
           availability: availability,
           authentication_note: authentication_note,
           public_note: public_note

@@ -1,3 +1,5 @@
+require 'httparty'
+
 module Umlaut
   module Alma
     class OptionList
@@ -17,7 +19,7 @@ puts xml
 
       def initialize(metadata: NullMetadata.new, options: []) 
         @metadata = metadata
-        @options = options
+        @options = deduplicate(options)
       end
 
       def enhance_metadata(request)
@@ -54,6 +56,19 @@ puts xml
           option.add_fulltext(request, base)
         end
         true
+      end
+
+      private
+      def deduplicate(options)
+        deduped = {}
+        options.each do |option|
+          response = HTTParty.head(option.url)
+          resolved_url = response.headers['location'] || option.url
+          unless deduped.has_key?(resolved_url)
+            deduped[resolved_url] = option
+          end
+        end
+        deduped.values
       end
     end
   end
