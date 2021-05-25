@@ -28,7 +28,6 @@ module Umlaut
 
       def handle(request)
         options = @client.handle(request)
-        puts options.inspect
         ActiveRecord::Base.connection_pool.with_connection do
           options.enhance_metadata(request)
         end

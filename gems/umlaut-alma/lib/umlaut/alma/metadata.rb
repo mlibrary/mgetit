@@ -10,6 +10,10 @@ module Umlaut
         @attributes = attributes
       end
 
+      def each(&block)
+        @attributes.each(&block)
+      end
+
       def [](key)
         @attributes.select {|kv| kv.has_key?(key)}.map(&:values).flatten
       end

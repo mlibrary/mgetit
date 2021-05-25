@@ -4,13 +4,12 @@ module Umlaut
   module Alma
     class OptionList
       def self.from_xml(xml)
-puts xml
         return self.from_xml_object(Nokogiri::XML(xml))
       end
 
       def self.from_xml_object(parsed)
         self.new(
-          metadata: parsed.xpath('//xmlns:context_object').first,
+          metadata: Metadata.for_xml_object(parsed.xpath('//xmlns:context_object').first),
           options: parsed.xpath('//xmlns:context_service').map { |context_service|
             Option.for_xml_object(context_service)
           }
@@ -23,13 +22,18 @@ puts xml
       end
 
       def enhance_metadata(request)
-        puts "Enhance Metadata:"
-        puts @metadata.inspect
+        rft = request.referent
+        @metadata.each do |kv|
+          key = kv.keys.first
+          value = kv.values.first
+          next unless key.start_with?('rft.')
+          next if value.empty?
+          next unless (rft.metadata[key].nil? || rft.metadata[key].empty?)
+          rft.enhance_referent(key, value)
+        end
       end
 
       def add_service(request, service)
-        puts "Add Service:"
-        puts @options.inspect
         if @options.empty?
           context = request.referent.to_context_object.to_hash
           ids = context['rft_id'] || []
