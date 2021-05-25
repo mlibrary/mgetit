@@ -10,13 +10,13 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  host: <%= ENV['DB_HOST'] %>
+  host: <%= ENV['MYSQL_HOST'] %>
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['MYSQL_USER'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  database: <%= ENV['MYSQL_DATABASE'] %>
 #
 # UMLAUT: mysql db with mysql2 adapter strongly recommended for Umlaut, in both 
 # production and development. sqlite3 has unclear semantics under threaded 
