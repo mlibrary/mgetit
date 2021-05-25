@@ -15,6 +15,5 @@
 # Ignore stuff that might be private
 /config/database.yml
 /config/umlaut_services.yml
-/config/secrets.yml
 /config/360link.yml
 /public/assets
