@@ -32,6 +32,6 @@ COPY  --chown=${UID}:${GID} Gemfile Gemfile.lock ${APP_HOME}/
 COPY --chown=${UID}:${GID} gems/ ${APP_HOME}/gems/
 RUN bundle install
 
-COPY . .
+COPY --chown=${UID}:${GID} . .
 
 CMD bundle exec rails s
