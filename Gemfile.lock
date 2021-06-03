@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/mlibrary/umlaut-mirlyn
-  revision: 2c5301f72d88003e58de57e2af238be8501be0ae
+  revision: 36c4d16b7539d0faa94338d8f750f45b5e79f8fb
   specs:
     umlaut-mirlyn (0.1.0)
       ratom
