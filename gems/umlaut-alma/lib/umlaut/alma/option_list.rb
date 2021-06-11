@@ -28,6 +28,12 @@ module Umlaut
           value = kv.values.first
           next unless key.start_with?('rft.')
           next if value.empty?
+          if key == 'rft.object_type' && value == 'BOOK'
+            rft.enhance_referent('genre', 'book');
+            rft.enhance_referent('rft.genre', 'book');
+            rft.enhance_referent('format', 'book');
+            rft.enhance_referent('rft_val_fmt', 'info:ofi/fmt:kev:mtx:book');
+          end
           next unless (rft.metadata[key].nil? || rft.metadata[key].empty?)
           rft.enhance_referent(key, value)
         end
@@ -46,6 +52,7 @@ module Umlaut
           isbn = rft.metadata['rft.isbn'] || rft.metadata['rft.isbn']
           rft.enhance_referent('isbn', isbn)
         end
+
         return self
       end
 
