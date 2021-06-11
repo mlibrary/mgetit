@@ -12,6 +12,9 @@ module Umlaut
         context_object = request.to_context_object
         transport = OpenURL::Transport.new(@base_url, context_object)
         transport.extra_args['svc_dat'] = 'CTO'
+        if request.http_env['REQUEST_URI'].include?('u.ignore_date_coverage=true')
+          transport.extra_args['u.ignore_date_coverage'] = 'true'
+        end
         transport.instance_eval { @client.use_ssl = true }
         begin
           transport.get
