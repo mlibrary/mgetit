@@ -28,9 +28,32 @@ module Umlaut
           value = kv.values.first
           next unless key.start_with?('rft.')
           next if value.empty?
+          if key == 'rft.object_type' && value == 'BOOK'
+            rft.enhance_referent('genre', 'book');
+            rft.enhance_referent('rft.genre', 'book');
+            rft.enhance_referent('format', 'book');
+            rft.enhance_referent('rft_val_fmt', 'info:ofi/fmt:kev:mtx:book');
+          end
           next unless (rft.metadata[key].nil? || rft.metadata[key].empty?)
           rft.enhance_referent(key, value)
         end
+        if rft.title.nil? || rft.title.empty?
+          title = rft.metadata['rft.title'] ||
+             rft.metadata['rft.jtitle'] ||
+             rft.metadata['rft.stitle'] ||
+             rft.metadata['rft.btitle']
+          rft.enhance_referent('title', title)
+        end
+        if rft.issn.nil? || rft.issn.empty?
+          issn = rft.metadata['rft.issn'] || rft.metadata['rft.eissn']
+          rft.enhance_referent('issn', issn)
+        end
+        if rft.isbn.nil? || rft.isbn.empty?
+          isbn = rft.metadata['rft.isbn'] || rft.metadata['rft.isbn']
+          rft.enhance_referent('isbn', isbn)
+        end
+
+        return self
       end
 
       def add_service(request, service)
