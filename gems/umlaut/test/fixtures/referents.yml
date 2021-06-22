@@ -1,0 +1,37 @@
+# Referent fixtures
+frankenstein:
+  isbn: "9780393964585"
+  title: "frankenstein : the 1818 text, contexts, nineteenth-century responses, modern criticism"
+  year: "1997"
+
+nytimes:
+  issn: 0362-4331
+  title: The New York times
+
+simple:
+  issn: "0098-7484"
+
+critical_inquiry:
+  title: "Critical inquiry"
+  issn: "0093-1896"
+
+sfx_multi_obj_request_no_fulltext_referent:
+  title: "Mobile Information Systems"
+
+momo:
+  title: Momo
+  isbn: 038519093X
+
+advocate:
+  title: Advocate
+  issn: 1832-9373
+
+coffeemakers:
+  atitle: "A blend of different tastes: the language of coffeemakers"
+  title: 'Environment and planning B, Planning and design'
+  issn: 0265-8135
+  year: 1998
+  volume: 25
+
+manually_entered:
+  title: Entry Manual

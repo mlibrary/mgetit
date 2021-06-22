@@ -35,8 +35,7 @@ group :development do
 end
 
 gem 'hashie', '3.4.4'
-
-gem 'umlaut', '>= 4.1.7', '< 5'
+gem 'umlaut', path: 'gems/umlaut'
 gem 'puma'
 gem 'slim'
 gem 'openurl', git: 'https://github.com/bertrama/openurl', branch: 'parse-doi-pmid-in-context-object'

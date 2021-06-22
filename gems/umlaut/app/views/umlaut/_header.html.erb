@@ -1,0 +1,15 @@
+<%# local implementers may over-ride this partial for custom local header. 
+    This partial is called by default umlaut layout.  %>
+
+<div id="header" class="header">
+  <h1><%= umlaut_config.header_title   %></h1>
+  
+  <% if umlaut_config.show_localization_selector %>
+    <div class='umlaut-locale-selector'>
+        <%= render_locale_selector %>
+    </div>
+  <% end %>
+
+  <%= render_umlaut_permalink %>
+
+</div>
