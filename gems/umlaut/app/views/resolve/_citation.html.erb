@@ -1,0 +1,53 @@
+<%
+# Get the citation from the user request
+cite = user_request.referent.to_citation
+@page_title = cite[:title] %>
+
+<% if user_request.referent.type_of_thing.present? %>
+  <p class="resource-type"><%=user_request.referent.type_of_thing.titlecase %></p>
+<% end %>
+<h2 class="title"><%= cite[:title] %></h2>
+<% if cite[:author].present? || cite[:date].present? %>
+  <p class="author-and-date">
+    <% if cite[:author].present? %>
+      <span class="author"><%= cite[:author] %></span>
+    <% end %>
+    <% if cite[:author].present? && cite[:date].present? %>
+      <span class="sep">•</span>
+    <% end %>
+    <% if cite[:date].present? %>
+      <span class="date"><%= date_format(cite[:date]) %></span>
+    <% end %>
+  </p>
+<% end %>
+<p class="published_in">
+  <% if [:container_title, :volume, :issue, :page].find {|k| cite[k].present? } %>
+
+    <span class="published-label"><%="#{t('umlaut.citation.published_in')} #{cite[:container_label]}"%></span> 
+    <span class="container-title"><%= cite[:container_title] %></span>. 
+  <% end %>
+  <% if cite[:volume].present? %>
+      <span class="volume"><%="#{t('umlaut.citation.volume').titlecase} #{cite[:volume]}" %></span>.
+  <% end %>
+  <% if cite[:issue].present? %>
+      <span class="issue"><%="#{t('umlaut.citation.issue').titlecase}  #{cite[:issue]}" %></span>.
+  <% end %>
+  <% if cite[:page].present? %>
+      <span class="page"><%="#{t('umlaut.citation.page').titlecase} #{cite[:page]}" %></span>.
+  <% end %>
+</p>
+<dl class="citation-info">
+  <%= if cite[:pub].present? 
+    content_tag(:dt, "#{t('umlaut.citation.publisher')}:", :class => "publisher") +
+      content_tag(:dd, cite[:pub], :class => "publisher")
+  end %>
+  <%= if cite[:issn].present?
+    content_tag(:dt, "#{t('umlaut.citation.issn')}:", :class => "issn") +
+      content_tag(:dd, cite[:issn], :class => "issn")
+  end %>
+  <%= if cite[:isbn].present?
+    content_tag(:dt, "#{t('umlaut.citation.isbn')}:", :class => "isbn") +
+      content_tag(:dd, cite[:isbn], :class => "isbn")
+  end %>
+  <%# todo, doi %>
+</dl>

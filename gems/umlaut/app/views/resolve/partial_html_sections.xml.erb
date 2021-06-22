@@ -1,0 +1,31 @@
+<partial_html_sections>
+
+<%= render(:partial => "api_in_progress", :layout => false) %>
+
+  
+<% partial_html_sections.each do |section|
+    
+    renderer = SectionRenderer.new(@user_request, section) 
+    
+
+%>
+  <html_section id="<%= section[:div_id] %>">
+    <included_services>
+       <% renderer.service_type_values.each do |svc_type| %>
+         <service name="<%= svc_type.name %>" />
+       <% end %>
+    </included_services>
+    <service_load_complete value="<%= ! renderer.services_in_progress?  %>" />
+    <etag><%= renderer.section_etag %></etag>
+    <response_count value="<%= renderer.responses_list.length %>" />
+    <html_content>
+      <%=  with_format("html") do 
+        escape_xml(  render_section(renderer) ).html_safe 
+      end %> 
+    </html_content>    
+  </html_section>
+<% end %>
+    
+</partial_html_sections>
+
+

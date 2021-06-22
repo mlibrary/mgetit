@@ -1,0 +1,522 @@
+# Referent_value fixtures
+frankenstein1:
+  normalized_value: info:oclcnum/33045872
+  key_name: identifier
+  metadata: false
+  value: info:oclcnum/33045872
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein2:
+  normalized_value: book
+  key_name: format
+  metadata: false
+  value: book
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein3:
+  normalized_value: "9780393964585"
+  key_name: isbn
+  metadata: true
+  value: "9780393964585"
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein4:
+  normalized_value: new york
+  key_name: place
+  metadata: true
+  value: New York
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein5:
+  normalized_value: ""
+  key_name: atitle
+  metadata: true
+  value: 
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein6:
+  normalized_value: ""
+  key_name: aucorp
+  metadata: true
+  value: 
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein7:
+  normalized_value: "1997"
+  key_name: date
+  metadata: true
+  value: "1997"
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein8:
+  normalized_value: "frankenstein : the 1818 text, contexts, nineteenth-century responses, modern criticism"
+  key_name: btitle
+  metadata: true
+  value: 'Frankenstein : the 1818 text, contexts, nineteenth-century responses, modern criticism'
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein9:
+  normalized_value: ""
+  key_name: series
+  metadata: true
+  value: 
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein10:
+  normalized_value: w.w. norton
+  key_name: pub
+  metadata: true
+  value: W.W. Norton
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein11:
+  normalized_value: book
+  key_name: genre
+  metadata: true
+  value: book
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:27 -04:00
+  private_data: false
+
+frankenstein12:
+  normalized_value: 1st ed.
+  key_name: edition
+  metadata: true
+  value: 1st ed.
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:28 -04:00
+  private_data: false
+
+frankenstein13:
+  normalized_value: wollstonecraft
+  key_name: auinitm
+  metadata: true
+  value: Wollstonecraft
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:28 -04:00
+  private_data: false
+
+frankenstein14:
+  normalized_value: ""
+  key_name: tpages
+  metadata: true
+  value: 
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:28 -04:00
+  private_data: false
+
+frankenstein15:
+  normalized_value: mary
+  key_name: aufirst
+  metadata: true
+  value: Mary
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:28 -04:00
+  private_data: false
+
+frankenstein16:
+  normalized_value: shelley
+  key_name: aulast
+  metadata: true
+  value: Shelley
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:28 -04:00
+  private_data: false
+
+frankenstein17:
+  normalized_value: "tag:gpc,2008-6-28:1"
+  key_name: identifier
+  metadata: false
+  value: "tag:gpc,2008-6-28:1"
+  referent: frankenstein
+  created_at: 2008-06-28 16:15:28 -04:00
+  private_data: false
+
+nytimes1:
+  normalized_value: 0362-4331
+  key_name: issn
+  metadata: true
+  value: 0362-4331
+  referent: nytimes
+  private_data: false
+
+nytimes2:
+  normalized_value: The New York times
+  key_name: jtitle
+  metadata: true
+  value: The New York times
+  referent: nytimes
+  private_data: false
+
+nytimes3:
+  normalized_value: journal
+  key_name: format
+  metadata: false
+  value: journal
+  referent: nytimes
+  private_data: false
+
+simple1:
+ referent: simple
+ key_name: "format"
+ value: "journal"
+ normalized_value: "journal"
+ metadata: false
+ private_data: false
+
+simple2:
+ referent: simple
+ key_name: "genre"
+ value: "journal"
+ normalized_value: "journal"
+ metadata: true
+ private_data: false
+
+simple3:
+  referent: simple
+  key_name: issn
+  value: 0098-7484
+  normalized_value: 0098-7484
+  metadata: true
+  private_data: false
+
+critical_inquiry1:
+  referent: critical_inquiry_referent
+  key_name: "issn"
+  value: "0093-1896"
+  normalized_value: "0093-1896"
+  metadata: true
+  private_data: false
+
+critical_inquiry2:
+  referent: critical_inquiry_referent
+  key_name: "title"
+  value: "Critical inquiry"
+  normalized_value: "Critical inquiry"
+  metadata: true
+  private_data: false
+
+critical_inquiry3:
+  referent: critical_inquiry_referent
+  key_name: "jtitle"
+  value: "Critical inquiry"
+  normalized_value: "Critical inquiry"
+  metadata: true
+  private_data: false
+
+critical_inquiry4:
+  referent: critical_inquiry_referent
+  key_name: "stitle"
+  value: "CRIT INQUIRY"
+  normalized_value: "CRIT INQUIRY"
+  metadata: true
+  private_data: false
+
+critical_inquiry5:
+  referent: critical_inquiry_referent
+  key_name: "genre"
+  value: "journal"
+  normalized_value: "journal"
+  metadata: true
+  private_data: false
+
+critical_inquiry6:
+  referent: critical_inquiry_referent
+  key_name: "aulast"
+  value: "Ranciè"
+  normalized_value: "Ranciè"
+  metadata: true
+  private_data: false
+
+critical_inquiry7:
+  referent: critical_inquiry_referent
+  key_name: "aufirst"
+  value: "Ranci&"
+  normalized_value: "Ranci&"
+  metadata: true
+  private_data: false
+
+critical_inquiry8:
+  referent: critical_inquiry_referent
+  key_name: "object_id"
+  value: "954925463186"
+  normalized_value: "954925463186"
+  metadata: true
+  private_data: false
+
+critical_inquiry9:
+  referent: critical_inquiry_referent
+  key_name: "object_type"
+  value: "JOURNAL"
+  normalized_value: "JOURNAL"
+  metadata: true
+  private_data: false
+
+critical_inquiry10:
+  referent: critical_inquiry_referent
+  key_name: "eissn"
+  value: "1539-7858"
+  normalized_value: "1539-7858"
+  metadata: true
+  private_data: false
+
+critical_inquiry11:
+  referent: critical_inquiry_referent
+  key_name: "atitle"
+  value: "The Aesthetic Dimension: Aesthetics, Politics, Knowledge"
+  normalized_value: "The Aesthetic Dimension: Aesthetics, Politics, Knowledge"
+  metadata: true
+  private_data: false
+
+critical_inquiry12:
+  referent: critical_inquiry_referent
+  key_name: "format"
+  value: "journal"
+  normalized_value: "journal"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv1:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "aulast"
+  value: "Santi"
+  normalized_value: "Santi"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv2:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "btitle"
+  value: "Mobile Information Systems"
+  normalized_value: "Mobile Information Systems"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv3:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "aufirst"
+  value: "Caballé"
+  normalized_value: "Caballé"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv4:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "atitle"
+  value: "Using mobile devices to support online collaborative learning"
+  normalized_value: "Using mobile devices to support online collaborative learning"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv5:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "date"
+  value: "2010"
+  normalized_value: "2010"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv6:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "volume"
+  value: "6"
+  normalized_value: "6"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv7:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "year"
+  value: "2010"
+  normalized_value: "2010"
+  metadata: true
+  private_data: false
+
+sfx_multi_obj_request_no_fulltext_rv8:
+  referent: sfx_multi_obj_request_no_fulltext_referent
+  key_name: "issue"
+  value: "1"
+  normalized_value: "1"
+  metadata: true
+  private_data: false
+
+momo1:
+  referent: momo
+  normalized_value: momo
+  key_name: btitle
+  metadata: true
+  value: Momo
+  private_data: false
+
+momo2:
+  referent: momo
+  normalized_value: 038519093X
+  key_name: isbn
+  metadata: true
+  value: 038519093X
+  private_data: false
+
+momo3:
+  referent: momo
+  normalized_value: book
+  key_name: format
+  metadata: false
+  value: book
+  private_data: false
+
+momo4:
+  referent: momo
+  normalized_value: book
+  key_name: genre
+  metadata: true
+  value: book
+  private_data: false
+
+momo5:
+  referent: momo
+  normalized_value: doubleday
+  key_name: pub
+  metadata: true
+  value: Doubleday
+  private_data: false
+
+momo6:
+  referent: momo
+  normalized_value: michael
+  key_name: aufirst
+  metadata: true
+  value: Michael
+  private_data: false
+
+momo7:
+  referent: momo
+  normalized_value: ende
+  key_name: aulast
+  metadata: true
+  value: Ende
+  private_data: false
+
+advocate1:
+  referent: advocate
+  normalized_value: advocate
+  key_name: jtitle
+  metadata: true
+  value: Advocate
+  private_data: false
+
+advocate2:
+  referent: advocate
+  normalized_value: "1832-9373"
+  key_name: issn
+  metadata: true
+  value: "1832-9373"
+  private_data: false
+
+advocate3:
+  referent: advocate
+  normalized_value: journal
+  key_name: format
+  metadata: false
+  value: journal
+  private_data: false
+
+advocate4:
+  referent: advocate
+  normalized_value: "2670000000017711"
+  key_name: object_id
+  metadata: true
+  value: "2670000000017711"
+  private_data: false
+
+coffeemakers1:
+  referent: coffeemakers
+  key_name: format
+  value: journal
+  normalized_value: journal
+  metadata: false
+  private_data: false
+  
+coffeemakers2:
+  referent: coffeemakers
+  key_name: genre
+  value: article
+  normalized_value: article
+  metadata: true
+  private_data: false
+
+coffeemakers3:
+  referent: coffeemakers
+  key_name: atitle
+  value: "A blend of different tastes: the language of coffeemakers"
+  normalized_value: "a blend of different tastes: the language of coffeemakers"
+  metadata: true
+  private_data: false
+
+coffeemakers4:
+  referent: coffeemakers
+  key_name: issn
+  value: "0265-8135"
+  normalized_value: "0265-8135"
+  metadata: true
+  private_data: false
+
+coffeemakers5:
+  referent: coffeemakers
+  key_name: volume
+  value: "25"
+  normalized_value: "25"
+  metadata: true
+  private_data: false
+
+manually_entered1:
+  referent: manually_entered
+  normalized_value: ""
+  key_name: object_id
+  metadata: true
+  value: ""
+  private_data: false
+
+manually_entered2:
+  referent: manually_entered
+  normalized_value: journal
+  key_name: format
+  metadata: false
+  value: journal
+  private_data: false
+
+manually_entered3:
+  referent: manually_entered
+  key_name: genre
+  value: article
+  normalized_value: article
+  metadata: true
+  private_data: false
+
+manually_entered4:
+  referent: manually_entered
+  normalized_value: entry manual
+  key_name: jtitle
+  metadata: true
+  value: Entry Manual
+  private_data: false
+
