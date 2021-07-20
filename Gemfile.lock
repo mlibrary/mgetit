@@ -30,6 +30,8 @@ PATH
     umlaut-alma (0.1.0)
       httparty
       openurl
+
+PATH
   remote: gems/umlaut
   specs:
     umlaut (4.1.7)
@@ -275,12 +277,8 @@ DEPENDENCIES
   slim
   therubyracer
   uglifier (>= 1.3.0)
-<<<<<<< HEAD
-  umlaut (>= 4.1.7, < 5)
-  umlaut-alma!
-=======
   umlaut!
->>>>>>> master
+  umlaut-alma!
   umlaut-mirlyn!
   umlaut-three-sixty-link!
   web-console (~> 2.0)
