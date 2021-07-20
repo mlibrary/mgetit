@@ -19,6 +19,13 @@
 default:
     services:
 
+      Alma:
+        type: Umlaut::Alma::Service
+        priority: 2
+        base_url: https://na04.alma.exlibrisgroup.com/view/uresolver
+        institution: 01UMICH_INST
+        # campus_code: UMICH ?
+
       # SFX has pubmed lookup built in, so this service not generally
       # needed with SFX, but included here as an example of it's availability
       Pubmed:
@@ -57,6 +64,7 @@ default:
         priority: 3
 
       ThreeSixtyLink:
+        disabled: true
         type: ThreeSixtyLink
         display_name: MGetIt
         base_url: http://dl2af5jf3e.openurl.xml.serialssolutions.com/openurlxml

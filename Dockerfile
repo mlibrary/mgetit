@@ -28,9 +28,11 @@ WORKDIR $APP_HOME
 
 USER $UNAME
 
-COPY  --chown=${UID}:${GID} Gemfile Gemfile.lock ${APP_HOME}/
+COPY --chown=${UID}:${GID} Gemfile Gemfile.lock ${APP_HOME}/
+COPY --chown=${UID}:${GID} gems/ ${APP_HOME}/gems/
 RUN bundle install
 
-COPY . .
+COPY --chown=${UID}:${GID} . .
+RUN mkdir -p ${APP_HOME}/tmp/pids/
 
 CMD bundle exec rails s

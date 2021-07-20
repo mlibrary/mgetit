@@ -40,7 +40,7 @@
 ## Docker-compose
 
 ```bash
-docker-compose build
+docker-compose up --build --no-start
 docker-compose run --rm web bundle install
 docker-compose run --rm web bundle exec rake db:migrate
 docker-compose run --rm web bundle exec rake assets:precompile

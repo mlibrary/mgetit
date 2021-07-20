@@ -5,7 +5,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-#      MYSQL_USERNAME: mgetit
       MYSQL_USER: mgetit
       MYSQL_PASSWORD: mgetit
       MYSQL_DATABASE: mgetit
@@ -18,14 +17,16 @@ services:
     ports:
     - "33061:3306"
   web:
+    stdin_open: true
+    tty: true
     build: .
     command: bundle exec rails s -p 3000 -b 0.0.0.0
     environment:
-      DB_USERNAME: mgetit
-      DB_PASSWORD: mgetit
-      DB_NAME: mgetit
-      DB_PORT: 3306
-      DB_HOST: mysql-web
+      MYSQL_USER: mgetit
+      MYSQL_PASSWORD: mgetit
+      MYSQL_DATABASE: mgetit
+      MYSQL_PORT: 3306
+      MYSQL_HOST: mysql-web
       RAILS_ENV: production
       BUNDLE_PATH: /bundle
       PUMA_BIND: 0.0.0.0
@@ -33,6 +34,8 @@ services:
       PUMA_PIDFILE: /home/app/tmp/puma.pid
       RAILS_RELATIVE_URL_ROOT: http://localhost:3000
       RAILS_SERVE_STATIC_FILES: 'true'
+      RAILS_SECRET_TOKEN: 4800e25f9231adc2b5427084b8154cb417bb2be3c10bdd92c46c2d08fd246cc17daec41ca3fea75d635c2d08d4c3a3885b00a943db1a89a328e242ae12a960b7
+      RAILS_SECRET_KEY_BASE: afdd1b894ee0f1efc5e628609f5484c639439eff86401b5c64adbabfd2f44a5a6ea1efc68be5fed305214d50e2a34ac0074aab41ca0d0e0986084620272281de
     volumes:
     - .:/home/app
     - bundle:/bundle

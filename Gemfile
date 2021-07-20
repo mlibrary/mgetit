@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -39,8 +40,8 @@ gem 'puma'
 gem 'slim'
 gem 'openurl', git: 'https://github.com/bertrama/openurl', branch: 'parse-doi-pmid-in-context-object'
 gem 'umlaut-three-sixty-link', git: 'https://github.com/mlibrary/umlaut-three-sixty-link'
+gem 'umlaut-alma', path: 'gems/umlaut-alma'
 gem 'umlaut-mirlyn', git: 'https://github.com/mlibrary/umlaut-mirlyn'
 gem 'nokogiri', '>= 1.11.0'
 gem "json", ">= 2.3.0"
 gem 'rack', '>= 1.6'
-

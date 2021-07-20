@@ -3,6 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 require File.expand_path('../../lib/mgetit/request_patch', __FILE__)
 require File.expand_path('../../lib/actionview_patch', __FILE__)
+require File.expand_path('../../lib/rack/redirect_static_without_trailing_slash', __FILE__)
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -21,6 +22,10 @@ module Mgetit
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # From Stack Overflow
+    # https://stackoverflow.com/questions/41613059/rails-do-not-allow-access-to-static-asset-directory-without-a-trailing
+    config.middleware.insert_before('ActionDispatch::Static', 'Rack::RedirectStaticWithoutTrailingSlash')
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
