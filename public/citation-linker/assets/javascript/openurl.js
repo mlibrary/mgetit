@@ -42,12 +42,12 @@ var create_query_strings = function() {
 
     // DOIs and PMIDs are special snowflakes
     if (value.key == 'doi') {
-      // Example: &rft_id=info:doi=10.1111/1468-232X.00264
-      return '&' + encodeURIComponent('rft_id') + '=' + encodeURIComponent('info:doi=' + value.value)
+      // Example: &rft_id=info:doi/10.1111/1468-232X.00264
+      return '&' + encodeURIComponent('rft_id') + '=' + encodeURIComponent('info:doi/' + value.value)
     }
 
     if (value.key == 'pmid') {
-      // Example: &rft_id=info:pmid=27405801
+      // Example: &rft_id=info:pmid/27405801
       return '&' + encodeURIComponent('rft_id') + '=' + encodeURIComponent('info:pmid/' + value.value)
     }
 
