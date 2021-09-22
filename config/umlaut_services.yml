@@ -24,7 +24,7 @@ default:
         priority: 2
         base_url: https://na04.alma.exlibrisgroup.com/view/uresolver
         institution: 01UMICH_INST
-        # campus_code: UMICH ?
+        campus_code: UMAA
 
       # SFX has pubmed lookup built in, so this service not generally
       # needed with SFX, but included here as an example of it's availability
