@@ -19,9 +19,9 @@ var openurl = function() {
   var get_format_query = function(type) {
     switch (type) {
       case 'journal':
-        return encodeURIComponent('rft_val_fmt') + '=' + encodeURIComponent('info:ofi/fmt:kev:mtx:journal') + '&rft.genre=Article'
+        return encodeURIComponent('rft_val_fmt') + '=' + encodeURIComponent('info:ofi/fmt:kev:mtx:journal') + '&rft.genre=article'
       case 'book':
-        return encodeURIComponent('rft_val_fmt') + '=' + encodeURIComponent('info:ofi/fmt:kev:mtx:book') + '&rft.genre=Book'
+        return encodeURIComponent('rft_val_fmt') + '=' + encodeURIComponent('info:ofi/fmt:kev:mtx:book') + '&rft.genre=book'
     }
   }
 
