@@ -23,6 +23,38 @@ module Umlaut
 
       def enhance_metadata(request)
         rft = request.referent
+        needed = {
+          'rft.au' => true,
+          'rft.title' => true,
+          'rft.atitle' => true,
+          'rft.btitle' => true,
+          'rft.jtitle' => true,
+          'rft.stitle' => true,
+          'rft.title' => true,
+          'rft.isbn' => true,
+          'rft.issn' => true,
+          'rft.eisbn' => true,
+          'rft.eissn' => true,
+          'rft.pubdate' => true,
+          'rft.edition' => true,
+          'rft.series' => true,
+          'rft.pub'   => true,
+          'rft.publisher' => true,
+          'rft.place' => true,
+          'rft.genre' => true,
+          'rft.spage' => true,
+          'rft.epage' => true,
+          'rft.pages' => true,
+          'rft.part' => true,
+          'rft.volume' => true,
+          'rft.issue' => true,
+          'rft.year'  => true,
+          'rft.aucorp' => true,
+        }
+        needed.keys.each do |key|
+          needed[key] = false unless rft.metadata[key].nil?  || rft.metadata[key].empty?
+        end
+        list = {'rft.au' => true, 'au' => true}
         @metadata.each do |kv|
           key = kv.keys.first
           value = kv.values.first
@@ -34,23 +66,16 @@ module Umlaut
             rft.enhance_referent('format', 'book');
             rft.enhance_referent('rft_val_fmt', 'info:ofi/fmt:kev:mtx:book');
           end
-          next unless (rft.metadata[key].nil? || rft.metadata[key].empty?)
-          rft.enhance_referent(key, value)
-        end
-        if rft.title.nil? || rft.title.empty?
-          title = rft.metadata['rft.title'] ||
-             rft.metadata['rft.jtitle'] ||
-             rft.metadata['rft.stitle'] ||
-             rft.metadata['rft.btitle']
-          rft.enhance_referent('title', title)
-        end
-        if rft.issn.nil? || rft.issn.empty?
-          issn = rft.metadata['rft.issn'] || rft.metadata['rft.eissn']
-          rft.enhance_referent('issn', issn)
-        end
-        if rft.isbn.nil? || rft.isbn.empty?
-          isbn = rft.metadata['rft.isbn'] || rft.metadata['rft.isbn']
-          rft.enhance_referent('isbn', isbn)
+          next unless needed[key]
+          target = key[4, key.length]
+          if list[target]
+            old_value = rft.metadata[target]
+            next if old_value&.include? value
+            values = [old_value, value].compact.reject(&:empty?)
+            rft.enhance_referent(target, values.join('; '))
+          else
+            rft.enhance_referent(target, value)
+          end
         end
 
         return self
