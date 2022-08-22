@@ -19,7 +19,7 @@
               <%= link_to(bundle.service_data[:headings][:database], {controller: 'link_router', id: bundle.service_data[:source_id]}, {class: 'fulltext-source'}) %>
               <% if bundle.service_data[:structured_notes][:database].present? %>
                 <span>
-                  <%= bundle.service_data[:structured_notes][:database][0] %>
+                  <%= bundle.service_data[:structured_notes][:database][0].html_safe %>
                 </span>
               <% end %>
             </div>

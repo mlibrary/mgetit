@@ -19,12 +19,12 @@
               <span class="fulltext-source"><%= fulltext_link.service_data[:package_name] %></span>
               <% if fulltext_link.service_data[:authentication_note].present? %>
                 <div>
-                  <%= fulltext_link.service_data[:authentication_note] %>
+                  <%= fulltext_link.service_data[:authentication_note].html_safe %>
                 </div>
               <% end %>
               <% if fulltext_link.service_data[:public_note].present? %>
                 <div>
-                  <%= fulltext_link.service_data[:public_note] %>
+                  <%= fulltext_link.service_data[:public_note].html_safe %>
                 </div>
               <% end %>
             </div>
