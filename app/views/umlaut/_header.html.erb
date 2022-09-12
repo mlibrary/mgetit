@@ -17,8 +17,16 @@
     </a>
 
     <div class="permalink-container permalink-header">
-      <label for="permalink">Permalink:</label>
-      <input class="permalink" id="permalink" type="text" readonly value="<%= render_umlaut_permalink_url %>" />
+      <label for="permalink-header"><span class="hidden">Header </span>Permalink:</label>
+      <input
+        class="permalink"
+        name="permalink-header"
+        id="permalink-header"
+        type="text"
+        readonly
+        value="<%= render_umlaut_permalink_url %>"
+        autocomplete="off"
+      />
     </div>
 
     <div class="clearfix"></div>
