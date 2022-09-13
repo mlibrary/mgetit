@@ -40,11 +40,6 @@
       </li>
       <% end %>
     </ul>
-
-    <% if fulltext_bundle.length > 1 %>
-      <a href="" id="show-more-sources" class="show-more hide">Show all <%= fulltext_bundle.length %> options</a>
-    <% end %>
-
   <% else %>
     <!-- inline -->
     <% html_sections(:not_available_online_links_2).each do |link| %>
