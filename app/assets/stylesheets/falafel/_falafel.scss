@@ -258,7 +258,12 @@ input[type="text"] {
   border-radius: 4px;
   border-bottom: 3px solid #0C5292;
   cursor: pointer;
+  text-align: center;
   text-decoration: none;
+  small {
+    display: block;
+    font-size: 0.875em;
+  }
 }
 
 .button:active {

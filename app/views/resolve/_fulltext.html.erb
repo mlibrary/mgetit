@@ -12,7 +12,10 @@
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
             <% label = t("umlaut.call_to_action.#{fulltext_link.service_data[:format]}.#{fulltext_link.service_data[:genre]}.#{fulltext_link.service_data[:best]}", default: default_label) %>
-            <%= link_to(default_label, {controller: 'link_router', id: fulltext_link.id}, {class: 'button fulltext-link'}) %>
+            <%= link_to({controller: "link_router", id: fulltext_link.id}, target: "_blank", rel: "noopener noreferrer", class: "button fulltext-link") do %>
+              <%= default_label %>
+              <small>(opens in new tab)</small>
+            <% end %>
           </div>
           <div class="fulltext-source-and-date">
             <div>
