@@ -20,7 +20,8 @@ services:
     stdin_open: true
     tty: true
     build: .
-    command: bundle exec rails s -p 3000 -b 0.0.0.0
+    #command: bundle exec rackup -p 3000 -o 0.0.0.0 -s puma
+    command: bundle exec puma -C config/puma.rb
     environment:
       MYSQL_USER: mgetit
       MYSQL_PASSWORD: mgetit

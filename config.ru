@@ -1,17 +1,11 @@
-# This file is used by Rack-based servers to start the application.
+require "bundler"
+Bundler.require
 
-require ::File.expand_path('../config/environment', __FILE__)
-class Debug
-  def initialize(app)
-    @app = app
-  end
+ENV['APP_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
-  def call(env)
-    #puts env.inspect
-    env['rack.url_scheme'] = 'https'
-    @app.call(env)
-  end
-end
+require_relative "lib/mgetit"
+require "rack/contrib/try_static"
 
-use Debug
-run Rails.application
+use Rack::TryStatic, root: "public", urls: %w[/], try: %w[index.html]
+
+run MGetIt

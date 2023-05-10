@@ -1,6 +1,12 @@
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+require "bundler"
+Bundler.require
 
-require File.expand_path('../config/application', __FILE__)
+module Rails
+  def self.env
+    ENV.fetch("RAILS_ENV", "development")
+  end
+end
 
-Rails.application.load_tasks
+require_relative "lib/mgetit"
+require "sinatra/activerecord/rake"
+require "standard/rake"

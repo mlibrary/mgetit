@@ -1,0 +1,15 @@
+<% not_available_online_2 = request.not_available_online %>
+<% unless not_available_online_2.length < 2 %>
+  <div class="alert links-not-available">
+
+    <p><strong>Online access not available</strong></p>
+
+    <p>
+      Please try
+      <%= link_to('searching the library catalog', "/link_router/index/#{not_available_online_2[0].id}") %>
+      or
+      <%= link_to('request to have a copy delivered', "/link_router/index/#{not_available_online_2[1].id}") %>
+      (Interlibrary Loan, 7Fast).
+    </p>
+  </div>
+<% end %>

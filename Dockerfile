@@ -35,4 +35,4 @@ RUN bundle install
 COPY --chown=${UID}:${GID} . .
 RUN mkdir -p ${APP_HOME}/tmp/pids/
 
-CMD bundle exec rails s
+CMD bundle exec rackup

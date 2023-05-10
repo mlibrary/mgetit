@@ -1,0 +1,73 @@
+<h2 class="citation-title"><%= referent.title %></h2>
+<div class="short-divider"></div>
+<div class="citation-container">
+  <% if referent.author.present? %>
+    <p class="citation-metadata">By <%= referent.author %></p>
+  <% end %>
+  <% if referent.date.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Publication Date:</span>
+      <%= referent.date %></p>
+  <% end %>
+  <% if referent.container_title.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label"><%= referent.container_type %>:</span>
+      <%= referent.container_title %></p>
+  <% end %>
+  <% if referent.volume.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Volume:</span>
+      <%= referent.volume %></p>
+  <% end %>
+  <% if referent.issue.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Issue:</span>
+      <%= referent.issue %></p>
+  <% end %>
+  <% if referent.page.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Page:</span>
+      <%= referent.page %></p>
+  <% elsif referent.pages.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Page:</span>
+      <%= referent.pages %></p>
+  <% elsif referent.spage.present? && referent.epage.present?%>
+    <p class="citation-metadata">
+      <span class="citation-label">Page:</span>
+      <%= referent.spage %>-<%= referent.epage %></p>
+  <% elsif referent.spage.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Page:</span>
+      <%= referent.spage %></p>
+  <% elsif referent.epage.present?%>
+    <p class="citation-metadata">
+      <span class="citation-label">Page:</span>
+      <%= referent.epage %></p>
+  <% end %>
+  <% if referent.issn.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">ISSN:</span>
+      <%= referent.issn %></p>
+  <% end %>
+  <% if referent.isbn.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">ISBN:</span>
+      <%= referent.isbn %></p>
+  <% end %>
+  <% if referent.type.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">Resource:</span>
+      <%= referent.type %></p>
+  <% end %>
+  <% if referent.pmid.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">PMID:</span>
+      <%= referent.pmid %></p>
+  <% end %>
+  <% if referent.doi.present? %>
+    <p class="citation-metadata">
+      <span class="citation-label">DOI:</span>
+      <%= referent.doi %></p>
+  <% end %>
+</div>

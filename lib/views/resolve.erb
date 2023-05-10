@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-8 col-xs-12">
+    <div class="card">
+      <%= erb(:citation, locals: {referent: LinkResolver::Presenter.for(request.referent)}) %>
+
+      <div class="clearfix"></div>
+
+      <div id="digital_sources">
+        <div id="fulltext">
+          <div class="fulltext_bundle umlaut-section-highlighted">
+            <% if request.fulltext.length > 0 %>
+              <p class="hidden">
+                Below are our best options for accessing this item. If you don't get to what you're looking for, come back and look for more options.
+              </p>
+              <ul class="fulltext-sources" id="fulltext-sources">
+
+              <% request.fulltext.each do |fulltext_link|%>
+                <%= erb(:fulltext_link, locals: {fulltext_link: LinkResolver::Presenter.for(fulltext_link)}) %>
+              <% end %>
+            <% else %>
+              <%= erb(:not_available_online_2, locals: {request: request}) %>
+            <% end %>
+          </div>
+          <%= erb(:found_a_problem, locals: {request: request}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-xs-12">
+    <div class="link-resolver-sidebar">
+
+      <%= erb(:not_available_online, locals: {request: request}) %>
+
+      <div class="card">
+        <h2 class="add-ask-a-librarian-image">Get Help</h2>
+        <p>
+          Contact a librarian for help with this item or with questions about your library research.
+        </p>
+
+        <a href="http://www.lib.umich.edu/ask-librarian">Ask a Librarian</a>
+      </div>
+    </div>
+  </div>
+</div>

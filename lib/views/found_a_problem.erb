@@ -1,0 +1,7 @@
+<% found_a_problem = request.found_a_problem %>
+<% if found_a_problem.length > 0 %>
+<p class="report-broken-link">
+  <strong>Found a problem?</strong>
+  <%= link_to('Let our team of link fixers know', "/link_router/index/#{found_a_problem[0].id}") %>.
+</p>
+<% end %>

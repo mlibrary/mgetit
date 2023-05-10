@@ -1,0 +1,17 @@
+<% not_available_online = request.not_available_online %>
+<% unless not_available_online.length < 2 %>
+<div class="card">
+  <h2>Not available online?</h2>
+
+  <% if not_available_online[0].url %>
+  <p>
+    <%= link_to('Search the catalog', "/link_router/index/#{not_available_online[0].id}") %>
+  </p>
+  <% end %>
+
+  <% if not_available_online[1].url %>
+    <%= link_to('Request to have a copy delivered', "/link_router/index/#{not_available_online[1].id}") %>
+    <span class="small-help-text">(Interlibrary Loan, 7Fast)</span>
+  <% end %>
+</div>
+<% end %>

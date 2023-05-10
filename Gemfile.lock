@@ -1,287 +1,155 @@
-GIT
-  remote: https://github.com/bertrama/openurl
-  revision: 499d12f1a322849abee38ed63b148c6183580914
-  branch: parse-doi-pmid-in-context-object
+PATH
+  remote: gems/openurl
   specs:
     openurl (1.0.0)
       marc
       scrub_rb (~> 1.0)
 
-GIT
-  remote: https://github.com/mlibrary/umlaut-mirlyn
-  revision: 36c4d16b7539d0faa94338d8f750f45b5e79f8fb
-  specs:
-    umlaut-mirlyn (0.1.0)
-      ratom
-      umlaut
-
-GIT
-  remote: https://github.com/mlibrary/umlaut-three-sixty-link
-  revision: 28db4688590c80a311b5dac9e7b94340f3505491
-  specs:
-    umlaut-three-sixty-link (0.0.1)
-      nokogiri
-      openurl
-      simple_xlsx_reader
-
-PATH
-  remote: gems/umlaut-alma
-  specs:
-    umlaut-alma (0.1.0)
-      httparty
-      openurl
-
-PATH
-  remote: gems/umlaut
-  specs:
-    umlaut (4.1.7)
-      bootstrap-sass (~> 3.2)
-      confstruct (~> 1.0, >= 1.0.2)
-      htmlentities
-      httpclient (~> 2.4)
-      isbn (~> 2.0.9)
-      jquery-rails
-      marc (>= 0.5.0, < 1.1)
-      multi_json
-      nokogiri (>= 1.5.3)
-      openurl (~> 1.0)
-      rails (>= 3.2.12, < 4.3.0)
-      sass-rails (>= 3.2.5)
-      scrub_rb (>= 1.0.1, < 2)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.2.11.1)
-      actionpack (= 4.2.11.1)
-      actionview (= 4.2.11.1)
-      activejob (= 4.2.11.1)
-      mail (~> 2.5, >= 2.5.4)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.11.1)
-      actionview (= 4.2.11.1)
-      activesupport (= 4.2.11.1)
-      rack (~> 1.6)
-      rack-test (~> 0.6.2)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (4.2.11.1)
-      activesupport (= 4.2.11.1)
-      builder (~> 3.1)
-      erubis (~> 2.7.0)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activejob (4.2.11.1)
-      activesupport (= 4.2.11.1)
-      globalid (>= 0.3.0)
-    activemodel (4.2.11.1)
-      activesupport (= 4.2.11.1)
-      builder (~> 3.1)
-    activerecord (4.2.11.1)
-      activemodel (= 4.2.11.1)
-      activesupport (= 4.2.11.1)
-      arel (~> 6.0)
-    activesupport (4.2.11.1)
-      i18n (~> 0.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
-      tzinfo (~> 1.1)
-    arel (6.0.4)
-    autoprefixer-rails (10.2.5.1)
-      execjs (> 0)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
-    builder (3.2.3)
-    bundler-audit (0.6.1)
-      bundler (>= 1.2.0, < 3)
-      thor (~> 0.18)
-    byebug (9.0.6)
-    coderay (1.1.1)
-    coffee-rails (4.1.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.10.0)
-    concurrent-ruby (1.1.5)
-    confstruct (1.0.2)
-      hashie (~> 3.3)
-    crass (1.0.5)
-    debug_inspector (0.0.2)
-    erubis (2.7.0)
-    execjs (2.7.0)
-    ffi (1.10.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
-    hashie (3.4.4)
-    htmlentities (4.3.4)
-    httparty (0.18.1)
+    activemodel (6.1.7.1)
+      activesupport (= 6.1.7.1)
+    activerecord (6.1.7.1)
+      activemodel (= 6.1.7.1)
+      activesupport (= 6.1.7.1)
+    activesupport (6.1.7.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    ast (2.4.2)
+    byebug (11.1.3)
+    coderay (1.1.3)
+    concurrent-ruby (1.1.10)
+    erubi (1.11.0)
+    ffi (1.15.5)
+    httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    httpclient (2.8.2.4)
-    i18n (0.9.5)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    isbn (2.0.11)
-    jbuilder (2.6.0)
-      activesupport (>= 3.0.0, < 5.1)
-      multi_json (~> 1.2)
-    jquery-rails (4.2.1)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
-    json (2.5.1)
-    libv8 (3.16.14.19)
-    libxml-ruby (2.9.0)
-    loofah (2.3.1)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
-    mail (2.7.1)
-      mini_mime (>= 0.1.1)
-    marc (1.0.0)
+    json (2.6.3)
+    language_server-protocol (3.17.0.3)
+    lint_roller (1.0.0)
+    marc (1.2.0)
+      rexml
       scrub_rb (>= 1.0.1, < 2)
       unf
-    method_source (0.8.2)
-    mime-types (3.3.1)
+    method_source (1.0.0)
+    mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0225)
-    mini_mime (1.0.1)
-    mini_portile2 (2.5.1)
-    minitest (5.11.3)
-    multi_json (1.12.1)
+    mime-types-data (3.2022.0105)
+    mini_portile2 (2.5.3)
+    minitest (5.17.0)
     multi_xml (0.6.0)
-    mysql2 (0.4.10)
-    nio4r (2.5.7)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
+    mysql2 (0.5.5)
+    nio4r (2.5.8)
     nokogiri (1.11.4)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    pry (0.10.4)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-    pry-byebug (3.4.3)
-      byebug (>= 9.0, < 9.1)
+    parallel (1.23.0)
+    parser (3.2.2.1)
+      ast (~> 2.4.1)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.8.0)
+      byebug (~> 11.0)
       pry (~> 0.10)
-    pry-rails (0.3.4)
-      pry (>= 0.9.10)
-    puma (5.3.2)
+    puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.5.2)
-    rack (1.6.13)
-    rack-test (0.6.3)
-      rack (>= 1.0)
-    rails (4.2.11.1)
-      actionmailer (= 4.2.11.1)
-      actionpack (= 4.2.11.1)
-      actionview (= 4.2.11.1)
-      activejob (= 4.2.11.1)
-      activemodel (= 4.2.11.1)
-      activerecord (= 4.2.11.1)
-      activesupport (= 4.2.11.1)
-      bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.11.1)
-      sprockets-rails
-    rails-deprecated_sanitizer (1.0.3)
-      activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.9)
-      activesupport (>= 4.2.0, < 5.0)
-      nokogiri (~> 1.6)
-      rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.4)
-      loofah (~> 2.2, >= 2.2.2)
-    railties (4.2.11.1)
-      actionpack (= 4.2.11.1)
-      activesupport (= 4.2.11.1)
-      rake (>= 0.8.7)
-      thor (>= 0.18.1, < 2.0)
-    rake (13.0.1)
-    ratom (0.9.0)
-      libxml-ruby (~> 2.6)
-    rb-fsevent (0.10.3)
-    rb-inotify (0.10.0)
+    rack (2.2.4)
+    rack-contrib (2.3.0)
+      rack (~> 2.0)
+    rack-protection (3.0.2)
+      rack
+    rainbow (3.1.1)
+    rake (13.0.6)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.10.1)
       ffi (~> 1.0)
-    ref (2.0.0)
-    rubyzip (2.0.0)
-    sass (3.7.3)
+    regexp_parser (2.8.0)
+    rexml (3.2.5)
+    rubocop (1.50.2)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.28.1)
+      parser (>= 3.2.1.0)
+    rubocop-performance (1.16.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
+    sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.0.6)
-      railties (>= 4.0.0, < 6)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
     sassc (2.4.0)
       ffi (~> 1.9)
     scrub_rb (1.0.1)
-    simple_xlsx_reader (1.0.4)
-      nokogiri
-      rubyzip
-    slim (3.0.7)
-      temple (~> 0.7.6)
-      tilt (>= 1.3.3, < 2.1)
-    slop (3.6.0)
-    sprockets (3.7.2)
+    sinatra (3.0.2)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.2)
+      tilt (~> 2.0)
+    sinatra-activerecord (2.0.26)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
+    standard (1.28.2)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.50.2)
+      standard-custom (~> 1.0.0)
+      standard-performance (~> 1.0.1)
+    standard-custom (1.0.0)
+      lint_roller (~> 1.0)
+    standard-performance (1.0.1)
+      lint_roller (~> 1.0)
+      rubocop-performance (~> 1.16.0)
+    tilt (2.0.11)
+    titlecase (0.1.1)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
-    sprockets-rails (3.2.1)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
-      sprockets (>= 3.0.0)
-    temple (0.7.7)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
-    thor (0.20.3)
-    thread_safe (0.3.6)
-    tilt (2.0.5)
-    tzinfo (1.2.5)
-      thread_safe (~> 0.1)
-    uglifier (3.0.2)
-      execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.2)
-    web-console (2.3.0)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
+    unf_ext (0.0.8.2)
+    unicode-display_width (2.4.2)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler-audit
-  byebug
-  coffee-rails (~> 4.1.0)
-  hashie (= 3.4.4)
-  jbuilder (~> 2.0)
-  jquery-rails
-  json (>= 2.3.0)
-  mysql2 (>= 0.4.10, < 0.5)
-  nokogiri (>= 1.11.0)
+  activesupport
+  erubi
+  httparty
+  mysql2
+  nokogiri
   openurl!
   pry
   pry-byebug
-  pry-rails
   puma
-  rack (>= 1.6)
-  rails (~> 4.2)
-  sass-rails (~> 5.0)
-  slim
-  therubyracer
-  uglifier (>= 1.3.0)
-  umlaut!
-  umlaut-alma!
-  umlaut-mirlyn!
-  umlaut-three-sixty-link!
-  web-console (~> 2.0)
+  rack-contrib
+  rake
+  sass
+  sassc
+  sinatra
+  sinatra-activerecord
+  standard
+  titlecase
 
 BUNDLED WITH
-   1.17.3
+   1.17.2
