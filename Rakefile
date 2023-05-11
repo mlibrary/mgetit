@@ -9,4 +9,4 @@ end
 
 require_relative "lib/mgetit"
 require "sinatra/activerecord/rake"
-require "standard/rake"
+#require "standard/rake"
