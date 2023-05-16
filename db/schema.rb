@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2016_08_11_182051) do
 
-  create_table "clickthroughs", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "clickthroughs", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.integer "request_id", default: 0, null: false
     t.integer "service_response_id", default: 0, null: false
     t.datetime "created_at", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["service_response_id"], name: "click_serv_resp_idx"
   end
 
-  create_table "dispatched_services", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "dispatched_services", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.integer "request_id", default: 0, null: false
     t.string "service_id", default: "0", null: false
     t.datetime "updated_at", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["request_id", "service_id"], name: "dptch_request_id"
   end
 
-  create_table "permalinks", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "permalinks", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.integer "referent_id", default: 0
     t.date "created_on", null: false
     t.text "context_obj_serialized"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["referent_id"], name: "plink_referent_idx"
   end
 
-  create_table "referent_values", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "referent_values", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.integer "referent_id", default: 0, null: false
     t.string "key_name", limit: 50, default: "", null: false
     t.text "value"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["referent_id", "key_name", "normalized_value"], name: "rft_val_referent_idx"
   end
 
-  create_table "referents", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "referents", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "atitle"
     t.string "title"
     t.string "issn", limit: 10
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["year", "volume"], name: "by_year"
   end
 
-  create_table "requests", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "requests", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "session_id", limit: 100, default: "", null: false
     t.integer "referent_id", default: 0, null: false
     t.string "referrer_id"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["session_id"], name: "req_sess_idx"
   end
 
-  create_table "service_responses", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "service_responses", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "service_id", limit: 25, null: false
     t.string "response_key", default: ""
     t.text "value_string"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2016_08_11_182051) do
     t.index ["service_id", "response_key", "value_string", "value_alt_string"], name: "svc_resp_service_id", length: { value_string: 255 }
   end
 
-  create_table "sfx_urls", id: :integer, charset: "latin1", force: :cascade do |t|
+  create_table "sfx_urls", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "url"
     t.index ["url"], name: "index_sfx_urls_on_url"
   end

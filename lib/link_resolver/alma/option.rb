@@ -41,8 +41,8 @@ module LinkResolver
         tmp = self["Authentication_note"].first
         return tmp if tmp.nil?
         if tmp.length % 2 == 0
-          left = tmp[0...tmp.length/2]
-          right = tmp[tmp.length/2...tmp.length]
+          left = tmp[0...tmp.length / 2]
+          right = tmp[tmp.length / 2...tmp.length]
           return left if left == right
         end
         tmp

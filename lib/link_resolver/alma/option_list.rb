@@ -59,12 +59,6 @@ module LinkResolver
           value = kv.values.first
           next unless key.start_with?("rft.")
           next if value.empty?
-          if key == "rft.object_type" && value == "BOOK"
-            rft.enhance_referent("genre", "book")
-            rft.enhance_referent("rft.genre", "book")
-            rft.enhance_referent("format", "book")
-            rft.enhance_referent("rft_val_fmt", "info:ofi/fmt:kev:mtx:book")
-          end
           next unless needed[key]
           target = key[4, key.length]
           if list[target]

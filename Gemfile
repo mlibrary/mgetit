@@ -14,6 +14,7 @@ gem "nokogiri"
 gem "erubi"
 gem "activesupport"
 gem "titlecase"
+gem "multi_json"
 gem "standard", group: [:development, :test]
 gem "pry", group: [:development, :test]
 gem "pry-byebug", group: [:development, :test]

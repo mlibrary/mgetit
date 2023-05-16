@@ -4,10 +4,10 @@ module LinkResolver
       :dispatched_service, :dispatched_status, :request_id
 
     def self.for_raw_request(raw_request)
-      new(
-        raw_request,
-        OpenURL::ContextObject.new_from_kev(raw_request.query_string)
-      )
+      context_object = OpenURL::ContextObject.new_from_kev(raw_request.query_string)
+      context_object.serviceType.clear
+
+      new(raw_request, context_object)
     end
 
     def initialize(raw_request, context_object)
@@ -32,10 +32,15 @@ module LinkResolver
       raw_request.env
     end
 
+    def client_ip_addr
+      return http_env["X_FORWARDED_FOR"] if http_env["X_FORWARDED_FOR"]
+      raw_request.env["REMOTE_ADDR"]
+    end
+
     def permalink_url
       return "" unless request_id
-      return "#{ENV['RAILS_RELATIVE_URL_ROOT']}/go/#{request_id}" if ENV['RAILS_RELATIVE_URL_ROOT']
-      "#{http_env["rack.url_scheme"]}://#{http_env["SERVER_NAME"]}#{[80, 443].include?(http_env["SERVER_PORT"])? "" : ":" }#{http_env["SERVER_PORT"]}/go/#{request_id}"
+      return "#{ENV["RAILS_RELATIVE_URL_ROOT"]}/go/#{request_id}" if ENV["RAILS_RELATIVE_URL_ROOT"]
+      "#{http_env["rack.url_scheme"]}://#{http_env["SERVER_NAME"]}#{[80, 443].include?(http_env["SERVER_PORT"]) ? "" : ":" + http_env["SERVER_PORT"]}/go/#{request_id}"
     end
 
     def dispatched(service, status)
@@ -53,6 +58,10 @@ module LinkResolver
 
     def fulltext
       get_service_type("fulltext")
+    end
+
+    def cover_image
+      get_service_type("cover_image")
     end
 
     def referent_presenter

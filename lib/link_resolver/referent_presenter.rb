@@ -19,7 +19,13 @@ module LinkResolver
     end
 
     def title
-      metadata["title"]
+      if metadata["genre"] == "bookitem" &&
+          metadata["atitle"] &&
+          metadata["btitle"]
+        metadata["atitle"]
+      else
+        metadata["title"]
+      end
     end
 
     def author
@@ -27,7 +33,13 @@ module LinkResolver
     end
 
     def container_title
-      metadata["container_title"]
+      if metadata["genre"] == "bookitem" &&
+          metadata["atitle"] &&
+          metadata["btitle"]
+        metadata["btitle"]
+      else
+        metadata["container_title"]
+      end
     end
 
     def volume
@@ -67,7 +79,11 @@ module LinkResolver
     end
 
     def type
-      metadata["genre"]&.titlecase
+      if metadata["genre"] == "bookitem"
+        "Book Chapter"
+      else
+        metadata["genre"]&.titlecase
+      end
     end
 
     def container_type

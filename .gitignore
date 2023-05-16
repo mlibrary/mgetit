@@ -17,3 +17,4 @@
 /config/umlaut_services.yml
 /config/360link.yml
 /public/assets
+*.swp

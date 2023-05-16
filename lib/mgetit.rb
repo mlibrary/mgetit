@@ -14,6 +14,7 @@ class MGetIt < Sinatra::Base
 
   configure do
     enable :sessions
+    #set :logging, Logger.new(STDOUT)
   end
 
   helpers do
@@ -25,6 +26,7 @@ class MGetIt < Sinatra::Base
 
     def link_resolvers
       @link_resolvers ||= [
+        LinkResolver::GoogleBookSearch.new,
         LinkResolver::Alma::Service.new,
         LinkResolver::Catalog::Service.new
       ]
@@ -75,6 +77,21 @@ class MGetIt < Sinatra::Base
     end
   end
 
+  get "/resource/proxy" do
+    service_response = ServiceResponse.find_by_id(params["id"])
+    if service_response
+      proxy = LinkResolver::Proxy.new(service_response.url, request)
+      headers(proxy.headers)
+      proxy.data
+    else
+      status 404
+      resolver_request = LinkResolver::Request.for_raw_request(request)
+      erb :application, locals: {request: resolver_request} do
+        "Page not found"
+      end
+    end
+  end
+
   get "/link_router/index/:id" do
     service_response = ServiceResponse.find_by_id(params["id"])
     if service_response
@@ -85,6 +102,13 @@ class MGetIt < Sinatra::Base
       erb :application, locals: {request: resolver_request} do
         "Page not found"
       end
+    end
+  end
+
+  error Exception do
+    resolver_request = LinkResolver::Request.for_raw_request(request)
+    erb :application, locals: {request: resolver_request} do
+      "Internal Server Error"
     end
   end
 
@@ -126,6 +150,7 @@ class MGetIt < Sinatra::Base
     resolver_request.context_object = user_request.referent.to_context_object
     resolver_request.service_responses = user_request.service_responses
     resolver_request.request_id = user_request.id
+
     erb :application, locals: {request: resolver_request, user_request: user_request} do
       erb :resolve, locals: {request: resolver_request, user_request: user_request}
     end

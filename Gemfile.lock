@@ -43,6 +43,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_portile2 (2.5.3)
     minitest (5.17.0)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
@@ -136,6 +137,7 @@ DEPENDENCIES
   activesupport
   erubi
   httparty
+  multi_json
   mysql2
   nokogiri
   openurl!

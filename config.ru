@@ -1,7 +1,7 @@
 require "bundler"
 Bundler.require
 
-ENV['APP_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
+ENV["APP_ENV"] = ENV["RAILS_ENV"] if ENV["RAILS_ENV"]
 
 require_relative "lib/mgetit"
 require "rack/contrib/try_static"

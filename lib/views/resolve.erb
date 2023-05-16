@@ -1,6 +1,20 @@
 <div class="row">
   <div class="col-md-8 col-xs-12">
     <div class="card">
+      <% if request.cover_image.length > 0 %>
+        <div id="cover_image" class="cover-image-container">
+          <div class="umlaut_section_content">
+            <% request.cover_image.each do |image|%>
+              <img
+                class="cover_image"
+                src="/resource/proxy?id=<%= image.id %>"
+                alt="Cover Image"
+                style="max-height: 160px; max-width: 200px; box-sizing: content-box;"
+              >
+            <% end %>
+          </div>
+        </div>
+      <% end %>
       <%= erb(:citation, locals: {referent: LinkResolver::Presenter.for(request.referent)}) %>
 
       <div class="clearfix"></div>
