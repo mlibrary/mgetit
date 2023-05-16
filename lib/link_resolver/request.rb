@@ -39,7 +39,7 @@ module LinkResolver
 
     def permalink_url
       return "" unless request_id
-      return "#{ENV["RAILS_RELATIVE_URL_ROOT"]}/go/#{request_id}" if ENV["RAILS_RELATIVE_URL_ROOT"]
+      return "#{ENV["RAILS_RELATIVE_URL_ROOT"]}go/#{request_id}" if ENV["RAILS_RELATIVE_URL_ROOT"]
       "#{http_env["rack.url_scheme"]}://#{http_env["SERVER_NAME"]}#{[80, 443].include?(http_env["SERVER_PORT"]) ? "" : ":" + http_env["SERVER_PORT"]}/go/#{request_id}"
     end
 

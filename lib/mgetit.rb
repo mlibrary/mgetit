@@ -69,6 +69,14 @@ class MGetIt < Sinatra::Base
     end
   end
 
+  get '/sfx_locater' do
+    if request.query_string.nil? || request.query_string.length == 0
+      redirect "/citation-linker/"
+    else
+      redirect "/resolve?" + request.query_string
+    end
+  end
+
   get "/" do
     if request.query_string.nil? || request.query_string.length == 0
       redirect "/citation-linker/"
