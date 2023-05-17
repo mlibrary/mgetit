@@ -103,6 +103,11 @@ class MGetIt < Sinatra::Base
   get "/link_router/index/:id" do
     service_response = ServiceResponse.find_by_id(params["id"])
     if service_response
+      Clickthrough.new.tap do |clickthrough|
+        clickthrough.request_id = service_response.request_id
+        clickthrough.service_response_id = service_response.id
+        clickthrough.save
+      end
       redirect service_response.url
     else
       status 404
