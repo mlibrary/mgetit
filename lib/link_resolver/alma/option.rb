@@ -34,7 +34,7 @@ module LinkResolver
       end
 
       def availability
-        self["Availability"].first.gsub(/<br>/, "\n")
+        self["Availability"].first&.gsub(/<br>/, "\n")
       end
 
       def authentication_note
