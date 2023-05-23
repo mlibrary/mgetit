@@ -78,7 +78,7 @@ module LinkResolver
         if @options.empty?
           context = request.referent.to_hash("rft")
           ids = context["rft_id"] || []
-          if ids.any? { |id| id.start_With("info:pmid") }
+          if ids.any? { |id| id.start_with?("info:pmid") }
             request.add_service_response(
               service: service,
               service_type_value: "site_message",
@@ -86,7 +86,7 @@ module LinkResolver
               message: "umlaut.message.pubmed_unavailable"
             )
           end
-          if ids.any? { |id| id.start_With("info:doi") }
+          if ids.any? { |id| id.start_with?("info:doi") }
             request.add_service_response(
               service: service,
               service_type_value: "site_message",

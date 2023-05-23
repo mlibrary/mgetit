@@ -42,7 +42,7 @@ module LinkResolver
       def request_has_error?(request)
         error = false
         request.service_responses.to_a.find do |response|
-          error ||= response[:service_type_value] == "site_message" && response.service_data[:type] == "warning"
+          error ||= response[:service_type_value] == "site_message" && response[:type] == "warning"
         end
         error
       end
