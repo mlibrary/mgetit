@@ -26,7 +26,7 @@ services:
       MYSQL_USER: mgetit
       MYSQL_PASSWORD: mgetit
       MYSQL_DATABASE: mgetit
-      DATABASE_URL: "mysql2://mgetit:mgetit@mysql-web"
+      DATABASE_URL: "mysql2://mgetit:mgetit@mysql-web/mgetit"
       MYSQL_PORT: 3306
       MYSQL_HOST: mysql-web
       RAILS_ENV: production
