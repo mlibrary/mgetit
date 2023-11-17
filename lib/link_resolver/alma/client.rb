@@ -30,7 +30,7 @@ module LinkResolver
         return option_list unless request.referent&.format == 'book'
         new_query_string = request.raw_request.query_string
 
-        while option_list.empty? && new_query_string.scan('isbn=').length > 1
+        while option_list.empty? && new_query_string.scan('isbn=').length > 0
           found = false
           new_query_string = new_query_string.split('&').reject do |kev|
             !found && kev.include?('isbn=') && found = true
