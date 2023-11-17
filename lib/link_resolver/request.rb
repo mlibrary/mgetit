@@ -5,6 +5,12 @@ module LinkResolver
 
     def self.for_raw_request(raw_request)
       context_object = OpenURL::ContextObject.new_from_kev(raw_request.query_string)
+
+      pages = context_object.referent&.get_metadata('pages')
+      if pages && pages == '-'
+        context_object.referent.set_metadata('pages', '')
+      end
+
       context_object.serviceType.clear
 
       new(raw_request, context_object)
