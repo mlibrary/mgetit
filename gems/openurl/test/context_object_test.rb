@@ -34,6 +34,8 @@ class ContextObjectTest < Test::Unit::TestCase
     test_kev_01_values(ctx)
     ctx = OpenURL::ContextObject.new_from_kev(data["context_objects"]["kev_0_1_nonstandard"])
     test_kev_01_nonstandard_values(ctx)
+    ctx = OpenURL::ContextObject.new_from_kev(data["context_objects"]["kev_case_insensitive"])
+    self.test_kev_case_insensitive(ctx)
   end
 
   def test_old_sid_translation
@@ -472,6 +474,27 @@ class ContextObjectTest < Test::Unit::TestCase
   def test_kev_01_nonstandard_values(ctx)
     assert(ctx.referent.identifiers.index("info:doi/10.1126/science.275.5304.1320").is_a?(Integer))
     assert(ctx.referent.identifiers.index("info:pmid/12345").is_a?(Integer))
+  end
+
+  def test_kev_case_insensitive(ctx)
+    assert(ctx.referrer.identifiers.index('info:sid/myid:mydb').is_a?(Fixnum))
+    assert(ctx.referent.identifiers.index('info:doi/10.1126/science.275.5304.1320').is_a?(Fixnum))
+    assert(ctx.referent.identifiers.index('info:pmid/9036860').is_a?(Fixnum))
+    assert_match(/info:doi\/10\.1126\/science\.275\.5304\.1320|info:pmid\/9036860/, ctx.referent.identifier)
+    assert_equal(ctx.referent.format, 'journal')
+    assert_equal(ctx.referent.metadata['atitle'], "Isolation of a common receptor for coxsackie B")
+    assert_equal(ctx.referent.metadata['title'], "Science")
+    assert_equal(ctx.referent.metadata['genre'], 'article')
+    assert_equal(ctx.referent.metadata['aulast'], 'Bergelson')
+    assert_equal(ctx.referent.metadata['auinit'], 'J')
+    assert_equal(ctx.referent.metadata['date'], '1997')
+    assert_equal(ctx.referent.metadata['volume'], '275')
+    assert_equal(ctx.referent.metadata['spage'], '1320')
+    assert_equal(ctx.referent.metadata['epage'], '1323')
+
+    # Check administrative values
+    assert_equal(ctx.admin["ctx_enc"]["value"], "info:ofi/enc:UTF-8")
+    assert_equal(ctx.admin["ctx_ver"]["value"], "Z39.88-2004")
   end
 
   def test_xml_values(ctx)

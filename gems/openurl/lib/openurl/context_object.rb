@@ -172,6 +172,12 @@ module OpenURL
 
     def import_kev(kev)
       co = CGI.parse(kev)
+      co.keys.each do |key|
+        lc = key.downcase
+        next if lc == key
+        co[lc] = (co[lc] || []) + co[key]
+        co.delete(key)
+      end
       co2 = {}
       co.each do |key, val|
         if val.is_a?(Array)
