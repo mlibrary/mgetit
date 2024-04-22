@@ -4,6 +4,7 @@ context_objects:
     kev_hybrid: url_ver=Z39.88-2004&url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&rfr_id=info%3Asid%2Fmyid.com%3Amydb&sid=myid%3Amydb&rft_id=info%3Adoi%2F10.1126%2Fscience.275.5304.1320&rft_id=info%3Apmid%2F9036860&id=doi%3A10.1126%2Fscience.275.5304.1320&id=pmid%3A9036860&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&rft.genre=article&rft.atitle=Isolation+of+a+common+receptor+for+coxsackie+B&rft.jtitle=Science&rft.aulast=Bergelson&rft.auinit=J&rft.date=1997&rft.volume=275&rft.spage=1320&rft.epage=1323&genre=article&atitle=Isolation+of+a+common+receptor+for+coxsackie+B&title=Science&aulast=Bergelson&auinit=J&date=1997&volume=275&spage=1320&epage=1323
     kev_0_1: sid=myid%3Amydb&id=doi%3A10.1126%2Fscience.275.5304.1320&id=pmid%3A9036860&genre=article&atitle=Isolation+of+a+common+receptor+for+coxsackie+B&title=Science&aulast=Bergelson&auinit=J&date=1997&volume=275&spage=1320&epage=1323
     kev_0_1_nonstandard: doi=10.1126/science.275.5304.1320&id=1&pmid=12345
+    kev_case_insensitive: SID=myid%3Amydb&id=doi%3A10.1126%2Fscience.275.5304.1320&ID=pmid%3A9036860&genre=article&atitle=Isolation+of+a+common+receptor+for+coxsackie+B&title=Science&aulast=Bergelson&auinit=J&date=1997&VOLume=275&SpAgE=1320&EpAgE=1323
     xml_doc: test/data/yu.xml
     oai_dc_ctx: test/data/dc_ctx.xml
     marc_21_ctx: test/data/marc_ctx.xml
