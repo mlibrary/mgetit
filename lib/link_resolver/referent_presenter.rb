@@ -19,14 +19,8 @@ module LinkResolver
     end
 
     def title
-      if metadata["genre"] == "bookitem" &&
-          metadata["atitle"] &&
-          metadata["btitle"]
-        metadata["atitle"]
-      elsif metadata["genre"] == "book" && metadata["btitle"]
-        metadata["btitle"]
-      else
-        metadata["title"]
+      ['atitle', 'btitle', 'jtitle', 'title', 'stitle'].each do |field|
+        return metadata[field] if metadata[field]
       end
     end
 
@@ -35,12 +29,8 @@ module LinkResolver
     end
 
     def container_title
-      if metadata["genre"] == "bookitem" &&
-          metadata["atitle"] &&
-          metadata["btitle"]
-        metadata["btitle"]
-      else
-        metadata["container_title"]
+      ['container_title', 'btitle', 'jtitle', 'title', 'stitle', 'atitle'].each do |field|
+        return metadata[field] if metadata[field]
       end
     end
 
