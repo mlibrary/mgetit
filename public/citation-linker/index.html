@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="assets/stylesheets/main.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@umich-lib/css@latest/dist/umich-lib.css"/>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@umich-lib/components@latest/dist/umich-lib/umich-lib.esm.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -53,6 +55,7 @@
       ></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <m-universal-header></m-universal-header>
     <header>
       <div class="site-header">
         <div class="container-fluid">
@@ -279,6 +282,8 @@
     <footer class="footer">
 
     </footer>
+
+    <m-chat></m-chat>
 
     <script src="https://unpkg.com/expect/umd/expect.min.js"></script> <!-- for development only -->
     <script src="assets/javascript/vendor/underscore.js"></script>
