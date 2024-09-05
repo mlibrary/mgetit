@@ -38,11 +38,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@umich-lib/web@latest/umich-lib.css"/>
     <link rel="stylesheet" href="assets/stylesheets/main.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@umich-lib/css@latest/dist/umich-lib.css"/>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@umich-lib/components@latest/dist/umich-lib/umich-lib.esm.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@umich-lib/web@latest/dist/umich-lib/umich-lib.esm.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -56,18 +56,7 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <m-universal-header></m-universal-header>
-    <header>
-      <div class="site-header">
-        <div class="container-fluid">
-          <a href="http://umich.edu" class="site-brand-umich-block-m-logo">
-            <img src="assets/images/umich_block_m.png" alt="Go to the University of Michigan homepage">
-          </a>
-          <a href="http://lib.umich.edu" class="site-brand-mlibrary-logo">
-            <img src="assets/images/mlibrary_logo.png" alt="Go to the University of Michigan Library homepage">
-          </a>
-        </div>
-      </div>
-    </header>
+    <m-website-header variant="dark"></m-website-header>
 
     <div class="callout spacing-top-bottom-2">
       <div class="page-container">
@@ -279,8 +268,21 @@
 
     </div>
 
-    <footer class="footer">
-
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="permalink-container permalink-footer">
+          <!-- <label for="permalink-footer"><span class="hidden">Footer </span>Permalink:</label>
+          <input
+            class="permalink"
+            name="permalink-footer"
+            id="permalink-footer"
+            type="text"
+            readonly
+            value="<%= request.permalink_url %>"
+            autocomplete="off"
+          /> -->
+        </div>
+      </div>
     </footer>
 
     <m-chat></m-chat>
