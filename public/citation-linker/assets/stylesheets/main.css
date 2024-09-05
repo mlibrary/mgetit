@@ -382,6 +382,8 @@ textarea {
   display: none; }
 
 .footer {
+  background: #00274C;
+  padding: 1rem 0;
   margin-top: 2rem; }
 
 .container-fluid,
