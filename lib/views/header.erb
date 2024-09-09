@@ -1,28 +1,16 @@
 <%# local implementers may over-ride this partial for custom local header.
     This partial is called by default umlaut layout.  %>
-<header class="site-header">
-  <div class="container-fluid">
-
-    <a href="http://umich.edu" class="site-brand-umich-block-m-logo">
-      <img src="<%= asset_path('umich_block_m.png') %>" alt="University of Michigan"/>
-    </a>
-    <a href="/" class="site-brand-mlibrary-logo">
-      <img src="<%= asset_path('mlibrary_logo.png') %>" alt="Library"/>
-    </a>
-
-    <div class="permalink-container permalink-header">
-      <label for="permalink-header"><span class="hidden">Header </span>Permalink:</label>
-      <input
-        class="permalink"
-        name="permalink-header"
-        id="permalink-header"
-        type="text"
-        readonly
-        value="<%= request.permalink_url %>"
-        autocomplete="off"
-      />
-    </div>
-
-    <div class="clearfix"></div>
+<m-website-header variant='dark'>
+  <div class="permalink-container permalink-header">
+    <label for="permalink-header"><span class="hidden">Header </span>Permalink:</label>
+    <input
+      class="permalink"
+      name="permalink-header"
+      id="permalink-header"
+      type="text"
+      readonly
+      value="<%= request.permalink_url %>"
+      autocomplete="off"
+    />
   </div>
-</header>
+</m-website-header>
