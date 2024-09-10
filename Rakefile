@@ -22,7 +22,7 @@ namespace "assets" do
     javascripts_path = File.join(assets_path, "javascripts")
     stylesheets_path = File.join(assets_path, "stylesheets")
 
-    images_source = File.expand_path(File.join("..", "lib", "assets", "images", "."), __FILE__)
+    images_source = File.join(File.expand_path(File.join("..", "lib", "assets", "images"), __FILE__), '.')
 
     javascript_sources = [
       File.expand_path(File.join("..", "gems", "jquery-rails", "vendor", "assets", "javascripts", "jquery.js"), __FILE__),
