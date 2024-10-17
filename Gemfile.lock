@@ -26,7 +26,7 @@ GEM
     concurrent-ruby (1.3.4)
     csv (3.3.0)
     erubi (1.13.0)
-    ffi (1.16.3)
+    ffi (1.17.0)
     httparty (0.22.0)
       csv
       mini_mime (>= 1.0.0)
@@ -50,7 +50,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.6)
     nio4r (2.7.3)
-    nokogiri (1.15.6)
+    nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     parallel (1.26.3)
@@ -139,7 +139,6 @@ PLATFORMS
 DEPENDENCIES
   activesupport (~> 6.1.7.8)
   erubi
-  ffi (~> 1.16.3)
   httparty
   multi_json
   mysql2
@@ -158,4 +157,4 @@ DEPENDENCIES
   titlecase
 
 BUNDLED WITH
-   2.1.4
+   2.5.16
