@@ -104,7 +104,7 @@ module LinkResolver
         hostname = http_env["HTTP_X_FORWARDED_HOST"] || http_env["HTTP_HOST"]
         query = base[:query].merge(
           LinkModel: "unknown",
-          DocumentID: "https://" + hostname + http_env["REQUEST_URI"]
+          DocumentID: "https://#{hostname}#{http_env["REQUEST_URI"]}"
         )
         URI::HTTP.build(base.merge(query: query.to_query)).to_s
       end

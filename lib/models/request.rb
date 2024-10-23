@@ -441,7 +441,7 @@ class Request < ActiveRecord::Base
           (k == "REQUEST_URI") ||
           k == "SERVER_NAME"
         k = k.dup.force_encoding("ISO-8859-1")
-        v.force_encoding("ISO-8859-1")
+        v = v.dup.force_encoding("ISO-8859-1")
         v.scrub!
         req.http_env[k] = v.slice(0, 800) # only first 800 chars sorry
       end
