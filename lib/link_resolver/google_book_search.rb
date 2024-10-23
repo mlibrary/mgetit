@@ -304,7 +304,7 @@ module LinkResolver
       # do NOT send that to Google, or Google will give you a 503 error
       # and refuse to process your request, as of 7 sep 2011. sigh.
       # Also if it doesn't look like an IP at all, forget it, don't send it.
-      if (!ip_address =~ /^\d+\.\d+\.\d+\/\d$/) ||
+      if (!ip_address.match?(/^\d+\.\d+\.\d+\/\d$/)) ||
           ip_address.start_with?("10.") ||
           ip_address.start_with?("172.16") ||
           ip_address.start_with?("192.168")

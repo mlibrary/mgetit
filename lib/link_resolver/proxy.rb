@@ -35,7 +35,7 @@ module LinkResolver
       # open-uri :read_timeout is not behaving reliably, resort to Timeout.timeout
       # should we just be using raw Net::Http and give up on open-uri? remember
       # to update timeout exceptions in rescue below if you change.
-      @remote_response = Timeout.timeout(HttpTimeout) { open(uri, "rb", proxied_headers) }
+      @remote_response = Timeout.timeout(HttpTimeout) { uri.open(proxied_headers) }
 
       @headers = {}
 

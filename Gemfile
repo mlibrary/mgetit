@@ -18,3 +18,8 @@ gem "multi_json"
 gem "standard", group: [:development, :test]
 gem "pry", group: [:development, :test]
 gem "pry-byebug", group: [:development, :test]
+
+gem "ostruct"
+gem "logger"
+gem "mutex_m"
+gem "bigdecimal"
