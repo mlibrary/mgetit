@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
+gem "logger"
 gem "rack-contrib"
-gem "sinatra", "~> 3.0", require: "sinatra/base"
+gem "sinatra", require: "sinatra/base"
 gem "sinatra-activerecord"
 gem "mysql2"
 gem "rake"
@@ -22,7 +23,6 @@ gem "rspec", group: [:development, :test]
 gem "rack-test", group: [:development, :test]
 
 gem "ostruct"
-gem "logger"
 gem "mutex_m"
 gem "bigdecimal"
 gem "fiddle"
