@@ -1,0 +1,78 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "xiNPzQEACAAJ",
+      "etag": "4sT2KslQH4M",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xiNPzQEACAAJ",
+      "volumeInfo": {
+        "title": "Oxford Research Encyclopedias",
+        "subtitle": "Politics",
+        "authors": [
+          "William R. Thompson"
+        ],
+        "publishedDate": "2019",
+        "description": "Substantive, peer-reviewed, and regularly updated, the Oxford Research Encyclopedia of Politics combines the speed & flexibility of digital with the rigorous standards of academic publishing.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0190228636"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780190228637"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "printType": "BOOK",
+        "categories": [
+          "Political science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xiNPzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xiNPzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=xiNPzQEACAAJ&dq=isbn:0190228636&hl=&as_pt=BOOKS&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=xiNPzQEACAAJ&dq=isbn:0190228636&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Oxford_Research_Encyclopedias.html?hl=&id=xiNPzQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xiNPzQEACAAJ&hl=&as_pt=BOOKS&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Substantive, peer-reviewed, and regularly updated, the Oxford Research Encyclopedia of Politics combines the speed &amp; flexibility of digital with the rigorous standards of academic publishing."
+      }
+    }
+  ]
+}

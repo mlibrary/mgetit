@@ -18,3 +18,5 @@
 /config/360link.yml
 /public/assets
 *.swp
+/coverage
+/.sass-cache

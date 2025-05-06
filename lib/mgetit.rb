@@ -30,6 +30,7 @@ class MGetIt < Sinatra::Base
     def link_resolvers
       @link_resolvers ||= [
         LinkResolver::GoogleBookSearch.new,
+        LinkResolver::Primo::Service.new,
         LinkResolver::Alma::Service.new,
         LinkResolver::Catalog::Service.new
       ]
@@ -147,7 +148,12 @@ class MGetIt < Sinatra::Base
     resolver_request = LinkResolver::Request.for_raw_request(request)
     if user_request.service_responses.empty?
       link_resolvers.each do |resolver|
-        resolver.handle(resolver_request)
+        begin
+          resolver.handle(resolver_request)
+        rescue Exception => e
+          # If a resolver fails, continue
+          logger.error { ([e.message] + e.backtrace).join($/) }
+        end
       end
       resolver_request.service_responses.each do |response|
         user_request.add_service_response(response)
