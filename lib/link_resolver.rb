@@ -1,6 +1,7 @@
 require "active_support"
 require "titlecase"
 
+require_relative "link_resolver/preprocess_query_string"
 require_relative "link_resolver/proxy"
 
 require_relative "link_resolver/alma"
