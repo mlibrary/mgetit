@@ -23,6 +23,8 @@ module LinkResolver
           metadata["atitle"] &&
           metadata["btitle"]
         metadata["atitle"]
+      elsif metadata["genre"] == "book" && metadata["btitle"]
+        metadata["btitle"]
       else
         metadata["title"]
       end
