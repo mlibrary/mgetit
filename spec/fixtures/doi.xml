@@ -1,0 +1,108 @@
+<uresolver_content xmlns="http://com/exlibris/urm/uresolver/xmlbeans/u" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <context_object>
+    <keys>
+      <key id="ctx_enc">info:ofi/enc:UTF-8</key>
+      <key id="rft_val_fmt">info:ofi/fmt:kev:mtx:journal</key>
+      <key id="rft.stitle">Magic.</key>
+      <key id="rft.place">Bingley :</key>
+      <key id="available_services">viewit</key>
+      <key id="available_services">getit</key>
+      <key id="rft.isbn_13">978-1-80455-613-9</key>
+      <key id="rft.btitle">Magic.</key>
+      <key id="rft.genre">book</key>
+      <key id="rft.aufirst">Richard</key>
+      <key id="rft.isbn_10">1-80455-613-0</key>
+      <key id="Incoming_URL">http%3A%2F%2Fna04.alma.exlibrisgroup.com%2Fview%2Furesolver%2F01UMICH_INST%2Fopenurl%3Fdebug%3Dtrue%26ctx_enc%3Dinfo%3Aofi%2Fenc%3AUTF-8%26ctx_id%3D%26ctx_tim%3D2025-01-01T00%3A00%3A00%252B00%3A00%26ctx_ver%3DZ39.88-2004%26rft_id%3Dinfo%3Adoi%2F10.1108%2F9781804556108%26rft_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26svc_dat%3DCTO%26url_ctx_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Actx%26url_ver%3DZ39.88-2004</key>
+      <key id="institution">6381</key>
+      <key id="rft.normalized_isbn">9781804556139</key>
+      <key id="rft.eisbn_10">1-80455-610-6</key>
+      <key id="rft.edition">1st ed.</key>
+      <key id="http_request_type">GET</key>
+      <key id="rft.eisbn_13">978-1-80455-610-8</key>
+      <key id="rft.normalized_eisbn">9781804556108</key>
+      <key id="rft.doi">10.1108/9781804556108</key>
+      <key id="prefer_ordered_resources">false</key>
+      <key id="user_ip" xsi:nil="true"/>
+      <key id="rft_id">info:doi/10.1108/9781804556108</key>
+      <key id="inventory_id">511298931700006381</key>
+      <key id="rft.inventory_id">511298931700006381</key>
+      <key id="rft.aulast">Wiseman</key>
+      <key id="publication_place">Bingley :</key>
+      <key id="rft.object_type">BOOK</key>
+      <key id="url_ver">Z39.88-2004</key>
+      <key id="ctx_id">80449422880006381</key>
+      <key id="full_text_indicator">true</key>
+      <key id="rft.title">Magic.</key>
+      <key id="rft.pub">Emerald Publishing Limited,</key>
+      <key id="ctx_tim">2025-01-01T00:00:00+00:00</key>
+      <key id="ctx_ver">Z39.88-2004</key>
+      <key id="licenseEnable">false</key>
+      <key id="rft.isbn">978-1-80455-613-9</key>
+      <key id="sfx.sid">DEFAULT</key>
+      <key id="url_ctx_fmt">info:ofi/fmt:kev:mtx:ctx</key>
+      <key id="sfx.doi_url">https://doi.org</key>
+      <key id="rft.oclcnum">1392345476</key>
+      <key id="rft.mms_id">99187986906406381</key>
+      <key id="rft.eisbn">1804556106</key>
+      <key id="rft.eisbn">9781804556108</key>
+      <key id="rft.publisher">Emerald Publishing Limited,</key>
+      <key id="rft.au">Wiseman, Richard.</key>
+      <key id="rft.pubdate">2023.</key>
+      <key id="customer">6380</key>
+    </keys>
+  </context_object>
+  <context_services>
+    <context_service service_type="getFullTxt" context_service_id="80443569600006381">
+      <keys>
+        <key id="package_name">Ebook Central</key>
+        <key id="package_public_name">Ebook Central Perpetual, DDA and Subscription Titles</key>
+        <key id="package_original_name">Ebook Central Perpetual, DDA and Subscription Titles</key>
+        <key id="package_display_name">Ebook Central Perpetual, DDA and Subscription Titles</key>
+        <key id="package_internal_name">EBOOK_CENTRAL_PERPETUAL_DDA_AND_SUBSCRIPTION_TITLES</key>
+        <key id="interface_name">Ebook Central</key>
+        <key id="db_id">AABBV</key>
+        <key id="package_pid">611143509990006381</key>
+        <key id="service_type_description">Full text available via</key>
+        <key id="character_set">iso-8859-1</key>
+        <key id="Is_free">0</key>
+        <key id="request_source">Unknown</key>
+        <key id="portfolio_PID">531298960230006381</key>
+        <key id="cz_link_id">53275069570000041</key>
+        <key id="electronic_material_type">BOOK</key>
+        <key id="Availability"/>
+        <key id="static_url">false</key>
+        <key id="parser_program">EBOOK::Central</key>
+        <key id="parse_parameters">url=https://ebookcentral.proquest.com/lib/ &amp; cust_id=umichigan&amp;bkey=30621268</key>
+        <key id="Authentication_note">Some website features require a personal account. Authorized U-M users (+ guests in U-M Libraries).&lt;br/></key>
+        <key id="public_note"/>
+        <key id="proxy_enabled">false</key>
+        <key id="proxy_selected">DEFAULT</key>
+        <key id="related_title">@TITLE (@RelationType)</key>
+        <key id="is_related_service">false</key>
+        <key id="is_closly_related">false</key>
+        <key id="license_exist">false</key>
+        <key id="crossref_enabled">no</key>
+        <key id="preferred_link">false</key>
+      </keys>
+      <resolution_url>https://umich.alma.exlibrisgroup.com/view/action/uresolver.do?operation=resolveService&amp;package_service_id=80443569600006381&amp;institutionId=6381&amp;customerId=6380</resolution_url>
+    </context_service>
+  </context_services>
+  <performance_counters>
+    <performance_counter name="TOTAL" duration="0.0"/>
+    <performance_counter name="MMS_LOOKUP" duration="0.287"/>
+    <performance_counter name="ENRICH" duration="0.0"/>
+    <performance_counter name="PARSE" duration="0.0"/>
+    <performance_counter name="GET_SERVICES" duration="0.004"/>
+    <performance_counter name="FILTER" duration="0.005"/>
+    <performance_counter name="SAVE" duration="0.004"/>
+    <performance_counter name="GET_ZERO_TITLE_SERVICES" duration="0.0"/>
+    <performance_counter name="FETCH_SERVICE_THRESHOLD_RULES" duration="0.0"/>
+    <performance_counter name="CREATE_ZERO_TITLE_SERVICES" duration="0.0"/>
+    <performance_counter name="SAVE_ZERO_TITLE_SERVICES" duration="0.0"/>
+    <performance_counter name="GET_SINGLE_SERVICE" duration="0.0"/>
+    <performance_counter name="EXECUTE_TARGET_PARSER" duration="0.0"/>
+    <performance_counter name="GET_URESOLVER_CONTENT" duration="0.0"/>
+    <performance_counter name="UPDATE_SELECTED" duration="0.0"/>
+    <performance_counter name="AF_GROUPS_ENRICHMENT" duration="0.0"/>
+  </performance_counters>
+</uresolver_content>

@@ -20,7 +20,7 @@ module LinkResolver
         @options.empty?
       end
 
-      def initialize(metadata: NullMetadata.new, options: [])
+      def initialize(metadata: Metadata.new, options: [])
         @metadata = metadata
         @options = deduplicate(options)
       end

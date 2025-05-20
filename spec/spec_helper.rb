@@ -18,6 +18,10 @@ ENV["APP_ENV"] = "test"
 Bundler.require :default
 Bundler.require :test
 
+require "webmock/rspec"
+WebMock.disable_net_connect!(allow_localhost: true)
+SimpleCov.start
+
 require_relative "../lib/mgetit"
 require "rack/contrib/try_static"
 

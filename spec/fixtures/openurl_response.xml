@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uresolver_content xmlns="http://com/exlibris/urm/uresolver/xmlbeans/u" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <context_object>
+    <keys>
+      <key id="ctx_enc">info:ofi/enc:UTF-8</key>
+      <key id="rft_val_fmt">info:ofi/fmt:kev:mtx:journal</key>
+      <key id="rft.epage">69</key>
+      <key id="rft.volume">6</key>
+      <key id="rft.stitle">Revista de enseñanza de la física.</key>
+      <key id="rft.stitle">AbreviatedTitle</key>
+      <key id="rft.issue_start">2</key>
+      <key id="rft.place">Córdoba, Argentina :</key>
+      <key id="available_services">viewit</key>
+      <key id="available_services">getit</key>
+      <key id="rft.genre">article</key>
+      <key id="rft.normalized_eissn">2250-6101</key>
+      <key id="Incoming_URL">http%3A%2F%2Fna04.alma.exlibrisgroup.com%2Fview%2Furesolver%2F01UMICH_INST%2Fopenurl%3Fdebug%3Dtrue%26svc_dat%3DCTO%26ctx_enc%3Dinfo%253Aofi%252Fenc%253AUTF-8%26ctx_id%3D10_1%26ctx_tim%3D2025-04-25%2B21%253A41%253A15%26ctx_ver%3DZ39.88-2004%26url_ctx_fmt%3Dinfo%253Aofi%252Ffmt%253Akev%253Amtx%253Actx%26url_ver%3DZ39.88-2004%26rfr_id%3Dinfo%253Asid%252Fprimo.exlibrisgroup.com-doaj%26rft_val_fmt%3Dinfo%253Aofi%252Ffmt%253Akev%253Amtx%253Ajournal%26rft.genre%3Darticle%26rft.atitle%3DNuestro%2BHombre%2Ben%2Bla%2BGalaxia-Enrique%2BGaviola%2B1900-1989%26rft.jtitle%3DRevista%2Bde%2Bense%25C3%25B1anza%2Bde%2Bla%2Bf%25C3%25ADsica%26rft.au%3DVeronica%2BGrunfeld%26rft.date%3D2016-12-01%26rft.volume%3D6%26rft.issue%3D2%26rft.spage%3D65%26rft.epage%3D69%26rft.pages%3D65-69%26rft.issn%3D0326-7091%26rft.eissn%3D2250-6101%26rft.pub%3DAsociaci%25C3%25B3n%2Bde%2BProfesores%2Bde%2BF%25C3%25ADsica%2Bde%2BArgentina%26rft_dat%3D%253Cdoaj%253Eoai_doaj_org_article_c13c78a6d2eb4bf1ac961a981ca88cbd%253C%252Fdoaj%253E%26svc_dat%3Dviewit%26utm_source%3Dlibrary-search%26rft_id%3Dinfo%3Aprimo%2Fcdi_doaj_primary_oai_doaj_org_article_c13c78a6d2eb4bf1ac961a981ca88cbd</key>
+      <key id="institution">6381</key>
+      <key id="rft.normalized_issn">0326-7091</key>
+      <key id="http_request_type">GET</key>
+      <key id="prefer_ordered_resources">false</key>
+      <key id="rft.year">2016</key>
+      <key id="req.id" xsi:nil="true"/>
+      <key id="user_ip" xsi:nil="true"/>
+      <key id="rft_id">info:primo/cdi_doaj_primary_oai_doaj_org_article_c13c78a6d2eb4bf1ac961a981ca88cbd</key>
+      <key id="rft.orig_genre">article</key>
+      <key id="inventory_id">511082163780006381</key>
+      <key id="rft.inventory_id">511082163780006381</key>
+      <key id="rft.issue">2</key>
+      <key id="sfx.primo_docID">doaj</key>
+      <key id="rft.volume_end">6</key>
+      <key id="publication_place">Córdoba, Argentina :</key>
+      <key id="rft.object_type">JOURNAL</key>
+      <key id="url_ver">Z39.88-2004</key>
+      <key id="rft.date">2016-12-01</key>
+      <key id="ctx_id">10_1</key>
+      <key id="ctx_id">80432616320006381</key>
+      <key id="full_text_indicator">true</key>
+      <key id="rft.issue_end">2</key>
+      <key id="rft_dat">&lt;doaj>oai_doaj_org_article_c13c78a6d2eb4bf1ac961a981ca88cbd&lt;/doaj></key>
+      <key id="rft.title">Revista de enseñanza de la física.</key>
+      <key id="utm_source">library-search</key>
+      <key id="rft.pub">Asociación de Profesores de Física de la Argentina,</key>
+      <key id="ctx_tim">2025-04-25 21:41:15</key>
+      <key id="ctx_ver">Z39.88-2004</key>
+      <key id="licenseEnable">false</key>
+      <key id="rft.jtitle">Revista de enseñanza de la física.</key>
+      <key id="sfx.sid">primo.exlibrisgroup.com-doaj</key>
+      <key id="sfx.primo_docTAG">doaj</key>
+      <key id="rft.pages">65-69</key>
+      <key id="url_ctx_fmt">info:ofi/fmt:kev:mtx:ctx</key>
+      <key id="rft.spage">65</key>
+      <key id="rft.issn">0326-7091</key>
+      <key id="rft.mms_id">99187281789306381</key>
+      <key id="rft.day">01</key>
+      <key id="rft.month">12</key>
+      <key id="rfr_id">info:sid/primo.exlibrisgroup.com-doaj</key>
+      <key id="rft.publisher">Asociación de Profesores de Física de la Argentina,</key>
+      <key id="rft.au">Veronica Grunfeld</key>
+      <key id="rft.pubdate">2013-</key>
+      <key id="rft.atitle">Nuestro Hombre en la Galaxia-Enrique Gaviola 1900-1989</key>
+      <key id="rft.volume_start">6</key>
+      <key id="rft.eissn">2250-6101</key>
+      <key id="customer">6380</key>
+      <key id="rfr.rfr">primo.exlibrisgroup.com-doaj</key>
+    </keys>
+  </context_object>
+  <context_services>
+    <context_service service_type="getFullTxt" context_service_id="80396425340006381">
+      <keys>
+        <key id="package_name">DOAJ Directory of Open Access Journals</key>
+        <key id="package_public_name">DOAJ Directory of Open Access Journals</key>
+        <key id="package_original_name">DOAJ Directory of Open Access Journals</key>
+        <key id="package_display_name">DOAJ Directory of Open Access Journals</key>
+        <key id="package_internal_name">DOAJ_DIRECTORY_OPEN_ACCESS_JOURNALS</key>
+        <key id="interface_name">DOAJ Directory of Open Access Journals</key>
+        <key id="db_id">DOA</key>
+        <key id="package_pid">611072788230006381</key>
+        <key id="service_type_description">Full text available via</key>
+        <key id="character_set">utf8</key>
+        <key id="Is_free">1</key>
+        <key id="request_source">doaj</key>
+        <key id="portfolio_PID">531082173000006381</key>
+        <key id="cz_link_id">534100000024200732</key>
+        <key id="electronic_material_type">JOURNAL</key>
+        <key id="Availability">Available from 01/01/2011.&lt;br></key>
+        <key id="static_url">false</key>
+        <key id="parser_program">DOAJ::DOAJ</key>
+        <key id="parse_parameters">url=https://www.doaj.org&amp;jkey=https://doaj.org/toc/c4da0c50d6a749f4ab41aaa39f8c7bfb</key>
+        <key id="Authentication_note">Link may lead to DOAJ. "Website" buttons lead to the journal site. "READ ONLINE" buttons lead to the article page.&lt;br/></key>
+        <key id="public_note"/>
+        <key id="proxy_enabled">false</key>
+        <key id="proxy_selected">DEFAULT</key>
+        <key id="related_title">@TITLE (@RelationType)</key>
+        <key id="is_related_service">false</key>
+        <key id="is_closly_related">false</key>
+        <key id="license_exist">false</key>
+        <key id="crossref_enabled">yes</key>
+        <key id="preferred_link">false</key>
+      </keys>
+      <resolution_url>https://umich.alma.exlibrisgroup.com/view/action/uresolver.do?operation=resolveService&amp;package_service_id=80396425340006381&amp;institutionId=6381&amp;customerId=6380</resolution_url>
+    </context_service>
+  </context_services>
+  <performance_counters>
+    <performance_counter name="TOTAL" duration="0.0"/>
+    <performance_counter name="MMS_LOOKUP" duration="0.028"/>
+    <performance_counter name="ENRICH" duration="0.0"/>
+    <performance_counter name="PARSE" duration="0.0"/>
+    <performance_counter name="GET_SERVICES" duration="0.006"/>
+    <performance_counter name="FILTER" duration="0.004"/>
+    <performance_counter name="SAVE" duration="0.005"/>
+    <performance_counter name="GET_ZERO_TITLE_SERVICES" duration="0.0"/>
+    <performance_counter name="FETCH_SERVICE_THRESHOLD_RULES" duration="0.0"/>
+    <performance_counter name="CREATE_ZERO_TITLE_SERVICES" duration="0.0"/>
+    <performance_counter name="SAVE_ZERO_TITLE_SERVICES" duration="0.0"/>
+    <performance_counter name="GET_SINGLE_SERVICE" duration="0.0"/>
+    <performance_counter name="EXECUTE_TARGET_PARSER" duration="0.0"/>
+    <performance_counter name="GET_URESOLVER_CONTENT" duration="0.0"/>
+    <performance_counter name="UPDATE_SELECTED" duration="0.0"/>
+    <performance_counter name="AF_GROUPS_ENRICHMENT" duration="0.0"/>
+  </performance_counters>
+</uresolver_content>
