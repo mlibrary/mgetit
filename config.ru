@@ -7,5 +7,5 @@ require_relative "lib/mgetit"
 require "rack/contrib/try_static"
 
 use Rack::TryStatic, root: "public", urls: %w[/], try: %w[index.html]
-
+use LinkResolver::PreprocessQueryString
 run MGetIt

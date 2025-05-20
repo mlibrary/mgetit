@@ -34,5 +34,6 @@ RUN bundle install
 
 COPY --chown=${UID}:${GID} . .
 RUN mkdir -p ${APP_HOME}/tmp/pids/
+RUN bundle exec rake assets:precompile
 
-CMD bundle exec rackup
+CMD bundle exec puma -C config/puma.rb

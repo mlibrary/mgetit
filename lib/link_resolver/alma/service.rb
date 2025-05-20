@@ -20,10 +20,18 @@ module LinkResolver
       end
 
       def handle(request)
+        return if preempted?(request)
         options = client.handle(request)
         options.enhance_metadata(request)
         status = options.add_service(request, self)
         request.dispatched(self, status)
+      end
+
+      def preempted?(request)
+        request.service_responses.any? do |response|
+          LinkResolver::Primo::Service === response[:service] &&
+            response[:service_type_value] == "fulltext"
+        end
       end
     end
   end
