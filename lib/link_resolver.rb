@@ -4,6 +4,7 @@ require "titlecase"
 require_relative "link_resolver/preprocess_query_string"
 require_relative "link_resolver/proxy"
 
+require_relative "link_resolver/lib_key"
 require_relative "link_resolver/alma"
 require_relative "link_resolver/catalog"
 require_relative "link_resolver/primo"

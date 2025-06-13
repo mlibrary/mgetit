@@ -30,6 +30,7 @@ class MGetIt < Sinatra::Base
     def link_resolvers
       @link_resolvers ||= [
         LinkResolver::GoogleBookSearch.new,
+        LinkResolver::LibKey::Service.new,
         LinkResolver::Primo::Service.new,
         LinkResolver::Alma::Service.new,
         LinkResolver::Catalog::Service.new
