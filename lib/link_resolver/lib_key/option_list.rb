@@ -5,7 +5,7 @@ module LinkResolver
         return new unless data
         new(
           metadata: Metadata.for_json(data["data"]),
-          options: [Option.for_json(data.dig("data", "bestIntegratorLink"))]
+          options: [Option.for_json(data.dig("data", "bestIntegratorLink").merge("openAccess" => data.dig("data","openAccess")))]
         )
       end
 

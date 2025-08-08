@@ -1,4 +1,4 @@
-FROM ruby:3.3
+FROM ruby:3.3 AS base
 
 #Set up variables for creating a user to run the app in the container
 ARG UNAME=app
@@ -27,6 +27,11 @@ RUN mkdir -p ${BUNDLE_PATH} ${APP_HOME} && chown ${UID}:${GID} ${BUNDLE_PATH} ${
 WORKDIR $APP_HOME
 
 USER $UNAME
+CMD bundle exec puma -C config/puma.rb
+
+FROM base AS development
+
+FROM base AS production
 
 COPY --chown=${UID}:${GID} Gemfile Gemfile.lock ${APP_HOME}/
 COPY --chown=${UID}:${GID} gems/ ${APP_HOME}/gems/
@@ -35,5 +40,3 @@ RUN bundle install
 COPY --chown=${UID}:${GID} . .
 RUN mkdir -p ${APP_HOME}/tmp/pids/
 RUN bundle exec rake assets:precompile
-
-CMD bundle exec puma -C config/puma.rb

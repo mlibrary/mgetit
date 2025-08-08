@@ -1,8 +1,7 @@
-      <% default_label = t("umlaut.call_to_action.default") %>
       <li>
         <div class="fulltext-wrapper">
           <div class="fulltext-links">
-            <% label = t("umlaut.call_to_action.#{fulltext_link.service_data[:format]}.#{fulltext_link.service_data[:genre]}.#{fulltext_link.service_data[:best]}", default: default_label) + "<small>(opens in new tab)</small>" %>
+            <% label =  fulltext_link.display_text + "<small>(opens in new tab)</small>" %>
             <%= link_to(href: "/link_router/index/#{fulltext_link.id}", target: "_blank", rel: "noopener noreferrer", class: "button fulltext-link") { label } %>
           </div>
           <div class="fulltext-source-and-date">

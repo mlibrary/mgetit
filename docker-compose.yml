@@ -11,15 +11,18 @@ services:
     expose:
     - '3306'
     volumes:
-    - mysql-web:/var/run/mysqld
+    - mysql-web:/var/lib/mysql
     logging:
       driver: none
     ports:
     - "33061:3306"
+
   web:
     stdin_open: true
     tty: true
-    build: .
+    build:
+      context: .
+      target: development
     #command: bundle exec rackup -p 3000 -o 0.0.0.0 -s puma
     command: bundle exec puma -C config/puma.rb
     environment:
@@ -29,7 +32,6 @@ services:
       DATABASE_URL: "mysql2://mgetit:mgetit@mysql-web/mgetit"
       MYSQL_PORT: 3306
       MYSQL_HOST: mysql-web
-      RAILS_ENV: production
       BUNDLE_PATH: /bundle
       PUMA_BIND: 0.0.0.0
       PUMA_PORT: 3000
