@@ -87,7 +87,7 @@ class Referent < ActiveRecord::Base
     issn_ids.each do |issn_id|
       # Long as we're at it, add an rft.issn if one's not there.
       issn_data = issn_id.slice((9..issn_id.length)) # actual ISSN without identifier prefix
-      co.referent.set_metadata(issn, issn_data) if co.referent.get_metadata("issn").blank? && !issn_data.blank?
+      co.referent.set_metadata("issn", issn_data) if co.referent.get_metadata("issn").blank? && !issn_data.blank?
 
       # And remove it as an identifier unless we know this is journal-level
       # cite.

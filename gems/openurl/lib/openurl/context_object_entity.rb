@@ -240,7 +240,7 @@ module OpenURL
     # into info URIs.
     def self.normalize_id(value)
       value =~ /^(\w+)(:|\/)(.*)/
-      prefix = $1.downcase
+      prefix = $1&.downcase
       remainder = $3
       # info ones
       if ["doi", "pmid", "oclcnum", "sici", "lccn", "sid"].include?(prefix)

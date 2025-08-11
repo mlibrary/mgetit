@@ -13,6 +13,10 @@ module LinkResolver
       def enhance_metadata(request)
       end
 
+      def empty?
+        true
+      end
+
       def add_service(request, service)
         request.add_service_response(
           service: service,

@@ -11,15 +11,18 @@ services:
     expose:
     - '3306'
     volumes:
-    - mysql-web:/var/run/mysqld
+    - mysql-web:/var/lib/mysql
     logging:
       driver: none
     ports:
     - "33061:3306"
+
   web:
     stdin_open: true
     tty: true
-    build: .
+    build:
+      context: .
+      target: development
     #command: bundle exec rackup -p 3000 -o 0.0.0.0 -s puma
     command: bundle exec puma -C config/puma.rb
     environment:
@@ -29,7 +32,6 @@ services:
       DATABASE_URL: "mysql2://mgetit:mgetit@mysql-web/mgetit"
       MYSQL_PORT: 3306
       MYSQL_HOST: mysql-web
-      RAILS_ENV: production
       BUNDLE_PATH: /bundle
       PUMA_BIND: 0.0.0.0
       PUMA_PORT: 3000
@@ -38,6 +40,9 @@ services:
       RAILS_SERVE_STATIC_FILES: 'true'
       RAILS_SECRET_TOKEN: 4800e25f9231adc2b5427084b8154cb417bb2be3c10bdd92c46c2d08fd246cc17daec41ca3fea75d635c2d08d4c3a3885b00a943db1a89a328e242ae12a960b7
       RAILS_SECRET_KEY_BASE: afdd1b894ee0f1efc5e628609f5484c639439eff86401b5c64adbabfd2f44a5a6ea1efc68be5fed305214d50e2a34ac0074aab41ca0d0e0986084620272281de
+      RACK_SESSION_SECRET: 917623d30a79e5ff596ad4964642cdb0e071f830af89b4d788cd0ca37782b0ba
+    env_file:
+    - .env
     volumes:
     - .:/home/app
     - bundle:/bundle

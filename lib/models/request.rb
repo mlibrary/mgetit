@@ -74,7 +74,7 @@ class Request < ActiveRecord::Base
       # Here we do require same session, since we don't have an explicit
       # request_id given.
       req = Request.where(
-        session_id: a_rails_request.session[:session_id],
+        session_id: a_rails_request.session[:session_id].to_s,
         contextobj_fingerprint: param_fingerprint,
         client_ip_addr: client_ip
       )

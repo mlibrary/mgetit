@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
+gem "logger"
 gem "rack-contrib"
-gem "sinatra", "~> 3.0", require: "sinatra/base"
+gem "sinatra", require: "sinatra/base"
 gem "sinatra-activerecord"
 gem "mysql2"
 gem "rake"
@@ -10,6 +11,7 @@ gem "openurl", path: "gems/openurl", require: "openurl"
 gem "sass"
 gem "sassc"
 gem "httparty"
+gem "faraday"
 gem "nokogiri"
 gem "erubi"
 gem "activesupport", "~> 6.1.7.8"
@@ -20,9 +22,10 @@ gem "pry", group: [:development, :test]
 gem "pry-byebug", group: [:development, :test]
 gem "rspec", group: [:development, :test]
 gem "rack-test", group: [:development, :test]
+gem "simplecov", group: [:development, :test]
+gem "webmock", group: [:development, :test]
 
 gem "ostruct"
-gem "logger"
 gem "mutex_m"
 gem "bigdecimal"
 gem "fiddle"
