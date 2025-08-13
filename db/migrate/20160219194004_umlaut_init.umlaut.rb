@@ -1,7 +1,7 @@
 # This migration comes from umlaut (originally 1)
 class UmlautInit < ActiveRecord::Migration[4.2]
   def change
-    create_table "clickthroughs" do |t|
+    create_table "clickthroughs", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.integer "request_id", default: 0, null: false
       t.integer "service_response_id", default: 0, null: false
       t.datetime "created_at", null: false
@@ -11,7 +11,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
     add_index "clickthroughs", ["request_id"], name: "click_req_id"
     add_index "clickthroughs", ["service_response_id"], name: "click_serv_resp_idx"
 
-    create_table "dispatched_services" do |t|
+    create_table "dispatched_services", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.integer "request_id", default: 0, null: false
       t.string "service_id", default: "0", null: false
       t.datetime "updated_at", null: false
@@ -22,7 +22,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
 
     add_index "dispatched_services", ["request_id", "service_id"], name: "dptch_request_id"
 
-    create_table "permalinks" do |t|
+    create_table "permalinks", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.integer "referent_id", default: 0
       t.date "created_on", null: false
       t.text "context_obj_serialized"
@@ -32,7 +32,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
 
     add_index "permalinks", ["referent_id"], name: "plink_referent_idx"
 
-    create_table "referent_values" do |t|
+    create_table "referent_values", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.integer "referent_id", default: 0, null: false
       t.string "key_name", limit: 50, default: "", null: false
       t.text "value"
@@ -45,7 +45,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
     add_index "referent_values", ["key_name", "normalized_value"], name: "by_name_and_normal_val"
     add_index "referent_values", ["referent_id", "key_name", "normalized_value"], name: "rft_val_referent_idx"
 
-    create_table "referents" do |t|
+    create_table "referents", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.string "atitle"
       t.string "title"
       t.string "issn", limit: 10
@@ -62,7 +62,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
     add_index "referents", ["volume"], name: "index_referents_on_volume"
     add_index "referents", ["year", "volume"], name: "by_year"
 
-    create_table "requests" do |t|
+    create_table "requests", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.string "session_id", limit: 100, default: "", null: false
       t.integer "referent_id", default: 0, null: false
       t.string "referrer_id"
@@ -79,7 +79,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
     add_index "requests", ["referent_id", "referrer_id"], name: "context_object_idx"
     add_index "requests", ["session_id"], name: "req_sess_idx"
 
-    create_table "service_responses" do |t|
+    create_table "service_responses", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.string "service_id", limit: 25, null: false
       t.string "response_key", default: ""
       t.string "value_string"
@@ -96,7 +96,7 @@ class UmlautInit < ActiveRecord::Migration[4.2]
 
     add_index "service_responses", ["service_id", "response_key", "value_string", "value_alt_string"], name: "svc_resp_service_id"
 
-    create_table "sfx_urls" do |t|
+    create_table "sfx_urls", charset: "utf8mb3", collation: "utf8mb3_unicode_ci" do |t|
       t.string "url"
     end
 

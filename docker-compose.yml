@@ -1,8 +1,7 @@
 version: "3.7"
 services:
   mysql-web:
-    image: "mysql:5.7"
-    restart: always
+    image: mariadb:11.5
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: mgetit
