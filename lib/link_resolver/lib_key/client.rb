@@ -26,15 +26,15 @@ module LinkResolver
 
       def fetch_pmid(id)
         return nil unless id
-        response = fetch("pmid", id[10..id.length])
-        return nil unless response&.body
-        return nil if response.body.empty?
-        JSON.parse(response.body)
+        process_response(fetch("pmid", id[10..id.length]))
       end
 
       def fetch_doi(id)
         return nil unless id
-        response = fetch("doi", id[9..id.length])
+        process_response(fetch("doi", id[9..id.length]))
+      end
+
+      def process_response(response)
         return nil unless response&.body
         return nil if response.body.empty?
         JSON.parse(response.body)

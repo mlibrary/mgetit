@@ -9,7 +9,7 @@ module LinkResolver
         )
       end
 
-      attr_reader :url, :open_access
+      attr_reader :url, :open_access, :type
 
       def initialize(type: "unknown", url: "", open_access: false)
         @type = type
@@ -18,6 +18,7 @@ module LinkResolver
       end
 
       def add_fulltext(request, base)
+        return unless type == "fullTextFile"
         request.add_service_response(base.merge(
           display_text: "View PDF",
           package_name: "Direct PDF Link",
