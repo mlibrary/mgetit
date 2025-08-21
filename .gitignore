@@ -20,3 +20,6 @@
 *.swp
 /coverage
 /.sass-cache
+
+# Make sure we don't add/commit local environment defintions
+/.env
