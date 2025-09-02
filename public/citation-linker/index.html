@@ -70,7 +70,7 @@
     <div class="page-container">
 
       <fieldset>
-        <label>What format is this item?</label>
+        <legend>What format is this item?</legend>
         <label class="button button-light">
           <input type="radio" name="format" checked id="tab1" />
           Journal Article
@@ -87,11 +87,13 @@
         </p>
 
         <fieldset>
+          <legend class="hidden">Article Title Info</legend>
           <label for="article-title">Article Title</label>
           <input id="article-title" name="article-title" data-openurlkey="rft.atitle" type="text" />
         </fieldset>
 
         <fieldset>
+          <legend class="hidden">Journal Title Info</legend>
           <label for="journal-title">Journal Title</label>
           <input id="journal-title" name="journal-title" data-openurlkey="rft.title" type="text" />
         </fieldset>
@@ -188,17 +190,19 @@
         </p>
 
         <fieldset>
+          <legend class="hidden">Chapter Title Info</legend>
           <label for="book-chapter">Chapter Title</label>
           <input id="book-chapter" name="book-chapter" data-openurlkey="rft.atitle" type="text" />
         </fieldset>
 
         <fieldset>
+          <legend class="hidden">Book Title Info</legend>
           <label for="book-book">Book Title</label>
           <input id="book-book" name="book-book" data-openurlkey="rft.btitle" type="text" />
         </fieldset>
 
         <fieldset>
-          <label class="fieldset-label">Citation Info</label>
+          <legend class="fieldset-label">Citation Info</legend>
 
           <div class="row">
             <div class="col-xs-12 col-sm-4">
