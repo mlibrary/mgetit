@@ -88,12 +88,12 @@
 
         <fieldset>
           <label for="article-title">Article Title</label>
-          <input id="article-title" data-openurlkey="rft.atitle" type="text" />
+          <input id="article-title" name="article-title" data-openurlkey="rft.atitle" type="text" />
         </fieldset>
 
         <fieldset>
           <label for="journal-title">Journal Title</label>
-          <input id="journal-title" data-openurlkey="rft.title" type="text" />
+          <input id="journal-title" name="journal-title" data-openurlkey="rft.title" type="text" />
         </fieldset>
 
         <fieldset>
@@ -102,25 +102,25 @@
           <div class="row">
             <div class="col-xs-6 col-sm-4">
               <label for="citation-info-volume">Volume</label>
-              <input id="citation-info-volume" data-openurlkey="rft.volume" type="text" />
+              <input id="citation-info-volume" name="citation-info-volume" data-openurlkey="rft.volume" type="text" />
             </div>
 
             <div class="col-xs-6 col-sm-4">
               <label for="citation-info-issue">Issue</label>
-              <input id="citation-info-issue" data-openurlkey="rft.issue" type="text" />
+              <input id="citation-info-issue" name="citation-info-issue" data-openurlkey="rft.issue" type="text" />
             </div>
 
             <div class="col-xs-6 col-sm-4">
               <label for="citation-info-start-page">Start Page</label>
-              <input id="citation-info-start-page" data-openurlkey="rft.spage" type="text" />
+              <input id="citation-info-start-page" name="citation-info-start-page" data-openurlkey="rft.spage" type="text" />
             </div>
           </div>
         </fieldset>
 
         <fieldset>
           <legend class="fieldset-label">Publication Date</legend>
-          <label for="citation-info-issue">Please enter in YYYY-MM-DD format.</label>
-          <input id="date-date" data-openurlkey="rft.date" type="text" />
+          <label for="date-date">Please enter in YYYY-MM-DD format.</label>
+          <input id="date-date" name="date-date" data-openurlkey="rft.date" type="text" />
         </fieldset>
 
         <fieldset>
@@ -128,25 +128,25 @@
 
           <div class="row">
             <div class="col-xs-6">
-              <label for="author-surname">Surname</label>
-              <input id="author-surname" data-openurlkey="rft.aulast" type="text" />
+              <label for="journal-author-surname">Surname</label>
+              <input id="journal-author-surname" name="journal-author-surname" data-openurlkey="rft.aulast" type="text" />
             </div>
 
             <div class="col-xs-6">
-              <label for="author-first">First</label>
-              <input id="author-first" data-openurlkey="rft.aufirst" type="text" />
+              <label for="journal-author-first">First</label>
+              <input id="journal-author-first" name="journal-author-first" data-openurlkey="rft.aufirst" type="text" />
             </div>
           </div>
 
           <div class="row spacing-top-1">
             <div class="col-xs-6">
-              <label for="author-full">Full</label>
-              <input id="author-full" data-openurlkey="rft.au" type="text" />
+              <label for="journal-author-full">Full</label>
+              <input id="journal-author-full" name="journal-author-full" data-openurlkey="rft.au" type="text" />
             </div>
 
             <div class="col-xs-6">
-              <label for="author-corp">Corporate</label>
-              <input id="author-corp" data-openurlkey="rft.aucorp" type="text" />
+              <label for="journal-author-corp">Corporate</label>
+              <input id="journal-author-corp" name="journal-author-corp" data-openurlkey="rft.aucorp" type="text" />
             </div>
           </div>
         </fieldset>
@@ -157,23 +157,29 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <label for="issn">ISSN</label>
-              <input id="issn" data-openurlkey="rft.issn" type="text" />
+              <input id="issn" name="issn" data-openurlkey="rft.issn" type="text" />
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <label for="doi">DOI</label>
-              <input id="doi" data-openurlkey="doi" type="text" />
+              <input id="doi" name="doi" data-openurlkey="doi" type="text" />
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <label for="pmid">PMID</label>
-              <input id="pmid" data-openurlkey="pmid" type="text" />
+              <input id="pmid" name="pmid" data-openurlkey="pmid" type="text" />
             </div>
           </div>
         </fieldset>
 
-        <input type="submit" value="Find It" class="button js-submit-form" />
-        <input type="submit" value="Clear" class="button button-light js-clear-form" />
+        <button type="submit" class="button js-submit-form">
+          Find It
+          <span class="hidden">Journal Article</span>
+        </button>
+        <button type="submit" class="button button-light js-clear-form">
+          Clear
+          <span class="hidden">Journal Article</span>
+        </button>
       </form>
 
       <form action="" method="post" id="book_form" class="hidden js-form">
@@ -183,12 +189,12 @@
 
         <fieldset>
           <label for="book-chapter">Chapter Title</label>
-          <input id="book-chapter" data-openurlkey="rft.atitle" type="text" />
+          <input id="book-chapter" name="book-chapter" data-openurlkey="rft.atitle" type="text" />
         </fieldset>
 
         <fieldset>
           <label for="book-book">Book Title</label>
-          <input id="book-book" data-openurlkey="rft.btitle" type="text" />
+          <input id="book-book" name="book-book" data-openurlkey="rft.btitle" type="text" />
         </fieldset>
 
         <fieldset>
@@ -196,18 +202,18 @@
 
           <div class="row">
             <div class="col-xs-12 col-sm-4">
-              <label for="citation-info-volume">Publisher</label>
-              <input id="page-publisher" data-openurlkey="rft.pub" type="text" />
+              <label for="page-publisher">Publisher</label>
+              <input id="page-publisher" name="page-publisher" data-openurlkey="rft.pub" type="text" />
             </div>
 
             <div class="col-xs-6 col-sm-4">
-              <label for="citation-info-issue">Start Page</label>
-              <input id="book-page" data-openurlkey="rft.spage" type="text" />
+              <label for="book-page">Start Page</label>
+              <input id="book-page" name="book-page" data-openurlkey="rft.spage" type="text" />
             </div>
 
             <div class="col-xs-4">
-              <label for="citation-info-start-page">Place of Publication</label>
-              <input id="book-place" data-openurlkey="rft.place" type="text" />
+              <label for="book-place">Place of Publication</label>
+              <input id="book-place" name="book-place" data-openurlkey="rft.place" type="text" />
             </div>
           </div>
         </fieldset>
@@ -215,7 +221,7 @@
         <fieldset>
           <legend class="fieldset-label">Publication Date</legend>
           <label for="book_date">Please enter in YYYY-MM-DD format.</label>
-          <input id="book_date" data-openurlkey="rft.date" type="text" />
+          <input id="book_date" name="book_date" data-openurlkey="rft.date" type="text" />
         </fieldset>
 
         <fieldset>
@@ -223,25 +229,25 @@
 
           <div class="row">
             <div class="col-xs-6">
-              <label for="author-surname">Surname</label>
-              <input id="author-surname" data-openurlkey="rft.aulast" type="text" />
+              <label for="book-author-surname">Surname</label>
+              <input id="book-author-surname" name="book-author-surname" data-openurlkey="rft.aulast" type="text" />
             </div>
 
             <div class="col-xs-6">
-              <label for="author-first">First</label>
-              <input id="author-first" data-openurlkey="rft.aufirst" type="text" />
+              <label for="book-author-first">First</label>
+              <input id="book-author-first" name="book-author-first" data-openurlkey="rft.aufirst" type="text" />
             </div>
           </div>
 
           <div class="row spacing-top-1">
             <div class="col-xs-6">
-              <label for="author-full">Full</label>
-              <input id="author-full" data-openurlkey="rft.au" type="text" />
+              <label for="book-author-full">Full</label>
+              <input id="book-author-full" name="book-author-full" data-openurlkey="rft.au" type="text" />
             </div>
 
             <div class="col-xs-6">
-              <label for="author-corp">Corporate</label>
-              <input id="author-corp" data-openurlkey="rft.aucorp" type="text" />
+              <label for="book-author-corp">Corporate</label>
+              <input id="book-author-corp" name="book-author-corp" data-openurlkey="rft.aucorp" type="text" />
             </div>
           </div>
         </fieldset>
@@ -252,18 +258,24 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <label for="volume">ISBN</label>
-              <input id="volume" data-openurlkey="rft.isbn" type="text" />
+              <input id="volume" name="volume" data-openurlkey="rft.isbn" type="text" />
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <label for="email">DOI</label>
-              <input id="email" data-openurlkey="doi" type="text" />
+              <input id="email" name="email" data-openurlkey="doi" type="text" />
             </div>
           </div>
         </fieldset>
 
-        <input type="submit" value="Find It" class="button js-submit-form" />
-        <input type="submit" value="Clear" class="button button-light js-clear-form" />
+        <button type="submit" class="button js-submit-form">
+          Find It
+          <span class="hidden">Book Chapter</span>
+        </button>
+        <button type="submit" class="button button-light js-clear-form">
+          Clear
+          <span class="hidden">Book Chapter</span>
+        </button>
       </form>
 
     </div>
