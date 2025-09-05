@@ -7,7 +7,7 @@ on:
     paths-ignore:
       - "README.md"
 
- jobs:
+jobs:
   build-unstable:
     name: Build unstable ${{ github.sha }}
     uses: mlibrary/platform-engineering-workflows/.github/workflows/build-unstable.yml@v1
