@@ -10,6 +10,14 @@ multi-ecosystem-groups:
     commit-message:
       prefix: "Monthly dependency updates: "
 
+  container-updates:
+    schedule:
+      interval: "cron"
+      cronjob: "0 6 3 4 *" #April 3 at 6AM
+      timezone: "America/Detroit"
+    commit-message:
+      prefix: "Annual container update: "
+
 updates:
   # For GitHub Actions updates
   - package-ecosystem: "github-actions"
@@ -26,11 +34,11 @@ updates:
   # For Docker
   - package-ecosystem: "docker"
     directory: "/"
-    multi-ecosystem-group: "app-dependencies"
+    multi-ecosystem-group: "container-updates"
     patterns: ["*"]
 
   # For Docker Compose
   - package-ecosystem: "docker-compose"
     directory: "/"
-    multi-ecosystem-group: "app-dependencies"
+    multi-ecosystem-group: "container-updates"
     patterns: ["*"]
