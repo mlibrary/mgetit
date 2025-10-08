@@ -4,28 +4,27 @@ FROM ruby:3.4 AS base
 ARG UNAME=app
 ARG UID=1000
 ARG GID=1000
+ARG APP_HOME=/home/${UNAME}
+ARG BUNDLE_PATH=/bundle
 
-#Create the group for the user
-RUN groupadd -g ${GID} -o ${UNAME}
-
-#Create the User and assign /app as its home directory
-RUN useradd -m -d /app -u ${UID} -g ${GID} -o -s /bin/bash ${UNAME}
-
-RUN apt update && \
-  apt install -y curl default-libmysqlclient-dev && \
-  apt clean && \
-  rm -rf /var/lib/apt/lists/*
-
-
-ENV BUNDLE_PATH /bundle
 ENV RAILS_LOG_TO_STDOUT 1
 ENV RAILS_SERVE_STATIC_FILES 1
-ENV APP_HOME /home/app
+ENV APP_HOME ${APP_HOME}
+ENV BUNDLE_PATH ${BUNDLE_PATH}
 
+#Create the group for the user
+#Create the User and assign ${APP_HOME} as its home directory
+RUN mkdir -p ${APP_HOME} ${BUNDLE_PATH} \
+ && groupadd -g ${GID} -o ${UNAME} \
+ && useradd -m -d ${APP_HOME} -u ${UID} -g ${GID} -o -s /bin/bash ${UNAME} \
+ && chown ${UID}:${GID} ${BUNDLE_PATH} ${APP_HOME}
 
-RUN mkdir -p ${BUNDLE_PATH} ${APP_HOME} && chown ${UID}:${GID} ${BUNDLE_PATH} ${APP_HOME}
-WORKDIR $APP_HOME
+RUN apt update \
+ && apt install -y curl default-libmysqlclient-dev \
+ && apt clean \
+ && rm -rf /var/lib/apt/lists/*
 
+WORKDIR ${APP_HOME}
 USER $UNAME
 CMD bundle exec puma -C config/puma.rb
 
