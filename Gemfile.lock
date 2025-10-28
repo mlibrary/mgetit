@@ -5,6 +5,13 @@ PATH
       marc
       scrub_rb (~> 1.0)
 
+PATH
+  remote: gems/rack-reverse-proxy
+  specs:
+    rack-reverse-proxy (1.0.0.pre.unreleased)
+      rack (>= 1.0.0)
+      rack-proxy (~> 0.6, >= 0.6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -108,6 +115,8 @@ GEM
       base64 (>= 0.1.0)
       logger (>= 1.6.0)
       rack (>= 3.0.0, < 4)
+    rack-proxy (0.7.7)
+      rack
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -225,6 +234,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rack-contrib
+  rack-reverse-proxy!
   rack-test
   rake
   rspec

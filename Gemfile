@@ -29,3 +29,7 @@ gem "ostruct"
 gem "mutex_m"
 gem "bigdecimal"
 gem "fiddle"
+
+gem "rack-reverse-proxy",
+  path: "gems/rack-reverse-proxy",
+  require: "rack/reverse_proxy"
