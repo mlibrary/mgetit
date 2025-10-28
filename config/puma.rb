@@ -9,14 +9,14 @@ bind "tcp://#{ip}:#{port}"
 
 pidfile ENV["PUMA_PIDFILE"]
 
-on_restart do
+#before_restart do
   # Code to run before doing a restart. This code should
   # close log files, database connections, etc.
-end
+#end
 
 workers 0
 worker_timeout 120
-on_worker_boot do
+before_worker_boot do
   # Code to run when a worker boots to setup the process before booting
   ActiveSupport.on_load(:active_record) do
     ActiveRecord::Base.establish_connection
