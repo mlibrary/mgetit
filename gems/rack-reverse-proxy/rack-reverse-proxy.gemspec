@@ -64,6 +64,6 @@ eos
   spec.add_dependency "rack-proxy", "~> 0.6", ">= 0.6.1"
 
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.3"
+  spec.add_development_dependency "rake", "~> 13.3"
 end
 # rubocop:enable
