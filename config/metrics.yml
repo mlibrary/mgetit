@@ -1,0 +1,64 @@
+---
+data_store:
+  class: "Prometheus::Client::DataStores::DirectFileStore"
+  dir: <%= ENV.fetch("PROMETHEUS_MONITORING_DIR", "/tmp/mgetit/metrics") %>
+
+subscriptions: "config/subscriptions.rb"
+
+puma:
+  control_app_url: <%= ENV.fetch("PUMA_CONTROL_APP", "unix:///tmp/mgetit.sock") %>
+  prometheus_exporter_url: <%= ENV.fetch("PROMETHEUS_EXPORTER_URL", "tcp://0.0.0.0:9439/metrics") %>
+
+logger:
+  file: <%= ENV.fetch("METRICS_LOG_FILE", false) %>
+  level: <%= ENV.fetch("METRICS_LOG_LEVEL", "info") %>
+
+metrics:
+- type: counter
+  name: http_server_requests_total
+  docstring: "The total number of HTTP requests handled by the Rack application."
+  labels:
+  - code
+  - method
+  - path
+
+- type: histogram
+  name: http_server_request_duration_seconds
+  docstring: "The HTTP response duration of the Rack application."
+  labels:
+  - method
+  - path
+  buckets: [0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, 15, 20, 30]
+
+- type: histogram
+  name: cookie_size_bytes
+  docstring: "The http request cookie sizes in bytes"
+  buckets: [500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 7500, 8000, 8200]
+
+- type: counter
+  name: cookie_purges_total
+  docstring: "The total number of cookie purges initiated by spectrum"
+
+- type: counter
+  name: exceptions_total
+  docstring: "The total number of exceptions caught by spectrum"
+  labels:
+  - source
+
+- type: gauge
+  name: open_file_descriptors_total
+  docstring: "The total number of open file descriptors"
+  labels:
+  - index
+
+- type: gauge
+  name: application_cpu_usage_usec
+  docstring: "The total number of cpu usec used by the cgroup"
+
+- type: histogram
+  name: api_response_duration_seconds
+  docstring: "The API response duration for requests made by Spectrum."
+  labels:
+  - source
+  - response_total_items_magnitude
+  buckets: [0.05, 0.1, 0.5, 1, 2.5, 5, 10, 15, 30, 60]
