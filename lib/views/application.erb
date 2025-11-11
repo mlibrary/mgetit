@@ -54,12 +54,21 @@
       ></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <div role="navigation" class="skip-links" aria-label="Skip links">
+      <div class="viewport-container">
+        <ul>
+          <li><a href="#maincontent">Skip to main content</a></li>
+          <li><a href="#footer">Skip to footer content</a></li>
+          <li><a href="#chat">Skip to Ask a Librarian chat</a></li>
+        </ul>
+      </div>
+    </div>
     <m-universal-header></m-universal-header>
     <%= erb :header, locals: {request: request} %>
 
     <div class="heading-container">
       <div class="container">
-        <h1 class="site-heading">MGet It</h1>
+        <h1 class="site-heading" id="maincontent" tabindex="-1">MGet It</h1>
         <p class="site-subheading">
           Your pathway to electronic resources
         </p>
@@ -71,6 +80,6 @@
     </div>
 
     <%= erb :footer, locals: {request: request} %>
-    <m-chat></m-chat>
+    <m-chat id="chat"></m-chat>
   </body>
 </html>

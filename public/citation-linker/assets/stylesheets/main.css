@@ -145,8 +145,7 @@ ul {
 
 li {
   padding-left: 1rem;
-  margin-top: 1rem;
-  font-family: "PT Serif", serif; }
+  margin-top: 1rem; }
 
 dl {
   margin-top: 1rem;
@@ -290,6 +289,38 @@ textarea {
   background: #FAFAFA;
   border-radius: 4px;
   cursor: pointer; }
+
+.skip-links {
+  background: var(--color-blue-400);
+  padding: var(--space-small);
+  margin: 0 auto;
+}
+
+.skip-links ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.skip-links ul li {
+  margin: var(--space-medium) 0;
+  text-align: center;
+}
+
+.skip-links a {
+  color: #fff;
+  padding: var(--space-x-small);
+}
+
+.skip-links:not(:focus-within) {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 
 .alert {
   margin: 2rem 0;

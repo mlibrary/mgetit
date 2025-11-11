@@ -55,12 +55,21 @@
       ></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+     <div role="navigation" class="skip-links" aria-label="Skip links">
+      <div class="viewport-container">
+        <ul>
+          <li><a href="#maincontent">Skip to main content</a></li>
+          <li><a href="#footer">Skip to footer content</a></li>
+          <li><a href="#chat">Skip to Ask a Librarian chat</a></li>
+        </ul>
+      </div>
+    </div>
     <m-universal-header></m-universal-header>
     <m-website-header variant="dark" name="MGet It"></m-website-header>
 
     <div class="callout spacing-top-bottom-2">
       <div class="page-container">
-        <h1 class="no-margin">Citation Linker</h1>
+        <h1 class="no-margin" id="maincontent" tabindex="-1">Citation Linker</h1>
         <p>
           Find a journal article or book by citation information. We'll send you off to MGet It when you're finished with the form.
         </p>
@@ -286,7 +295,7 @@
 
     <footer id="footer" class="footer"></footer>
 
-    <m-chat></m-chat>
+    <m-chat id="chat"></m-chat>
 
     <script src="https://unpkg.com/expect/umd/expect.min.js"></script> <!-- for development only -->
     <script src="assets/javascript/vendor/underscore.js"></script>
