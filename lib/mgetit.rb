@@ -69,7 +69,7 @@ class MGetIt < Sinatra::Base
 
   not_found do
     resolver_request = LinkResolver::Request.for_raw_request(request)
-    erb :application, locals: {request: resolver_request} do
+    erb :application, locals: {request: resolver_request, title: "404 - Page not found"} do
       "Page not found"
     end
   end
@@ -93,7 +93,7 @@ class MGetIt < Sinatra::Base
     else
       status 404
       resolver_request = LinkResolver::Request.for_raw_request(request)
-      erb :application, locals: {request: resolver_request} do
+      erb :application, locals: {request: resolver_request, title: "404 - Page not found"} do
         "Page not found"
       end
     end
@@ -111,7 +111,7 @@ class MGetIt < Sinatra::Base
     else
       status 404
       resolver_request = LinkResolver::Request.for_raw_request(request)
-      erb :application, locals: {request: resolver_request} do
+      erb :application, locals: {request: resolver_request, title: "404 - Page not found"} do
         "Page not found"
       end
     end
@@ -119,7 +119,7 @@ class MGetIt < Sinatra::Base
 
   error Exception do
     resolver_request = LinkResolver::Request.for_raw_request(request)
-    erb :application, locals: {request: resolver_request} do
+    erb :application, locals: {request: resolver_request, title: "500 - Internal server error"} do
       "Internal Server Error"
     end
   end
@@ -131,12 +131,12 @@ class MGetIt < Sinatra::Base
       resolver_request.context_object = user_request.referent.to_context_object
       resolver_request.service_responses = user_request.service_responses
       resolver_request.request_id = user_request.id
-      erb :application, locals: {request: resolver_request, user_request: user_request} do
+      erb :application, locals: {request: resolver_request, user_request: user_request, title: "Go"} do
         erb :resolve, locals: {request: resolver_request, user_request: user_request}
       end
     else
       status 404
-      erb :application, locals: {request: resolver_request} do
+      erb :application, locals: {request: resolver_request, title: "404 - Page not found"} do
         "Page not found"
       end
     end
@@ -168,7 +168,7 @@ class MGetIt < Sinatra::Base
     resolver_request.service_responses = user_request.service_responses
     resolver_request.request_id = user_request.id
 
-    erb :application, locals: {request: resolver_request, user_request: user_request} do
+    erb :application, locals: {request: resolver_request, user_request: user_request, title: "Resolve"} do
       erb :resolve, locals: {request: resolver_request, user_request: user_request}
     end
   end
