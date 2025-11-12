@@ -1,16 +1,18 @@
 <%# local implementers may over-ride this partial for custom local header.
     This partial is called by default umlaut layout.  %>
 <m-website-header variant="dark" name="MGet It">
-  <div class="permalink-container permalink-header">
-    <label for="permalink-header"><span class="hidden">Header </span>Permalink:</label>
-    <input
-      class="permalink"
-      name="permalink-header"
-      id="permalink-header"
-      type="text"
-      readonly
-      value="<%= request.permalink_url %>"
-      autocomplete="off"
-    />
-  </div>
+  <% if !request.nil? %>
+    <div class="permalink-container permalink-header">
+      <label for="permalink-header"><span class="hidden">Header </span>Permalink:</label>
+      <input
+        class="permalink"
+        name="permalink-header"
+        id="permalink-header"
+        type="text"
+        readonly
+        value="<%= request.permalink_url %>"
+        autocomplete="off"
+      />
+    </div>
+  <% end %>
 </m-website-header>
