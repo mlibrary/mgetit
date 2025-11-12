@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="assets/stylesheets/main.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,1,200&icon_names=accessible_forward,location_on" rel="stylesheet" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@umich-lib/web@latest/dist/umich-lib/umich-lib.esm.js"></script>
   </head>
   <body>
@@ -293,7 +294,35 @@
 
     </main>
 
-    <footer id="footer" class="footer"></footer>
+    <footer id="footer" class="footer">
+      <div class="viewport-container">
+        <div class="footer__content">
+          <section class="first-column">
+            <h2>University of Michigan Library</h2>
+            <ul>
+              <li>
+                <span class="material-symbols-rounded" aria-hidden="true">location_on</span>
+                <a href="https://lib.umich.edu/">
+                  <address>
+                    913 S. University Avenue
+                    Ann Arbor, MI 48109-1190
+                  </address>
+                </a>
+              </li>
+              <!-- <li>
+                <span class="material-symbols-rounded" aria-hidden="true">accessible_forward</span>
+                <a href="/mget-it-accessibility-statement">MGet It Accessibility Statement</a>
+              </li> -->
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="footer__disclaimer">
+        <div class="viewport-container">
+          <p>&copy; 2025, Regents of the University of Michigan</p>
+        </div>
+      </div>
+    </footer>
 
     <m-chat id="chat"></m-chat>
 
