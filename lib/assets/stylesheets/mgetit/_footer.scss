@@ -1,18 +1,119 @@
 .footer {
-  background: $main-1;
-  padding: 1rem 0;
+  background: var(--color-blue-400);
   margin-top: 2rem;
+}
 
-  p, a {
-    color: white;
-    margin: 0;
+.footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer ul li {
+  display: flex;
+  align-items: start;
+  gap: 0 0.5rem;
+}
+
+.footer ul li .material-symbols-rounded {
+  margin-top: 0.125rem;
+}
+
+.footer ul a {
+  display: inline-block;
+  padding: .25rem 0;
+  line-height: initial;
+}
+
+.footer ul a:hover {
+  text-decoration: underline;
+}
+
+.footer ul a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.footer ul a span:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a > svg {
+  margin-right: 0.5em;
+}
+
+.footer address {
+  max-width: 22ch;
+}
+
+.footer__content {
+  color: var(--color-blue-100);
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  gap: 3rem;
+}
+
+.footer__content .first-column ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+}
+
+.footer__content ul li a {
+  text-decoration: none;
+}
+
+.footer__content h2 {
+  color: var(--color-blue-200);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footer__policies {
+  border-left: solid 1px var(--color-blue-300);
+  padding-left: 2em;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer__policies {
+    border-left: none;
+    padding-left: 0;
   }
+}
 
-  a {
-    cursor: pointer;
+.footer__disclaimer {
+  background: var(--color-blue-500);
+  color: var(--color-blue-200);
+  padding: 1rem 0;
+}
+
+.footer__disclaimer a {
+  color: var(--color-blue-200);
+}
+
+.footer__disclaimer p {
+  margin: 0;
+}
+
+@media screen and (max-width:40rem) {
+  .footer__disclaimer p {
+    padding-top: 0.5rem;
   }
+ }
 
-  a:hover {
-    background: transparent;
+@media screen and (min-width: 820px) {
+  .footer__disclaimer p {
+    display: inline-block;
+  }
+  .footer__disclaimer p + p {
+    margin-left: 2rem;
   }
 }

@@ -39,9 +39,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@umich-lib/web@latest/umich-lib.css"/>
     <link href="/assets/stylesheets/mgetit.css" media="screen" rel="stylesheet" type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,1,200&icon_names=accessible_forward,location_on" rel="stylesheet" />
     <script src="/assets/javascripts/mgetit.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@umich-lib/web@latest/dist/umich-lib/umich-lib.esm.js"></script>
-    <title>MGet It</title>
+    <title><%= title %> | MGet It</title>
   </head>
   <body class="no-js">
     <!-- Google Tag Manager (noscript) -->
@@ -54,23 +55,32 @@
       ></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <div role="navigation" class="skip-links" aria-label="Skip links">
+      <div class="viewport-container">
+        <ul>
+          <li><a href="#maincontent">Skip to main content</a></li>
+          <li><a href="#footer">Skip to footer content</a></li>
+          <li><a href="#chat">Skip to Ask a Librarian chat</a></li>
+        </ul>
+      </div>
+    </div>
     <m-universal-header></m-universal-header>
     <%= erb :header, locals: {request: request} %>
 
     <div class="heading-container">
       <div class="container">
-        <h1 class="site-heading">MGet It</h1>
+        <h1 class="site-heading" id="maincontent" tabindex="-1">MGet It</h1>
         <p class="site-subheading">
           Your pathway to electronic resources
         </p>
       </div>
     </div>
 
-    <div class="container">
+    <main class="container">
       <%= yield %>
-    </div>
+    </main>
 
     <%= erb :footer, locals: {request: request} %>
-    <m-chat></m-chat>
+    <m-chat id="chat"></m-chat>
   </body>
 </html>
