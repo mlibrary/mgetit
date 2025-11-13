@@ -172,4 +172,11 @@ class MGetIt < Sinatra::Base
       erb :resolve, locals: {request: resolver_request, user_request: user_request}
     end
   end
+
+  get "/accessibility" do
+    callout = "The University of Michigan Library is dedicated to creating inclusive services and products for all users. See more about our approach to #{link_to("digital product accessibility", "https://www.lib.umich.edu/about-us/about-library/accessibility/digital-product-accessibility")}, as well as our overall #{link_to("accessibility services and practices", "https://lib.umich.edu/about-us/about-library/accessibility")} at the U-M Library."
+    erb :application, locals: {body_class: "static-page", request: nil, title: "MGet It Accessibility Statement", callout: callout} do
+      erb :accessibility
+    end
+  end
 end

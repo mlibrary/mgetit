@@ -2,20 +2,22 @@
     This partial is called by default umlaut layout.  %>
 
 <footer id="footer" class="footer">
-  <div class="container">
-    <div class="permalink-container permalink-footer">
-      <label for="permalink-footer"><span class="hidden">Footer </span>Permalink:</label>
-      <input
-        class="permalink"
-        name="permalink-footer"
-        id="permalink-footer"
-        type="text"
-        readonly
-        value="<%= request.permalink_url %>"
-        autocomplete="off"
-      />
+  <% if !request.nil? %>
+    <div class="container">
+      <div class="permalink-container permalink-footer">
+        <label for="permalink-footer"><span class="hidden">Footer </span>Permalink:</label>
+        <input
+          class="permalink"
+          name="permalink-footer"
+          id="permalink-footer"
+          type="text"
+          readonly
+          value="<%= request.permalink_url %>"
+          autocomplete="off"
+        />
+      </div>
     </div>
-  </div>
+  <% end %>
   <div class="viewport-container">
     <div class="footer__content">
       <section class="first-column">
@@ -30,10 +32,10 @@
               </address>
             </a>
           </li>
-          <%# <li>
+          <li>
             <span class="material-symbols-rounded" aria-hidden="true">accessible_forward</span>
-            <a href="/mget-it-accessibility-statement">MGet It Accessibility Statement</a>
-          </li> %>
+            <a href="/accessibility">MGet It Accessibility Statement</a>
+          </li>
         </ul>
       </section>
     </div>
