@@ -16,19 +16,26 @@ pidfile ENV["PUMA_PIDFILE"]
 
 workers ENV.fetch("PUMA_WORKERS", 0).to_i
 worker_timeout 120
-before_worker_boot do
-  # Code to run when a worker boots to setup the process before booting
-  ActiveSupport.on_load(:active_record) do
-    ActiveRecord::Base.establish_connection
-  end
-end
-
-before_fork do
-  ActiveRecord::Base.connection_pool.disconnect!
-end
 
 Bundler.require(:metrics)
 Metrics.load_config
 Metrics.configure_puma(self)
 
+require "active_support/lazy_load_hooks"
+if ENV.fetch("PUMA_WORKERS", 0).to_i > 0
+  before_worker_boot do
+    # Code to run when a worker boots to setup the process before booting
+    ActiveSupport.on_load(:active_record) do
+      ActiveRecord::Base.establish_connection
+    end
+  end
+
+  before_fork do
+    ActiveRecord::Base.connection_pool.disconnect!
+  end
+else
+  ActiveSupport.on_load(:active_record) do
+    ActiveRecord::Base.establish_connection
+  end
+end
 #preload_app!

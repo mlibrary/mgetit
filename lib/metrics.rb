@@ -3,6 +3,7 @@ require "erb"
 require "logger"
 require "prometheus/middleware/collector"
 require "active_support/notifications"
+require "benchmark"
 
 module Metrics
   module NoOpMetric
@@ -55,7 +56,7 @@ module Metrics
       puma.plugin :yabeda
       puma.plugin :yabeda_prometheus
       puma.prometheus_exporter_url(@prometheus_exporter_url)
-      puma.on_worker_boot do
+      puma.before_worker_boot do
         uri = URI(@prometheus_exporter_url)
         ObjectSpace.each_object(TCPServer).each do |server|
           next if server.closed?
@@ -72,7 +73,7 @@ module Metrics
             File.unlink(file_path)
           end
         end
-        puma.on_worker_shutdown do
+        puma.before_worker_shutdown do
           Dir[File.join(@data_store_dir, "*___#{$$}.bin")].each do |file_path|
             File.unlink(file_path)
           end

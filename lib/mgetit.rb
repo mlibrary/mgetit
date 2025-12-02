@@ -150,10 +150,22 @@ class MGetIt < Sinatra::Base
     if user_request.service_responses.empty?
       link_resolvers.each do |resolver|
         begin
-          resolver.handle(resolver_request)
+          resolver_duration = ::Benchmark.realtime do
+            resolver.handle(resolver_request)
+          end
+          ActiveSupport::Notifications.instrument(
+            "link_resolver.handle",
+            duration: resolver_duration,
+            resolver: resolver.class.name
+          )
         rescue Exception => e
           # If a resolver fails, continue
           logger.error { ([e.message] + e.backtrace).join($/) }
+          ActiveSupport::Notifications.instrument(
+            "link_resolver.handle_error",
+            resolver: resolver.class.name,
+            error: e
+          )
         end
       end
       resolver_request.service_responses.each do |response|

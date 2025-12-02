@@ -11,4 +11,14 @@ ActiveSupport::Notifications.subscribe("cookie_purge.spectrum_json") do |event|
   end
 end
 
+ActiveSupport::Notifications.subscribe("link_resolver.handle") do |event|
+  Metrics(:link_resolver_handle_duration_seconds) do |metric|
+    metric.observe(event.payload[:duration],  labels: {resolver: event.payload[:resolver]})
+  end
+end
 
+ActiveSupport::Notifications.subscribe("link_resolver.handle_error") do |event|
+  Metrics(:link_resolver_handle_error_total) do |metric|
+    metric.increment(labels: {resolver: event.payload[:resolver]})
+  end
+end

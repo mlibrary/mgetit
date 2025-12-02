@@ -62,3 +62,16 @@ metrics:
   - source
   - response_total_items_magnitude
   buckets: [0.05, 0.1, 0.5, 1, 2.5, 5, 10, 15, 30, 60]
+
+- type: histogram
+  name: link_resolver_handle_duration_seconds
+  docstring: "The duration of the link resolver's handle method in seconds."
+  labels:
+  - resolver
+  buckets: [0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, 15, 20, 30]
+
+- type: counter
+  name: link_resolver_handle_error_total
+  docstring: "The total number of errors encountered by the link resolver's handle method."
+  labels:
+  - resolver
