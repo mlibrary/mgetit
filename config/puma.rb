@@ -1,5 +1,5 @@
 environment "production"
-threads 1, 4
+threads ENV.fetch("PUMA_THREADS_MIN", 4).to_i, ENV.fetch("PUMA_THREADS_MAX", 32).to_i
 # Bind to the private network address
 # Use tcp as the http server (apache) is on a different host.
 
@@ -14,17 +14,28 @@ pidfile ENV["PUMA_PIDFILE"]
   # close log files, database connections, etc.
 #end
 
-workers 0
+workers ENV.fetch("PUMA_WORKERS", 0).to_i
 worker_timeout 120
-before_worker_boot do
-  # Code to run when a worker boots to setup the process before booting
+
+Bundler.require(:metrics)
+Metrics.load_config
+Metrics.configure_puma(self)
+
+require "active_support/lazy_load_hooks"
+if ENV.fetch("PUMA_WORKERS", 0).to_i > 0
+  before_worker_boot do
+    # Code to run when a worker boots to setup the process before booting
+    ActiveSupport.on_load(:active_record) do
+      ActiveRecord::Base.establish_connection
+    end
+  end
+
+  before_fork do
+    ActiveRecord::Base.connection_pool.disconnect!
+  end
+else
   ActiveSupport.on_load(:active_record) do
     ActiveRecord::Base.establish_connection
   end
 end
-
-before_fork do
-  ActiveRecord::Base.connection_pool.disconnect!
-end
-
-preload_app!
+#preload_app!

@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 
 gem "logger"
-gem "rack-contrib"
 gem "sinatra", require: "sinatra/base"
 gem "sinatra-activerecord"
+gem "rack-contrib"
+gem "rack-attack" # Rack attack needs to be after "sinatra-activerecord"
+gem "rack-timeout"
 gem "mysql2"
 gem "rake"
 gem "puma"
@@ -33,3 +35,9 @@ gem "fiddle"
 gem "rack-reverse-proxy",
   path: "gems/rack-reverse-proxy",
   require: "rack/reverse_proxy"
+
+group :metrics do
+  gem "yabeda-puma-plugin"
+  gem "yabeda-prometheus"
+  gem "prometheus-client", require: File.expand_path(File.join(["lib", "metrics"]), __dir__)
+end
