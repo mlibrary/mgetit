@@ -5,7 +5,7 @@ module LinkResolver
         new(data)
       end
 
-      def initialize(attributes = data)
+      def initialize(attributes = {})
         @attributes = attributes
       end
 
