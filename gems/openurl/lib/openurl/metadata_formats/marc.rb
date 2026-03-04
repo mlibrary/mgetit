@@ -34,7 +34,7 @@ module OpenURL
         rec = @marc.to_xml.root
         rec.add_namespace(label, @marc_ns)
         rec.name = "#{label}:#{rec.name}"
-        mrc_elem = metadata.add_element rec
+        metadata.add_element rec
       end
     end
 

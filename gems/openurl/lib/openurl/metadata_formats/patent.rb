@@ -47,7 +47,6 @@ module OpenURL
     end
 
     def remove_inventor(inventor)
-      idx = inventor
       idx = @inventors.index(inventor)
       raise ArgumentError unless idx
       @authors.delete_at(idx)

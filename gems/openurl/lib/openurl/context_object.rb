@@ -341,7 +341,7 @@ module OpenURL
           next
         elsif /^[a-z]{3}_ref/.match?(key)
           # determines if we have a by-reference context object
-          (entity, v, fmt) = key.split("_")
+          (entity, _, fmt) = key.split("_")
           ent = get_entity_obj(entity)
           unless ent
             foreign_keys[key] = val
@@ -366,7 +366,7 @@ module OpenURL
           end
         elsif /^[a-z]{3}_id$/.match?(key)
           # Get the entity identifier
-          (entity, v) = key.split("_")
+          (entity, _) = key.split("_")
           ent = get_entity_obj(entity)
           unless ent
             foreign_keys[key] = val
@@ -379,7 +379,7 @@ module OpenURL
 
         elsif /^[a-z]{3}_dat$/.match?(key)
           # Get any private data
-          (entity, v) = key.split("_")
+          (entity, _) = key.split("_")
           ent = get_entity_obj(entity)
           unless ent
             foreign_keys[key] = val
