@@ -22,14 +22,14 @@ module LinkResolver
       def handle(request)
         return if preempted?(request)
         retries = 3
-        begin
-          options = client.handle(request)
+        options = begin
+          client.handle(request)
         rescue Nokogiri::XML::XPath::SyntaxError => e
           retries -= 1
-          if retries <= 0
-            options = FailedOptionList.new(e)
-          else
+          if retries  > 0
             retry
+          else
+            FailedOptionList.new(e)
           end
         end
         options.enhance_metadata(request)
