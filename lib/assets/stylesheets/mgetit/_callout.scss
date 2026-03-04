@@ -1,0 +1,12 @@
+.callout {
+  background: #F2F9FF;
+  padding: 2rem 0;
+  & > .page-container {
+    & > *:first-child {
+      margin-top: 0;
+    }
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

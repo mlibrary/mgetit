@@ -8,7 +8,15 @@ html {
 
 body {
   background: $grey-7;
+  display: flex;
+  flex-direction: column;
   min-width: 20rem;
+  & > main {
+    flex: 1 0 auto;
+  }
+  &.static-page {
+    background: #fff;
+  }
 }
 
 .container {
