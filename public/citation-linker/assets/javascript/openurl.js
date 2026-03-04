@@ -57,7 +57,7 @@ var create_query_strings = function() {
   var generate = function(query_string_hash) {
 
     return _.reduce(query_string_hash, function(base, value) {
-      return base = base + create_query_string(value)
+      return base + create_query_string(value)
     }, '')
   }
 
