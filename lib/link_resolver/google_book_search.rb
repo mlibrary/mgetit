@@ -194,7 +194,7 @@ module LinkResolver
 
     def add_abstract(request, data)
       info = data["items"].first.try { |h| h["volumeInfo"] }
-      if description = info["description"]
+      if info["description"]
 
         url = info["infoLink"]
         request.add_service_response(
@@ -381,9 +381,7 @@ module LinkResolver
       # Shouldn't ever get to this point, but just in case
       return nil if info_views.blank?
 
-      url = ""
       iv = info_views.first
-      type = nil
       if viewability == ViewPartialValue &&
           url = iv["volumeInfo"]["previewLink"]
         url = fix_pg_gbs_link(url)

@@ -185,7 +185,6 @@ module MetadataHelper
     when :urn then "urn:#{sub_scheme}:"
     end
 
-    bare_identifier = nil
     identifiers = referent.identifiers.collect { |id| $1 if id =~ /^#{prefix}(.*)/ }.compact
 
     if identifiers.blank? && ["lccn", "oclcnum", "isbn", "issn", "doi", "pmid"].include?(sub_scheme)

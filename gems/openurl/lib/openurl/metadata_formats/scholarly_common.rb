@@ -57,7 +57,6 @@ module OpenURL
     end
 
     def remove_author(author)
-      idx = author
       idx = @authors.index(author)
       raise ArgumentError unless idx
       @authors.delete_at(idx)

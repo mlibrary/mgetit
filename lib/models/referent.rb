@@ -39,7 +39,7 @@ class Referent < ActiveRecord::Base
       # Permalinks created on-demand later. But if set config to :force, can
       # force old behavior.
       if options[:permalink] == :force
-        permalink = Permalink.new_with_values!(rft, co.referrer.identifier)
+        Permalink.new_with_values!(rft, co.referrer.identifier)
       end
 
       # Add shortcuts.
