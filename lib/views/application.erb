@@ -68,23 +68,23 @@
     <%= erb :header, locals: {request: request} %>
 
     <% if !defined?(callout) || callout.nil? %>
-      <div class="heading-container">
+      <section class="heading-container">
         <div class="container">
           <h1 class="site-heading" id="maincontent" tabindex="-1">MGet It</h1>
           <p class="site-subheading">
             Your pathway to electronic resources
           </p>
         </div>
-      </div>
+      </section>
     <% else %>
-      <div class="callout spacing-top-bottom-2">
+      <section class="callout spacing-top-bottom-2">
         <div class="page-container">
           <h1 class="no-margin" id="maincontent" tabindex="-1"><%= title %></h1>
           <p>
             <%= callout %>
           </p>
         </div>
-      </div>
+      </section>
     <% end %>
 
     <main class="container">
