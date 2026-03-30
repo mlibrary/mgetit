@@ -17,7 +17,7 @@ if (acme_challenge_hostname = ENV.fetch("PROXY_ACME_CHALLENGE", false))
   use Rack::ReverseProxy do
     reverse_proxy_options verify_mode: OpenSSL::SSL::VERIFY_NONE
     reverse_proxy %r{^/.well-known/acme-challenge/(.*)$},
-      "https://macc.kubernetes.lib.umich.edu/.well-known/acme-challenge/$1",
+      "https://#{ENV.fetch("KUBERNETES_INGRESS_IP", "macc.kubernetes.lib.umich.edu")}/.well-known/acme-challenge/$1",
        preserve_host: false
   end
 end
