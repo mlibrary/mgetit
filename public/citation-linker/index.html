@@ -68,14 +68,14 @@
     <m-universal-header></m-universal-header>
     <m-website-header variant="dark" name="MGet It"></m-website-header>
 
-    <div class="callout spacing-top-bottom-2">
+    <section class="callout spacing-top-bottom-2">
       <div class="page-container">
         <h1 class="no-margin" id="maincontent" tabindex="-1">Citation Linker</h1>
         <p>
           Find a journal article or book by citation information. We'll send you off to MGet It when you're finished with the form.
         </p>
       </div>
-    </div>
+    </section>
 
     <main class="page-container">
 
@@ -311,7 +311,7 @@
               </li>
               <li>
                 <span class="material-symbols-rounded" aria-hidden="true">accessible_forward</span>
-                <a href="/accessibility">MGet It Accessibility Statement</a>
+                <a href="/accessibility">MGet It Accessibility</a>
               </li>
             </ul>
           </section>
@@ -324,7 +324,9 @@
       </div>
     </footer>
 
-    <m-chat id="chat"></m-chat>
+    <aside aria-label="Ask a Librarian Chat">
+      <m-chat id="chat"></m-chat>
+    </aside>
 
     <script src="https://unpkg.com/expect/umd/expect.min.js"></script> <!-- for development only -->
     <script src="assets/javascript/vendor/underscore.js"></script>
