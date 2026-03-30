@@ -16,7 +16,7 @@ gem "httparty"
 gem "faraday"
 gem "nokogiri"
 gem "erubi"
-gem "activesupport", "~> 8.1.1"
+gem "activesupport", "~> 8.1.2"
 gem "titlecase"
 gem "multi_json"
 gem "standard", group: [:development, :test]
