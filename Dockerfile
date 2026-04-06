@@ -1,4 +1,4 @@
-FROM ruby:3.4 AS base
+FROM ruby:4.0 AS base
 
 #Set up variables for creating a user to run the app in the container
 ARG UNAME=app
