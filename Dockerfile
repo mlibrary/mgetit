@@ -1,4 +1,4 @@
-FROM ruby:4.0 AS base
+FROM ruby:4.0@sha256:d6c89d3f16ec6d210d66f29e2213fe9514905f6a78ae06456eb31580ebc6a318 AS base
 
 #Set up variables for creating a user to run the app in the container
 ARG UNAME=app
