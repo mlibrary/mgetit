@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "logger"
+gem "benchmark"
 gem "sinatra", require: "sinatra/base"
 gem "sinatra-activerecord"
 gem "rack-contrib"
