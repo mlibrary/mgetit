@@ -15,6 +15,7 @@ class MGetIt < Sinatra::Base
 
   configure do
     enable :sessions
+    enable :logging
     set :session_secret, ENV.fetch("RACK_SESSION_SECRET", SecureRandom.hex(32))
 
     #set :logging, Logger.new(STDOUT)
