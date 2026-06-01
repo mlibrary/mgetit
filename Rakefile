@@ -18,6 +18,32 @@ require "sass"
 require "sass/exec"
 require "standard/rake" unless Rails.env == "production"
 
+namespace "db" do
+  desc "Prune old records from the database"
+  task :prune do
+    deadline = 4.years.ago
+    batchsize = 1000
+    # created_at
+    [
+      Clickthrough,
+      DispatchedService,
+      ReferentValue,
+      Referent,
+      Request,
+      ServiceResponse,
+    ].each do |model|
+      model.where("created_at < ?", deadline).in_batches(of: batchsize).delete_all
+    end
+
+    # created_on
+    [
+      Permalink,
+    ].each do |model|
+      model.where("created_on < ?", deadline).in_batches(of: batchsize).delete_all
+    end
+  end
+end
+
 namespace "assets" do
   desc "Precompile assets"
   task :precompile do
