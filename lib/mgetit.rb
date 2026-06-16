@@ -10,6 +10,8 @@ Dir.glob(File.join("models", "*.rb"), base: File.dirname(__FILE__)) do |model|
 end
 
 class MGetIt < Sinatra::Base
+  include ERB::Util
+
   REDIRECTS = ['/', '/sfx_local', '/sfx_locator', '/sfx_locater', '/citation/sfx_local']
   register Sinatra::ActiveRecordExtension
 
