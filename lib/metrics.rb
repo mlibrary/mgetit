@@ -4,6 +4,7 @@ require "logger"
 require "prometheus/middleware/collector"
 require "active_support/notifications"
 require "benchmark"
+require "ostruct"
 
 module Metrics
   module NoOpMetric
@@ -15,8 +16,14 @@ module Metrics
   end
 
   class Middleware < Prometheus::Middleware::Collector
-    KNOWN_PATHS = ["/citation-linker", "/assets", "/favicon.ico"]
-    APP_PATHS = ["/resolve", "/go", "/link_router"]
+    PATHS = OpenStruct.new(
+      known: OpenStruct.new(
+        start_with: ["/citation-linker", "/assets", "/favicon.ico", "/sfx_", "/citation/sfx_"],
+        exact: ["/", "/accessibility"]),
+      app: OpenStruct.new(
+        start_with: ["/go/", "/link_router/", "/resource/proxy/"],
+        exact: ["/resolve"])
+    )
 
     protected
 
@@ -34,9 +41,16 @@ module Metrics
 
     def strip_ids_from_path(path)
       p = super
-      return "/known-path" if KNOWN_PATHS.any? { |known_path| p.start_with?(known_path) }
-      return "/not-a-path" unless APP_PATHS.any? { |app_path| p.start_with?(app_path) }
-      p.gsub(%r{/go/[^/]+}, "/go/:id").gsub(%r{/link_router/index/[^/]+}, "/link_router/index/:id")
+      return "/known-path" if PATHS.known.exact.include?(p)
+      return "/known-path" if PATHS.known.start_with.any? { |known_path| p.start_with?(known_path) }
+
+      return p if PATHS.app.exact.include?(p)
+
+      PATHS.app.start_with.each do |app_path|
+        return "#{app_path}:id" if p.start_with?(app_path)
+      end
+
+      return "/not-a-path"
     end
   end
 
