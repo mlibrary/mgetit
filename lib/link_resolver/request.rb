@@ -22,6 +22,30 @@ module LinkResolver
       self.service_responses = []
     end
 
+    def resolve!(resolvers)
+      resolvers.each do |resolver|
+        begin
+          resolver_duration = ::Benchmark.realtime do
+            resolver.handle(self)
+          end
+          ActiveSupport::Notifications.instrument(
+            "link_resolver.handle",
+            duration: resolver_duration,
+            resolver: resolver.class.name
+          )
+        rescue Exception => e
+          # If a resolver fails, continue
+          logger.error { ([e.message] + e.backtrace).join($/) }
+          ActiveSupport::Notifications.instrument(
+            "link_resolver.handle_error",
+            resolver: resolver.class.name,
+            error: e
+          )
+        end
+      end
+      self
+    end
+
     def to_context_object
       OpenURL::ContextObject.new_from_context_object(context_object)
     end
