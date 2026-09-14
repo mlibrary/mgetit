@@ -385,6 +385,17 @@ class Request < ActiveRecord::Base
     end
   end
 
+  # This assumes that service_responses have been refreshed separately.
+  # This also assumes that dispacthed_services don't actually matter.
+  def refresh!
+    now = Time.now
+    self.update_column(:created_at, now)
+    self.referent.update_column(:created_at, now)
+    self.referent.referent_values.update_all(created_at: now)
+    # Permalinks have a different column name.
+    self.referent.permalinks.update_all(created_on: now)
+  end
+
   protected
 
   # Called by self.find_or_create, if a new request _really_ needs to be created.

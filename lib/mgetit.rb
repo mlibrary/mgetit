@@ -130,18 +130,34 @@ class MGetIt < Sinatra::Base
   get "/go/:id" do
     resolver_request = LinkResolver::Request.for_raw_request(request)
     user_request = Request.find_by_id(params["id"])
-    if user_request
+    unless user_request
+      status 404
+      return erb :application, locals: {request: resolver_request, title: "404 - Page not found"} do
+        "Page not found"
+      end
+    end
+    if user_request.created_at < 1.year.ago
+      # Handle older requests
+      resolver_request.context_object = user_request.referent.to_context_object
+      resolver_request.resolve!(link_resolvers)
+      user_request.service_responses.each(&:delete)
+      user_request.service_responses.clear
+      resolver_request.service_responses.each do |response|
+        user_request.add_service_response(response)
+      end
+      resolver_request.referent.metadata.each_pair do |k, v|
+        user_request.referent.enhance_referent(k, v)
+      end
+      resolver_request.service_responses = user_request.service_responses
+      resolver_request.request_id = user_request.id
+      user_request.refresh!
+    else
       resolver_request.context_object = user_request.referent.to_context_object
       resolver_request.service_responses = user_request.service_responses
       resolver_request.request_id = user_request.id
-      erb :application, locals: {request: resolver_request, user_request: user_request, title: "Go"} do
-        erb :resolve, locals: {request: resolver_request, user_request: user_request}
-      end
-    else
-      status 404
-      erb :application, locals: {request: resolver_request, title: "404 - Page not found"} do
-        "Page not found"
-      end
+    end
+    erb :application, locals: {request: resolver_request, user_request: user_request, title: "Go"} do
+      erb :resolve, locals: {request: resolver_request, user_request: user_request}
     end
   end
 
@@ -151,26 +167,7 @@ class MGetIt < Sinatra::Base
     user_request ||= Request.find_or_create(params, request.session, request, options)
     resolver_request = LinkResolver::Request.for_raw_request(request)
     if user_request.service_responses.empty?
-      link_resolvers.each do |resolver|
-        begin
-          resolver_duration = ::Benchmark.realtime do
-            resolver.handle(resolver_request)
-          end
-          ActiveSupport::Notifications.instrument(
-            "link_resolver.handle",
-            duration: resolver_duration,
-            resolver: resolver.class.name
-          )
-        rescue Exception => e
-          # If a resolver fails, continue
-          logger.error { ([e.message] + e.backtrace).join($/) }
-          ActiveSupport::Notifications.instrument(
-            "link_resolver.handle_error",
-            resolver: resolver.class.name,
-            error: e
-          )
-        end
-      end
+      resolver_request.resolve!(link_resolvers)
       resolver_request.service_responses.each do |response|
         user_request.add_service_response(response)
       end
