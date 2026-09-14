@@ -23,6 +23,7 @@ gem "multi_json"
 gem "standard", group: [:development, :test]
 gem "pry", group: [:development, :test]
 gem "pry-byebug", group: [:development, :test]
+gem "readline", group: [:development, :test]
 gem "rspec", group: [:development, :test]
 gem "rack-test", group: [:development, :test]
 gem "simplecov", group: [:development, :test]

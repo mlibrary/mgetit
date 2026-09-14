@@ -140,6 +140,8 @@ GEM
     rb-inotify (0.11.1)
       ffi (~> 1.0)
     regexp_parser (2.12.0)
+    readline (0.0.4)
+      reline
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
@@ -263,6 +265,7 @@ DEPENDENCIES
   rack-test
   rack-timeout
   rake
+  readline
   rspec
   sass
   sassc
