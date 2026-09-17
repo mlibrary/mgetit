@@ -21,4 +21,7 @@ ActiveSupport::Notifications.subscribe("link_resolver.handle_error") do |event|
   Metrics(:link_resolver_handle_error_total) do |metric|
     metric.increment(labels: {resolver: event.payload[:resolver]})
   end
+  resolver = event.payload[:resolver]
+  e = event.payload[:error]
+  Metrics.logger.error { "#{resolver} Error: #{([e.message] + e.backtrace).join($/)}" }
 end
