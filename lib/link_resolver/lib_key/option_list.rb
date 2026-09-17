@@ -3,9 +3,12 @@ module LinkResolver
     class OptionList
       def self.for_json(data)
         return new unless data
+
+        integrator_link = data.dig("data", "bestIntegratorLink") || {}
+        open_access_link = {"openAccess" => data.dig("data", "openAccess")}
         new(
           metadata: Metadata.for_json(data["data"]),
-          options: [Option.for_json(data.dig("data", "bestIntegratorLink").merge("openAccess" => data.dig("data","openAccess")))]
+          options: [Option.for_json(integrator_link.merge(open_access_link))]
         )
       end
 
