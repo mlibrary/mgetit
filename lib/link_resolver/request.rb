@@ -35,7 +35,6 @@ module LinkResolver
           )
         rescue Exception => e
           # If a resolver fails, continue
-          logger.error { ([e.message] + e.backtrace).join($/) }
           ActiveSupport::Notifications.instrument(
             "link_resolver.handle_error",
             resolver: resolver.class.name,
