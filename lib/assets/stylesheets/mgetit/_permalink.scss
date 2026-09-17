@@ -1,13 +1,13 @@
 .permalink-container {
   display: flex;
+  flex-direction: column;
   margin: 1rem 0;
 
   label {
     font-size: 0.9rem;
     font-weight: 400;
     color: white;
-    padding: 0.5rem;
-    padding-left: 0;
+    padding-bottom: 0.5rem;
     margin: 0;
   }
 
