@@ -10,7 +10,8 @@ module LinkResolver
 
         @connection = Faraday.new(
           @host,
-          headers: { "Authorization" => "Bearer #{@key}" }
+          headers: { "Authorization" => "Bearer #{@key}" },
+          request: { timeout: 5, open_timeout: 3 }
         )
       end
 

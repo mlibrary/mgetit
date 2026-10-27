@@ -12,12 +12,14 @@ module LinkResolver
         @primo_tab  = ENV["PRIMO_TAB"]
         @primo_api_connection = Faraday.new(
           "https://#{primo_host}",
-          headers: {"Content-Type" => "application/json"}
+          headers: {"Content-Type" => "application/json"},
+          request: { timeout: 5, open_timeout: 3 }
         )
 
         @primo_web_connection = Faraday.new(
           @base_url,
-          headers: {"Content-Type" => "application/json"}
+          headers: {"Content-Type" => "application/json"},
+          request: { timeout: 5, open_timeout: 3 }
         )
       end
 
