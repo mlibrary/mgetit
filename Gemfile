@@ -40,6 +40,6 @@ gem "rack-reverse-proxy",
 
 group :metrics do
   gem "yabeda-puma-plugin"
-  gem "yabeda-prometheus"
-  gem "prometheus-client", require: File.expand_path(File.join(["lib", "metrics"]), __dir__)
+  gem "yabeda-prometheus", "> 0.9.0"
+  gem "prometheus-client", "~> 4.2.5", require: File.expand_path(File.join(["lib", "metrics"]), __dir__)
 end

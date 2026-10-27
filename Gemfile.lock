@@ -36,7 +36,7 @@ GEM
       uri (>= 0.13.1)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    anyway_config (2.8.0)
+    anyway_config (2.9.1)
       ruby-next-core (~> 1.0)
     ast (2.4.3)
     base64 (0.3.0)
@@ -104,7 +104,7 @@ GEM
       ast (~> 2.4.1)
       racc
     prism (1.9.0)
-    prometheus-client (5.0.0)
+    prometheus-client (4.2.5)
       base64
     pry (0.16.0)
       coderay (~> 1.1)
@@ -176,7 +176,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.47.1, < 2.0)
-    ruby-next-core (1.2.0)
+    ruby-next-core (1.2.1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sass (3.7.4)
@@ -228,8 +228,10 @@ GEM
       anyway_config (>= 1.0, < 3)
       concurrent-ruby
       dry-initializer
-    yabeda-prometheus (0.1.5)
-      yabeda
+    yabeda-prometheus (0.9.1)
+      prometheus-client (>= 3.0, < 5.0)
+      rack
+      yabeda (~> 0.10)
     yabeda-puma-plugin (0.9.0)
       json
       puma
@@ -253,7 +255,7 @@ DEPENDENCIES
   nokogiri
   openurl!
   ostruct
-  prometheus-client
+  prometheus-client (~> 4.2.5)
   pry
   pry-byebug
   puma
@@ -273,7 +275,7 @@ DEPENDENCIES
   standard
   titlecase
   webmock
-  yabeda-prometheus
+  yabeda-prometheus (> 0.9.0)
   yabeda-puma-plugin
 
 BUNDLED WITH
