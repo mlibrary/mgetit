@@ -1,4 +1,4 @@
-FROM ruby:4.0@sha256:d6c89d3f16ec6d210d66f29e2213fe9514905f6a78ae06456eb31580ebc6a318 AS base
+FROM ruby:4.0@sha256:4de17567bc750e8a509fd2181e5c5eda3137bbb635b046943277c90271e4ec1c AS base
 
 #Set up variables for creating a user to run the app in the container
 ARG UNAME=app
@@ -7,10 +7,10 @@ ARG GID=1000
 ARG APP_HOME=/home/${UNAME}
 ARG BUNDLE_PATH=/bundle
 
-ENV RAILS_LOG_TO_STDOUT 1
-ENV RAILS_SERVE_STATIC_FILES 1
-ENV APP_HOME ${APP_HOME}
-ENV BUNDLE_PATH ${BUNDLE_PATH}
+ENV RAILS_LOG_TO_STDOUT=1
+ENV RAILS_SERVE_STATIC_FILES=1
+ENV APP_HOME=${APP_HOME}
+ENV BUNDLE_PATH=${BUNDLE_PATH}
 
 #Create the group for the user
 #Create the User and assign ${APP_HOME} as its home directory
@@ -21,12 +21,13 @@ RUN mkdir -p ${APP_HOME} ${BUNDLE_PATH} \
 
 RUN apt update \
  && apt install -y curl default-libmysqlclient-dev \
+ && apt upgrade -y \
  && apt clean \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR ${APP_HOME}
 USER $UNAME
-CMD bundle exec puma -C config/puma.rb
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 
 FROM base AS development
 
